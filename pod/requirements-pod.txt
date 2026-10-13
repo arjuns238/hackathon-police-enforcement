@@ -1,0 +1,6 @@
+# Extra pip packages this project needs on the pod, beyond what pod_setup.sh installs.
+# Installed by pod/post_setup.sh on every pod (re)start.
+pyyaml
+hf_transfer
+tqdm
+joblib

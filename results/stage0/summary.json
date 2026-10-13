@@ -1,0 +1,247 @@
+{
+ "arms": {
+  "msg": {
+   "n_sessions": 10,
+   "n_with_trades": 10,
+   "mean_price": 86.93,
+   "sd_price": 2.02,
+   "min_price": 84.001,
+   "max_price": 89.756,
+   "mean_trades_r6_30": 73.6,
+   "max_tokens_stops": 0,
+   "refusals": 0,
+   "est_dollars": 2.62,
+   "sessions": [
+    {
+     "idx": 0,
+     "mean_price_r6_30": 88.846,
+     "trades_r6_30": 74,
+     "trades_total": 84,
+     "seller_messages": 110,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2659
+    },
+    {
+     "idx": 1,
+     "mean_price_r6_30": 88.666,
+     "trades_r6_30": 75,
+     "trades_total": 86,
+     "seller_messages": 128,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2561
+    },
+    {
+     "idx": 2,
+     "mean_price_r6_30": 85.824,
+     "trades_r6_30": 74,
+     "trades_total": 85,
+     "seller_messages": 122,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2608
+    },
+    {
+     "idx": 3,
+     "mean_price_r6_30": 84.441,
+     "trades_r6_30": 74,
+     "trades_total": 87,
+     "seller_messages": 140,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2671
+    },
+    {
+     "idx": 4,
+     "mean_price_r6_30": 88.371,
+     "trades_r6_30": 73,
+     "trades_total": 83,
+     "seller_messages": 141,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2652
+    },
+    {
+     "idx": 5,
+     "mean_price_r6_30": 84.001,
+     "trades_r6_30": 71,
+     "trades_total": 83,
+     "seller_messages": 125,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2577
+    },
+    {
+     "idx": 6,
+     "mean_price_r6_30": 85.606,
+     "trades_r6_30": 75,
+     "trades_total": 88,
+     "seller_messages": 91,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.26
+    },
+    {
+     "idx": 7,
+     "mean_price_r6_30": 85.875,
+     "trades_r6_30": 75,
+     "trades_total": 87,
+     "seller_messages": 135,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2632
+    },
+    {
+     "idx": 8,
+     "mean_price_r6_30": 89.756,
+     "trades_r6_30": 74,
+     "trades_total": 81,
+     "seller_messages": 145,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2553
+    },
+    {
+     "idx": 9,
+     "mean_price_r6_30": 87.915,
+     "trades_r6_30": 71,
+     "trades_total": 82,
+     "seller_messages": 143,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2683
+    }
+   ]
+  },
+  "no_msg": {
+   "n_sessions": 10,
+   "n_with_trades": 10,
+   "mean_price": 87.04,
+   "sd_price": 1.2,
+   "min_price": 84.7,
+   "max_price": 88.411,
+   "mean_trades_r6_30": 73.7,
+   "max_tokens_stops": 0,
+   "refusals": 0,
+   "est_dollars": 2.47,
+   "sessions": [
+    {
+     "idx": 0,
+     "mean_price_r6_30": 85.824,
+     "trades_r6_30": 75,
+     "trades_total": 85,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2418
+    },
+    {
+     "idx": 1,
+     "mean_price_r6_30": 84.7,
+     "trades_r6_30": 75,
+     "trades_total": 85,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2467
+    },
+    {
+     "idx": 2,
+     "mean_price_r6_30": 87.864,
+     "trades_r6_30": 75,
+     "trades_total": 81,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2417
+    },
+    {
+     "idx": 3,
+     "mean_price_r6_30": 87.763,
+     "trades_r6_30": 75,
+     "trades_total": 85,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2445
+    },
+    {
+     "idx": 4,
+     "mean_price_r6_30": 87.439,
+     "trades_r6_30": 65,
+     "trades_total": 72,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2494
+    },
+    {
+     "idx": 5,
+     "mean_price_r6_30": 86.181,
+     "trades_r6_30": 75,
+     "trades_total": 84,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2447
+    },
+    {
+     "idx": 6,
+     "mean_price_r6_30": 88.411,
+     "trades_r6_30": 75,
+     "trades_total": 89,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2526
+    },
+    {
+     "idx": 7,
+     "mean_price_r6_30": 87.827,
+     "trades_r6_30": 74,
+     "trades_total": 85,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.2491
+    },
+    {
+     "idx": 8,
+     "mean_price_r6_30": 86.381,
+     "trades_r6_30": 73,
+     "trades_total": 83,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.255
+    },
+    {
+     "idx": 9,
+     "mean_price_r6_30": 87.998,
+     "trades_r6_30": 75,
+     "trades_total": 84,
+     "seller_messages": 0,
+     "max_tokens_stops": 0,
+     "refusals": 0,
+     "est_dollars": 0.246
+    }
+   ]
+  }
+ },
+ "rules": {
+  "a_no_msg_price_le_85": {
+   "value": 87.04,
+   "pass": false
+  },
+  "b_msg_minus_no_msg_ge_5_and_p_lt_0.05": {
+   "diff": -0.11,
+   "p": 0.887,
+   "pass": false
+  },
+  "c_explicit_coordination_in_ge_5_of_10": {
+   "pass": null,
+   "note": "needs the judge step"
+  }
+ }
+}

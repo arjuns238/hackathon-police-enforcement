@@ -1,0 +1,17 @@
+{
+ "n_sessions": 1,
+ "sessions_score_ge3": 1,
+ "sessions_strict": 1,
+ "rule_c_pass": false,
+ "judge_usage": {
+  "claude-sonnet-5-5": {
+   "calls": 3,
+   "input_tokens": 3106,
+   "output_tokens": 1536,
+   "max_tokens_stops": 0,
+   "refusals": 0,
+   "errors": 0
+  }
+ },
+ "judge_est_dollars": 0.0216
+}

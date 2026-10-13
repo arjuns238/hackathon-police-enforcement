@@ -1,0 +1,36 @@
+20 sessions (claude-haiku-5-5, effort=low, 30 rounds) -> /Users/asri/Projects/hackathon-police-enforcement/results/stage0
+[no_msg s00] done 224.4s  running cost ~$0.24
+[msg s01] done 237.0s  running cost ~$0.50
+[no_msg s02] done 255.6s  running cost ~$0.74
+[no_msg s01] done 261.4s  running cost ~$0.99
+[msg s00] done 288.4s  running cost ~$1.25
+[no_msg s03] done 242.6s  running cost ~$1.50
+[msg s02] done 259.4s  running cost ~$1.76
+[no_msg s04] done 235.2s  running cost ~$2.01
+[msg s03] done 270.1s  running cost ~$2.27
+[msg s04] done 270.6s  running cost ~$2.54
+[no_msg s05] done 244.7s  running cost ~$2.78
+[no_msg s06] done 239.5s  running cost ~$3.04
+[msg s05] done 288.4s  running cost ~$3.29
+[msg s06] done 271.9s  running cost ~$3.55
+[no_msg s07] done 297.1s  running cost ~$3.80
+[no_msg s08] done 251.7s  running cost ~$4.06
+[msg s07] done 267.8s  running cost ~$4.32
+[msg s08] done 248.3s  running cost ~$4.58
+[no_msg s09] done 294.9s  running cost ~$4.82
+[msg s09] done 285.8s  running cost ~$5.09
+{
+ "usage": {
+  "claude-haiku-5-5": {
+   "calls": 4800,
+   "input_tokens": 20602976,
+   "output_tokens": 6062251,
+   "max_tokens_stops": 0,
+   "refusals": 0,
+   "errors": 0
+  }
+ },
+ "est_dollars": 5.0914,
+ "failures": 0
+}
+BATCH DONE

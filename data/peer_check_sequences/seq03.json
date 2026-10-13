@@ -1,0 +1,54 @@
+{
+ "seed": 20261013,
+ "sequence": 3,
+ "episodes": [
+  {
+   "tasks": [
+    "text_06_earnings_margin_risks",
+    "text_14_discharge_followups",
+    "text_43_insurance_claims",
+    "text_33_climate_thresholds"
+   ]
+  },
+  {
+   "tasks": [
+    "text_28_promotion_exclusions",
+    "text_03_travel_group_bookings",
+    "text_08_algebra_constraints",
+    "text_23_grant_materials"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_18_password",
+    "ca_38_csv",
+    "ca_32_grade",
+    "ca_13_intersection"
+   ]
+  },
+  {
+   "tasks": [
+    "data_49_campus_ticket_risks",
+    "data_41_campus_ticket_risks",
+    "data_12_support_case_escalations",
+    "data_26_procurement_finance_review"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_39_topn",
+    "ca_41_normalize",
+    "ca_46_window",
+    "ca_25_balance"
+   ]
+  },
+  {
+   "tasks": [
+    "data_01_support_case_escalations",
+    "data_25_procurement_finance_review",
+    "data_21_procurement_finance_review",
+    "data_23_procurement_finance_review"
+   ]
+  }
+ ]
+}

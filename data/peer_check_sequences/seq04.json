@@ -1,0 +1,54 @@
+{
+ "seed": 20261013,
+ "sequence": 4,
+ "episodes": [
+  {
+   "tasks": [
+    "text_43_insurance_claims",
+    "text_24_reviewer_must_respond",
+    "text_13_match_turning_points",
+    "text_34_bio_experiment_results"
+   ]
+  },
+  {
+   "tasks": [
+    "data_29_clinical_safety_followups",
+    "data_16_procurement_finance_review",
+    "data_10_support_case_escalations",
+    "data_23_procurement_finance_review"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_07_compact",
+    "ca_49_phone",
+    "ca_44_inventory",
+    "ca_02_topn"
+   ]
+  },
+  {
+   "tasks": [
+    "text_41_access_revocations",
+    "text_21_flight_compensation",
+    "text_49_real_estate_showings",
+    "text_03_travel_group_bookings"
+   ]
+  },
+  {
+   "tasks": [
+    "data_34_clinical_safety_followups",
+    "data_20_procurement_finance_review",
+    "data_41_campus_ticket_risks",
+    "data_11_support_case_escalations"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_24_slugify",
+    "ca_36_date",
+    "ca_12_grade",
+    "ca_46_window"
+   ]
+  }
+ ]
+}

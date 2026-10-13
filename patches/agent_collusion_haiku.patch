@@ -1,0 +1,87 @@
+diff --git a/experiments/agents.py b/experiments/agents.py
+index 7ddd820..73a4f27 100644
+--- a/experiments/agents.py
++++ b/experiments/agents.py
+@@ -1,6 +1,7 @@
+ """LiteLLM calls, retry handling, tool execution, and usage normalization."""
+ 
+ import json
++import os
+ import random
+ import re
+ import time
+@@ -180,6 +181,8 @@ def _select_tools_and_choice(
+             == forced_tool_name
+         ]
+         if use_auto:
++            if os.environ.get("PEERCHECK_FIXED_TOOLS") == "1":
++                return tools, "auto"
+             return (matching_tools or tools), "auto"
+         return tools, {
+             "type": "function",
+@@ -543,7 +546,9 @@ def _needs_auto_tool_choice_fallback(
+     effort.
+     """
+     reasoning_effort = reasoning_effort.strip().lower()
+-    return resolve_provider(model)[1] == "deepseek" and reasoning_effort != "none"
++    # [hackathon patch] The paper ran Claude with tool_choice=auto so it could think before each call;
++    # Claude 5-family models skip thinking entirely on a forced tool call.
++    return resolve_provider(model)[1] in ("deepseek", "anthropic") and reasoning_effort != "none"
+ 
+ 
+ def _complete_with_retries(
+@@ -743,12 +748,22 @@ def run_agent_turn(
+ ) -> dict[str, Any]:
+     # answer_key belongs to the agent task; task_type and phase are shared.
+     slot = agent_state(state, actor)
+-    tools = get_tool_schemas(
+-        task_type=str(state.get("task_type", "code_analysis")),
+-        phase=str(state.get("phase", "task")),
+-        answer_key=[str(column) for column in slot.get("answer_key", [])],
+-        peer=peer_id(actor),
+-    )
++    # [hackathon patch] PEERCHECK_FIXED_TOOLS=1 offers one tool list in every phase (the reflection list: task
++    # tools + send_message + submit_verdict). A per-phase list re-writes the whole prompt cache at each phase
++    # change; the dispatcher's phase gate still rejects a tool called in the wrong phase.
++    if os.environ.get("PEERCHECK_FIXED_TOOLS") == "1":
++        tools = get_task_tool_schemas(
++            task_type=str(state.get("task_type", "code_analysis")),
++            answer_key=[str(column) for column in slot.get("answer_key", [])],
++            peer=peer_id(actor),
++        )
++    else:
++        tools = get_tool_schemas(
++            task_type=str(state.get("task_type", "code_analysis")),
++            phase=str(state.get("phase", "task")),
++            answer_key=[str(column) for column in slot.get("answer_key", [])],
++            peer=peer_id(actor),
++        )
+     extra = get_litellm_completion_kwargs(
+         model,
+         reasoning_effort,
+diff --git a/experiments/llm.py b/experiments/llm.py
+index df7f066..e24d059 100644
+--- a/experiments/llm.py
++++ b/experiments/llm.py
+@@ -104,6 +104,10 @@ def _thinking_instead_of_effort(
+     budget = _THINKING_BUDGET_BY_EFFORT.get(reasoning_effort)
+     if budget is None:
+         return None
++    # [hackathon patch] The direct Anthropic API maps effort natively (adaptive thinking plus
++    # output_config.effort), and Claude 5-family models reject budget_tokens with a 400.
++    if provider == "anthropic":
++        return None
+     try:
+         from litellm.llms.anthropic.chat.transformation import AnthropicConfig
+ 
+@@ -167,6 +171,10 @@ def get_litellm_completion_kwargs(
+             requested_params,
+         )
+     )
++    # [hackathon patch] An org-level API key needs the workspace header on every call.
++    workspace_id = os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip()
++    if provider == "anthropic" and workspace_id:
++        kwargs["extra_headers"] = {"anthropic-workspace-id": workspace_id}
+     if forced_params:
+         kwargs["allowed_openai_params"] = forced_params
+     return kwargs

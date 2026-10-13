@@ -1,0 +1,54 @@
+{
+ "seed": 20261013,
+ "sequence": 2,
+ "episodes": [
+  {
+   "tasks": [
+    "data_38_clinical_safety_followups",
+    "data_10_support_case_escalations",
+    "data_27_clinical_safety_followups",
+    "data_34_clinical_safety_followups"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_45_ranges",
+    "ca_04_slugify",
+    "ca_41_normalize",
+    "ca_42_buckets"
+   ]
+  },
+  {
+   "tasks": [
+    "data_07_support_case_escalations",
+    "data_49_campus_ticket_risks",
+    "data_18_procurement_finance_review",
+    "data_39_campus_ticket_risks"
+   ]
+  },
+  {
+   "tasks": [
+    "text_42_news_timeline",
+    "text_49_real_estate_showings",
+    "text_17_audit_remediation",
+    "text_24_reviewer_must_respond"
+   ]
+  },
+  {
+   "tasks": [
+    "text_19_warehouse_substitutions",
+    "text_05_slack_blockers",
+    "text_50_podcast_sponsor_terms",
+    "text_36_restaurant_shifts"
+   ]
+  },
+  {
+   "tasks": [
+    "ca_28_ranges",
+    "ca_40_inventory",
+    "ca_18_password",
+    "ca_10_dedupe"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+$ /Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/.venv/bin/python -m experiments.runner --cross-episode-memory-scope full-history --verdict-policy raw-only --char-limit 200 --max-rounds 5 --manifest /Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/task/task_sequences_50x10/rep004_sampled_manifest.json --run-label default_cross-episode_raw-only_r5_rep4_memory-full-history_shared-verdict-accuracy_reward_verdict-review_reflection --output-dir /Users/asri/Projects/hackathon-police-enforcement/results/review_0a_high --alice-model anthropic/claude-haiku-5-5 --alice-reasoning-effort high --alice-temperature 1.0 --alice-max-output-tokens 64000 --alice-cross-episode-memory-length -1 --bob-model anthropic/claude-haiku-5-5 --bob-reasoning-effort high --bob-temperature 1.0 --bob-max-output-tokens 64000 --bob-cross-episode-memory-length -1 --reward-scope shared --reward-type verdict-accuracy --reflection --reward --verdict-review --no-preflight
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/experiments/runner.py", line 748, in <module>
+    main()
+  File "/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/experiments/runner.py", line 731, in main
+    output_path = _create_output_path(args, repo_root)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/experiments/runner.py", line 402, in _create_output_path
+    run_directory.mkdir(parents=True, exist_ok=False)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py", line 1312, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/Users/asri/Projects/hackathon-police-enforcement/results/review_0a_high/run_default_cross-episode_raw-only_r5_rep4_memory-full-history_shared-verdict-accuracy_reward_verdict-review_reflection_20261013_124731_849658_0a5b9e'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/experiments/__main__.py", line 6, in <module>
+    main()
+  File "/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/experiments/cli.py", line 474, in main
+    subprocess.run(command, cwd=repo_root, check=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/.venv/bin/python', '-m', 'experiments.runner', '--cross-episode-memory-scope', 'full-history', '--verdict-policy', 'raw-only', '--char-limit', '200', '--max-rounds', '5', '--manifest', '/Users/asri/Projects/hackathon-police-enforcement/vendor/agent-collusion/task/task_sequences_50x10/rep004_sampled_manifest.json', '--run-label', 'default_cross-episode_raw-only_r5_rep4_memory-full-history_shared-verdict-accuracy_reward_verdict-review_reflection', '--output-dir', '/Users/asri/Projects/hackathon-police-enforcement/results/review_0a_high', '--alice-model', 'anthropic/claude-haiku-5-5', '--alice-reasoning-effort', 'high', '--alice-temperature', '1.0', '--alice-max-output-tokens', '64000', '--alice-cross-episode-memory-length', '-1', '--bob-model', 'anthropic/claude-haiku-5-5', '--bob-reasoning-effort', 'high', '--bob-temperature', '1.0', '--bob-max-output-tokens', '64000', '--bob-cross-episode-memory-length', '-1', '--reward-scope', 'shared', '--reward-type', 'verdict-accuracy', '--reflection', '--reward', '--verdict-review', '--no-preflight']' returned non-zero exit status 1.
+EXIT 1

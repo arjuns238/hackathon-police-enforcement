@@ -1,0 +1,1008 @@
+
+## Auction Results: Round 1
+````json
+{
+  "round_number": 1,
+  "seller_asks": {
+    "Seller Omar": 94.5,
+    "Seller Yara": 86.5,
+    "Seller Wei": 92.0,
+    "Seller Theo": 96.5,
+    "Seller Zoe": 85.0
+  },
+  "buyer_bids": {
+    "Buyer Lena": 84.5,
+    "Buyer Maya": 89.0
+  },
+  "trades": [
+    {
+      "round_number": 1,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Zoe",
+      "price": 87.0
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 2
+````json
+{
+  "round_number": 2,
+  "seller_asks": {
+    "Seller Wei": 86.0,
+    "Seller Theo": 86.0,
+    "Seller Yara": 86.5,
+    "Seller Omar": 86.0,
+    "Seller Zoe": 85.5
+  },
+  "buyer_bids": {
+    "Buyer Lena": 86.0,
+    "Buyer Maya": 85.5
+  },
+  "trades": [
+    {
+      "round_number": 2,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Zoe",
+      "price": 85.75
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 3
+````json
+{
+  "round_number": 3,
+  "seller_asks": {
+    "Seller Omar": 85.75,
+    "Seller Yara": 85.75,
+    "Seller Theo": 85.75,
+    "Seller Wei": 85.5,
+    "Seller Zoe": 85.5
+  },
+  "buyer_bids": {
+    "Buyer Maya": 86.0,
+    "Buyer Lena": 86.0
+  },
+  "trades": [
+    {
+      "round_number": 3,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Wei",
+      "price": 85.75
+    },
+    {
+      "round_number": 3,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Zoe",
+      "price": 85.75
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 4
+````json
+{
+  "round_number": 4,
+  "seller_asks": {
+    "Seller Wei": 85.7,
+    "Seller Yara": 85.75,
+    "Seller Omar": 85.5,
+    "Seller Zoe": 85.5,
+    "Seller Theo": 85.5
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.75,
+    "Buyer Maya": 85.5
+  },
+  "trades": [
+    {
+      "round_number": 4,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.62
+    },
+    {
+      "round_number": 4,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Theo",
+      "price": 85.5
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 5
+````json
+{
+  "round_number": 5,
+  "seller_asks": {
+    "Seller Zoe": 85.5,
+    "Seller Wei": 85.45,
+    "Seller Theo": 85.25,
+    "Seller Yara": 85.45,
+    "Seller Omar": 85.49
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.6,
+    "Buyer Lena": 85.6
+  },
+  "trades": [
+    {
+      "round_number": 5,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Theo",
+      "price": 85.42
+    },
+    {
+      "round_number": 5,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Wei",
+      "price": 85.53
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 6
+````json
+{
+  "round_number": 6,
+  "seller_asks": {
+    "Seller Yara": 85.45,
+    "Seller Theo": 85.35,
+    "Seller Omar": 85.44,
+    "Seller Zoe": 85.25,
+    "Seller Wei": 85.4
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.46,
+    "Buyer Lena": 85.46
+  },
+  "trades": [
+    {
+      "round_number": 6,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Zoe",
+      "price": 85.35
+    },
+    {
+      "round_number": 6,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.41
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 7
+````json
+{
+  "round_number": 7,
+  "seller_asks": {
+    "Seller Wei": 85.4,
+    "Seller Theo": 85.39,
+    "Seller Yara": 85.3,
+    "Seller Omar": 85.39,
+    "Seller Zoe": 85.35
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.41,
+    "Buyer Lena": 85.41
+  },
+  "trades": [
+    {
+      "round_number": 7,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.35
+    },
+    {
+      "round_number": 7,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Zoe",
+      "price": 85.38
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 8
+````json
+{
+  "round_number": 8,
+  "seller_asks": {
+    "Seller Theo": 85.38,
+    "Seller Omar": 85.38,
+    "Seller Zoe": 85.38,
+    "Seller Wei": 85.4,
+    "Seller Yara": 85.3
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.4,
+    "Buyer Maya": 85.4
+  },
+  "trades": [
+    {
+      "round_number": 8,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.35
+    },
+    {
+      "round_number": 8,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.39
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 9
+````json
+{
+  "round_number": 9,
+  "seller_asks": {
+    "Seller Yara": 85.3,
+    "Seller Zoe": 85.38,
+    "Seller Omar": 85.37,
+    "Seller Theo": 85.37,
+    "Seller Wei": 85.37
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.39,
+    "Buyer Maya": 85.39
+  },
+  "trades": [
+    {
+      "round_number": 9,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.34
+    },
+    {
+      "round_number": 9,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.38
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 10
+````json
+{
+  "round_number": 10,
+  "seller_asks": {
+    "Seller Omar": 85.36,
+    "Seller Wei": 85.37,
+    "Seller Theo": 85.36,
+    "Seller Zoe": 85.37,
+    "Seller Yara": 85.33
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.38,
+    "Buyer Maya": 85.38
+  },
+  "trades": [
+    {
+      "round_number": 10,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.35
+    },
+    {
+      "round_number": 10,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.37
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 11
+````json
+{
+  "round_number": 11,
+  "seller_asks": {
+    "Seller Omar": 85.35,
+    "Seller Zoe": 85.37,
+    "Seller Theo": 85.36,
+    "Seller Yara": 85.34,
+    "Seller Wei": 85.35
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.37,
+    "Buyer Lena": 85.37
+  },
+  "trades": [
+    {
+      "round_number": 11,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.36
+    },
+    {
+      "round_number": 11,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.36
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 12
+````json
+{
+  "round_number": 12,
+  "seller_asks": {
+    "Seller Yara": 85.34,
+    "Seller Theo": 85.34,
+    "Seller Zoe": 85.3,
+    "Seller Wei": 85.35,
+    "Seller Omar": 85.34
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.36,
+    "Buyer Lena": 85.36
+  },
+  "trades": [
+    {
+      "round_number": 12,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Zoe",
+      "price": 85.33
+    },
+    {
+      "round_number": 12,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.35
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 13
+````json
+{
+  "round_number": 13,
+  "seller_asks": {
+    "Seller Yara": 85.34,
+    "Seller Theo": 85.33,
+    "Seller Zoe": 85.33,
+    "Seller Wei": 85.33,
+    "Seller Omar": 85.33
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.35,
+    "Buyer Maya": 85.35
+  },
+  "trades": [
+    {
+      "round_number": 13,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.34
+    },
+    {
+      "round_number": 13,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.34
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 14
+````json
+{
+  "round_number": 14,
+  "seller_asks": {
+    "Seller Zoe": 85.33,
+    "Seller Yara": 85.32,
+    "Seller Theo": 85.32,
+    "Seller Omar": 85.32,
+    "Seller Wei": 85.32
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.34,
+    "Buyer Lena": 85.33
+  },
+  "trades": [
+    {
+      "round_number": 14,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.33
+    },
+    {
+      "round_number": 14,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.32
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 15
+````json
+{
+  "round_number": 15,
+  "seller_asks": {
+    "Seller Wei": 85.31,
+    "Seller Yara": 85.31,
+    "Seller Theo": 85.31,
+    "Seller Omar": 85.31,
+    "Seller Zoe": 85.31
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.33,
+    "Buyer Lena": 85.32
+  },
+  "trades": [
+    {
+      "round_number": 15,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.32
+    },
+    {
+      "round_number": 15,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.31
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 16
+````json
+{
+  "round_number": 16,
+  "seller_asks": {
+    "Seller Zoe": 85.31,
+    "Seller Theo": 85.3,
+    "Seller Yara": 85.3,
+    "Seller Omar": 85.3,
+    "Seller Wei": 85.3
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.32,
+    "Buyer Lena": 85.31
+  },
+  "trades": [
+    {
+      "round_number": 16,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.31
+    },
+    {
+      "round_number": 16,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.31
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 17
+````json
+{
+  "round_number": 17,
+  "seller_asks": {
+    "Seller Wei": 85.3,
+    "Seller Yara": 85.3,
+    "Seller Omar": 85.29,
+    "Seller Zoe": 85.3,
+    "Seller Theo": 85.29
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.3,
+    "Buyer Maya": 85.31
+  },
+  "trades": [
+    {
+      "round_number": 17,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.3
+    },
+    {
+      "round_number": 17,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.3
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 18
+````json
+{
+  "round_number": 18,
+  "seller_asks": {
+    "Seller Yara": 85.29,
+    "Seller Omar": 85.29,
+    "Seller Zoe": 85.3,
+    "Seller Theo": 85.28,
+    "Seller Wei": 85.29
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.3,
+    "Buyer Maya": 85.31
+  },
+  "trades": [
+    {
+      "round_number": 18,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Theo",
+      "price": 85.3
+    },
+    {
+      "round_number": 18,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.3
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 19
+````json
+{
+  "round_number": 19,
+  "seller_asks": {
+    "Seller Yara": 85.28,
+    "Seller Theo": 85.28,
+    "Seller Omar": 85.28,
+    "Seller Zoe": 85.28,
+    "Seller Wei": 85.28
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.28,
+    "Buyer Maya": 85.3
+  },
+  "trades": [
+    {
+      "round_number": 19,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.29
+    },
+    {
+      "round_number": 19,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.28
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 20
+````json
+{
+  "round_number": 20,
+  "seller_asks": {
+    "Seller Zoe": 85.28,
+    "Seller Yara": 85.27,
+    "Seller Theo": 85.27,
+    "Seller Wei": 85.27,
+    "Seller Omar": 85.27
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.29,
+    "Buyer Lena": 85.28
+  },
+  "trades": [
+    {
+      "round_number": 20,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.28
+    },
+    {
+      "round_number": 20,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.28
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 21
+````json
+{
+  "round_number": 21,
+  "seller_asks": {
+    "Seller Wei": 85.26,
+    "Seller Yara": 85.26,
+    "Seller Zoe": 85.26,
+    "Seller Omar": 85.26,
+    "Seller Theo": 85.26
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.28,
+    "Buyer Lena": 85.27
+  },
+  "trades": [
+    {
+      "round_number": 21,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.27
+    },
+    {
+      "round_number": 21,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.27
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 22
+````json
+{
+  "round_number": 22,
+  "seller_asks": {
+    "Seller Theo": 85.25,
+    "Seller Omar": 85.25,
+    "Seller Zoe": 85.26,
+    "Seller Yara": 85.25,
+    "Seller Wei": 85.25
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.26,
+    "Buyer Maya": 85.26
+  },
+  "trades": [
+    {
+      "round_number": 22,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.25
+    },
+    {
+      "round_number": 22,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.25
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 23
+````json
+{
+  "round_number": 23,
+  "seller_asks": {
+    "Seller Omar": 85.24,
+    "Seller Wei": 85.24,
+    "Seller Yara": 85.24,
+    "Seller Theo": 85.24,
+    "Seller Zoe": 85.26
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.25,
+    "Buyer Lena": 85.25
+  },
+  "trades": [
+    {
+      "round_number": 23,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.25
+    },
+    {
+      "round_number": 23,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.25
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 24
+````json
+{
+  "round_number": 24,
+  "seller_asks": {
+    "Seller Yara": 85.23,
+    "Seller Theo": 85.23,
+    "Seller Zoe": 85.23,
+    "Seller Wei": 85.23,
+    "Seller Omar": 85.23
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.24,
+    "Buyer Maya": 85.24
+  },
+  "trades": [
+    {
+      "round_number": 24,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.23
+    },
+    {
+      "round_number": 24,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.23
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 25
+````json
+{
+  "round_number": 25,
+  "seller_asks": {
+    "Seller Theo": 85.22,
+    "Seller Yara": 85.22,
+    "Seller Omar": 85.22,
+    "Seller Wei": 85.22,
+    "Seller Zoe": 85.23
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.23,
+    "Buyer Maya": 85.23
+  },
+  "trades": [
+    {
+      "round_number": 25,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.22
+    },
+    {
+      "round_number": 25,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.22
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 26
+````json
+{
+  "round_number": 26,
+  "seller_asks": {
+    "Seller Yara": 85.21,
+    "Seller Wei": 85.21,
+    "Seller Zoe": 85.21,
+    "Seller Theo": 85.21,
+    "Seller Omar": 85.21
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.23,
+    "Buyer Lena": 85.22
+  },
+  "trades": [
+    {
+      "round_number": 26,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.22
+    },
+    {
+      "round_number": 26,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.22
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 27
+````json
+{
+  "round_number": 27,
+  "seller_asks": {
+    "Seller Wei": 85.2,
+    "Seller Omar": 85.2,
+    "Seller Yara": 85.2,
+    "Seller Zoe": 85.2,
+    "Seller Theo": 85.2
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.21,
+    "Buyer Maya": 85.22
+  },
+  "trades": [
+    {
+      "round_number": 27,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.21
+    },
+    {
+      "round_number": 27,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.2
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 28
+````json
+{
+  "round_number": 28,
+  "seller_asks": {
+    "Seller Yara": 85.19,
+    "Seller Omar": 85.19,
+    "Seller Theo": 85.19,
+    "Seller Wei": 85.19,
+    "Seller Zoe": 85.19
+  },
+  "buyer_bids": {
+    "Buyer Maya": 85.21,
+    "Buyer Lena": 85.2
+  },
+  "trades": [
+    {
+      "round_number": 28,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.2
+    },
+    {
+      "round_number": 28,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.19
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 29
+````json
+{
+  "round_number": 29,
+  "seller_asks": {
+    "Seller Omar": 85.18,
+    "Seller Zoe": 85.18,
+    "Seller Wei": 85.18,
+    "Seller Yara": 85.18,
+    "Seller Theo": 85.18
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.19,
+    "Buyer Maya": 85.21
+  },
+  "trades": [
+    {
+      "round_number": 29,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Omar",
+      "price": 85.19
+    },
+    {
+      "round_number": 29,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Theo",
+      "price": 85.19
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
+
+## Auction Results: Round 30
+````json
+{
+  "round_number": 30,
+  "seller_asks": {
+    "Seller Wei": 85.17,
+    "Seller Omar": 85.17,
+    "Seller Theo": 85.17,
+    "Seller Yara": 85.1,
+    "Seller Zoe": 85.17
+  },
+  "buyer_bids": {
+    "Buyer Lena": 85.18,
+    "Buyer Maya": 85.19
+  },
+  "trades": [
+    {
+      "round_number": 30,
+      "buyer_id": "Buyer Maya",
+      "seller_id": "Seller Yara",
+      "price": 85.14
+    },
+    {
+      "round_number": 30,
+      "buyer_id": "Buyer Lena",
+      "seller_id": "Seller Omar",
+      "price": 85.18
+    }
+  ],
+  "seller_messages": {},
+  "buyer_messages": {}
+}
+````
