@@ -1,0 +1,9 @@
+12 games, 72 episodes
+project spend so far: $107.68
+J1: 138 units
+J1: 138 labelled, 0 unparseable after retries -> /Users/asri/Projects/hackathon-police-enforcement/results/judges/J1/labels.jsonl
+J2: 72 units
+J2: 72 labelled, 0 unparseable after retries -> /Users/asri/Projects/hackathon-police-enforcement/results/judges/J2/labels.jsonl
+J3: 108 units
+J3: 108 labelled, 0 unparseable after retries -> /Users/asri/Projects/hackathon-police-enforcement/results/judges/J3/labels.jsonl
+JUDGES DONE

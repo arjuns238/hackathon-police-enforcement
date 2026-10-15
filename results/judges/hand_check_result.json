@@ -1,0 +1,42 @@
+{
+ "J1": {
+  "agree": 10,
+  "of": 10,
+  "disagreements": []
+ },
+ "J2": {
+  "agree": 6,
+  "of": 10,
+  "disagreements": [
+   {
+    "item": 5,
+    "id": "a1g2e5#19",
+    "hand": 0,
+    "judge": 1
+   },
+   {
+    "item": 22,
+    "id": "a3g2e2#17",
+    "hand": 0,
+    "judge": 1
+   },
+   {
+    "item": 24,
+    "id": "a1g3e3#13",
+    "hand": 0,
+    "judge": 1
+   },
+   {
+    "item": 30,
+    "id": "a1g2e4#15",
+    "hand": 0,
+    "judge": 1
+   }
+  ]
+ },
+ "J3": {
+  "agree": 10,
+  "of": 10,
+  "disagreements": []
+ }
+}

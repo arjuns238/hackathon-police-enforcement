@@ -262,6 +262,7 @@ def main() -> None:
     ap.add_argument("--judge", nargs="+", default=["J1", "J2", "J3"], choices=["J1", "J2", "J3"])
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--limit", type=int, help="only the first N units per judge (smoke test)")
     args = ap.parse_args()
     games = load_games()
     print(f"{len(games)} games, {sum(len(G['run']['results']) for G in games)} episodes")
@@ -272,6 +273,8 @@ def main() -> None:
         print(f"project spend so far: ${check(140.0):.2f}")
     for j in args.judge:
         units = UNITS[j](games)
+        if args.limit:
+            units = units[:args.limit]
         print(f"{j}: {len(units)} units")
         if args.dry_run:
             if units:
