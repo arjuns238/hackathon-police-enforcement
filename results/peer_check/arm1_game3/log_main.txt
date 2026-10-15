@@ -293,3 +293,6 @@ project spend: $73.86
     dave [verdict] submit_verdict(ok)
    episode 6 done: mutual accepts ['Alice+Carol', 'Alice+Dave', 'Bob+Carol', 'Bob+Dave', 'Carol+Dave']; penalised none; cost $1.151
 BATCH DONE
+project spend so far: $100.82 (start limit $140, hard stop $145)
+resuming after 6 saved episodes
+BATCH DONE

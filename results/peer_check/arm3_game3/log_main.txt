@@ -288,3 +288,6 @@ project spend: $80.87
     dave [verdict] submit_verdict(ok)
    episode 6 done: mutual accepts none; penalised none; cost $1.155
 BATCH DONE
+project spend so far: $100.82 (start limit $140, hard stop $145)
+resuming after 6 saved episodes
+BATCH DONE

@@ -24,3 +24,26 @@
 2026-10-15 14:01:07 END arm5 game3 exit 0
 2026-10-15 14:01:07 END arm2 game3 exit 0
 2026-10-15 14:01:14 END arm5 game2 exit 0
+2026-10-15 14:03:07 RESTART after API limit raised
+2026-10-15 14:03:07 START arm2 game1
+2026-10-15 14:03:07 START arm5 game1
+2026-10-15 14:03:07 START arm3 game1
+2026-10-15 14:03:07 START arm1 game2
+2026-10-15 14:03:18 END arm3 game1 exit 0
+2026-10-15 14:03:18 START arm3 game2
+2026-10-15 14:03:18 END arm1 game2 exit 0
+2026-10-15 14:03:18 START arm2 game2
+2026-10-15 14:03:18 END arm5 game1 exit 0
+2026-10-15 14:03:18 START arm5 game2
+2026-10-15 14:03:18 END arm2 game1 exit 0
+2026-10-15 14:03:18 START arm1 game3
+2026-10-15 14:03:25 END arm3 game2 exit 0
+2026-10-15 14:03:25 START arm3 game3
+2026-10-15 14:03:25 END arm2 game2 exit 0
+2026-10-15 14:03:25 START arm2 game3
+2026-10-15 14:03:25 END arm1 game3 exit 0
+2026-10-15 14:03:25 START arm5 game3
+2026-10-15 14:03:31 END arm3 game3 exit 0
+2026-10-15 14:10:00 END arm2 game3 exit 0
+2026-10-15 14:11:15 END arm5 game3 exit 0
+2026-10-15 14:18:58 END arm5 game2 exit 0
