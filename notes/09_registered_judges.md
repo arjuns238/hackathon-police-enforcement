@@ -1,6 +1,6 @@
 # 09: Judges and rubrics for the main peer-check games — registered
 
-*2026-10-15, Claude; DRAFT for asri's OK. Written while the main games run and BEFORE any judge call or any reading
+*2026-10-15, Claude; APPROVED by asri 2026-10-15 ("hm ok sure", after the results write-up), before any judge call. Written while the main games run and BEFORE any judge call or any reading
 of the main-game chats beyond the pilots and T1 (which are excluded from the analysis anyway). Completes the
 "still to register before the analysis" list in notes/04 (amendments A and B).*
 
