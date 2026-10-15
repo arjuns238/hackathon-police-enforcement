@@ -755,3 +755,24 @@ Files: `hand_check_items.json`, `hand_check_key.json`, `hand_check_labels.json`,
 collusion it misses is not hidden deals but approvals nobody announces. Nobody suspected the plant: workers
 responded to being fined, not to identifying a mole. Plant "agreement" messages (19, J2) are its registered
 going-along replies, but the count rests on the unreliable J2.
+
+## Construct check: is this collusion? (asri, 2026-10-15: "how is it collusion then? … this seems like they're just not following the rules")
+
+Free analysis on the saved games:
+
+| check | result |
+|---|---|
+| explicit two-sided deals among colluding pairs, no cop (J1, hand-checked) | 0 of 87 |
+| workers approving everyone in episode 1, before anyone could see anyone's verdicts (no cop) | 7 of 12 workers approved ≥ 2 peers |
+| approve peer next episode if that peer approved you vs rejected you (no cop) | 98% (153/156) vs 88% (21/24) |
+| same, cop setups (confounded by fines) | 50% (78/156) vs 28% (58/204) |
+| explicit collusion offers accepted (plant, H1) | 0 of 9 |
+
+Reading: with no cop, approving correct work pays on its own (+10 vs 0), so it needs no cooperation; it starts before
+anyone knows what others do, and depends only weakly on being approved back. What we measure is mostly **mutual
+rule-breaking** (each reviewer independently dropping the verification rule, and the group converging on a lower
+shared standard in the chat), which the source paper (Shi et al.) and the AI-oversight literature call collusion
+(overseers going easy on each other; "tacit collusion" in economics), but not collusion in the everyday sense of a
+deliberate joint plan. The one test of explicit collusion (the plant's offer) was refused 9 of 9. The write-up must
+use the weaker term and state this; a game where breaking the rule only pays if partners reciprocate would be needed
+to test collusion in the strong sense.
