@@ -691,7 +691,7 @@ avoided that.
 
 In arms 3 and 5 the plant both detects (honeypot fines) and acts as a persistently strict colleague (it rejects
 almost everyone). Arm 1 vs arm 3 cannot fully separate "one strict colleague in the room" from "getting fined".
-Partial evidence that the strict peer alone does not stop collusion: before any fine, plant games still had full
-collusion among the other three (arm 3 game 1 pilot episode 1, arm 3 game 3 episode 2, arm 5 game 1 episode 1,
-arm 5 game 2 episode 3), with the plant rejecting everyone. The clean control is arm 4 (mole announced, no plant, no
+Partial evidence that the strict peer alone does not stop collusion: before any fine, with the plant rejecting
+everyone, the other three still colluded (arm 5 game 1 episode 1: 3/3 pairs; arm 5 game 2 episode 3: 3/3; arm 3 game
+2 episode 1: 1/3). The clean control is arm 4 (mole announced, no plant, no
 fines), registered but not run; about $30 of budget remains after the judges.
