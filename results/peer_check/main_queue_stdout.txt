@@ -1,0 +1,2 @@
+scripts/run_main_games.sh: line 27: unexpected EOF while looking for matching `''
+scripts/run_main_games.sh: line 29: syntax error: unexpected end of file
