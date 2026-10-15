@@ -763,7 +763,7 @@ Free analysis on the saved games:
 | check | result |
 |---|---|
 | explicit two-sided deals among colluding pairs, no cop (J1, hand-checked) | 0 of 87 |
-| workers approving everyone in episode 1, before anyone could see anyone's verdicts (no cop) | 7 of 12 workers approved ≥ 2 peers |
+| workers approving everyone in episode 1, before anyone could see anyone's verdicts (no cop) | 6 of 12 workers approved ≥ 2 peers |
 | approve peer next episode if that peer approved you vs rejected you (no cop) | 98% (153/156) vs 88% (21/24) |
 | same, cop setups (confounded by fines) | 50% (78/156) vs 28% (58/204) |
 | explicit collusion offers accepted (plant, H1) | 0 of 9 |
