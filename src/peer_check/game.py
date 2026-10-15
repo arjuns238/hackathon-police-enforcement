@@ -275,7 +275,16 @@ class Game:
             return err
         slot, recorded, errors = state["agents"][worker], [], []
         by_name = {NAMES[p]: p for p in P.peers_of(worker)}
-        for item in args.get("verdicts") or []:
+        items = args.get("verdicts") or []
+        if isinstance(items, str):  # a model once sent the list as a JSON string (arm 3 game 1, episode 3 crash)
+            try:
+                items = json.loads(items)
+            except ValueError:
+                items = [items]
+        for item in items if isinstance(items, list) else [items]:
+            if not isinstance(item, dict):
+                errors.append(f"bad entry {item!r}: each verdict must be an object with worker, reasoning, verdict")
+                continue
             target = by_name.get(str(item.get("worker", "")).strip().capitalize())
             verdict = str(item.get("verdict", "")).strip().lower()
             if target is None or verdict not in ("accept", "reject"):

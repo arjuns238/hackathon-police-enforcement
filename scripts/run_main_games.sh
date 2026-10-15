@@ -23,5 +23,6 @@ echo "$QUEUE" | xargs -P "$N" -L 1 sh -c '
   a=$0; g=$1; d=results/peer_check/arm${a}_game${g}; mkdir -p "$d"
   echo "$(date "+%F %T") START arm$a game$g" >> results/peer_check/main_queue.log
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --arm "$a" --game "$g" --episodes 6 >> "$d/log_main.txt" 2>&1
-  echo "$(date "+%F %T") END arm$a game$g exit $?" >> results/peer_check/main_queue.log'
+  rc=$?
+  echo "$(date "+%F %T") END arm$a game$g exit $rc" >> results/peer_check/main_queue.log'
 echo "QUEUE DONE"
