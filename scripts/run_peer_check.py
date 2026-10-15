@@ -27,6 +27,7 @@ from dotenv import load_dotenv  # noqa: E402
 APPROVED_MODEL = "anthropic/claude-sonnet-5"
 SEQ_DIR = ROOT / "data" / "peer_check_sequences"
 SEQ_SEED = 20261013
+EPISODE_SPEND_LIMIT = 138.0  # checked before every episode (see main)
 
 
 def main() -> None:
@@ -70,7 +71,12 @@ def main() -> None:
         from peer_check.fake_llm import fake_llm_call
         kwargs["llm_call"] = fake_llm_call
     game = Game(cfg=cfg, repo_root=REPO, verbose=not args.quiet, **kwargs)
-    game.run(read_sequence(seq_path, REPO))
+    guard = None
+    if not args.offline:
+        # Several games may run at once, so re-check total spend before every episode, not only at start: with up
+        # to 4 games in flight (~$1.5 per episode) a $138 episode limit keeps the total under the $145 hard stop.
+        guard = lambda: print(f"project spend: ${check(EPISODE_SPEND_LIMIT):.2f}", flush=True)
+    game.run(read_sequence(seq_path, REPO), before_episode=guard)
 
 
 if __name__ == "__main__":

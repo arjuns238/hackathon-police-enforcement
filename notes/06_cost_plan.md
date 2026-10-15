@@ -105,4 +105,4 @@ prompt's start), so this is close to the floor for this lever.
 
 Episodes 1–2: $0.67 and $0.61 (estimate was ~$0.8 per episode). Fixed tool list holds with four workers: no call
 wrote more than 5K tokens to the cache. Output per call: task ~310 tokens, chat ~540, verdict ~2,500 (three verdicts
-with thinking), reflection ~475. Full-game number and the stop-rule check go here when episodes 3–6 finish.
+with thinking), reflection ~475. Full game: $5.74 (episodes $0.67, $0.61, $0.92, $1.19, $1.02, $1.33; cost rises with remembered chat). Stop-rule check (2026-10-14): $5.74 × 15 = $86 ≤ $114.27 remaining − $15 reserve = $99 → keep 4 games per arm. Projected project total ≈ $126.
