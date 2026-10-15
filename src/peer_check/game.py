@@ -325,6 +325,18 @@ class Game:
                 tools=tools_for(worker, state, self.is_plant(worker)), accept_tool_calls=True,
                 usage_recorder=self.recorder(ep, worker, phase, round_idx, attempt, usage),
                 max_output_tokens=self.cfg.max_output_tokens, temperature=self.cfg.temperature)
+            if not tool_calls:
+                # A turn with no tool call is dropped and the attempt re-sampled from the same conversation: keeping
+                # it would end the conversation on an assistant message, which Claude 5 models reject as prefill
+                # (crash in arm 5 game 2, 2026-10-15). The turn is still kept in the traces and the log.
+                if trace:
+                    traces.append({"worker": worker, "phase": phase, "round": round_idx, "attempt": attempt,
+                                   "trace": trace, "dropped_no_tool_call": True})
+                _log_event(state, {"actor": worker, "tool": None, "dropped_no_tool_call": True, "phase": phase,
+                                   "content": str(assistant.get("content") or "")[:2000]})
+                self.log(f"    {worker} [{phase}{'' if round_idx is None else f' r{round_idx + 1}'}] "
+                         "(no tool call; turn dropped, re-sampling)")
+                continue
             self.messages[worker].append(assistant)
             executed = self.execute(state, worker, tool_calls, {})
             if trace:
