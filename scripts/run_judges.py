@@ -36,7 +36,7 @@ os.chdir(REPO)
 MODEL = "anthropic/claude-sonnet-5"
 EFFORT = "low"
 ARMS, GAMES = (1, 2, 3, 5), (1, 2, 3)
-PLANT_ARMS = {3, 5}
+PLANT_ARMS = {3, 5, 6, 7}
 WORKERS = ("alice", "bob", "carol", "dave")
 NAME = {w: w.capitalize() for w in WORKERS}
 OUT = ROOT / "results" / "judges"
@@ -80,11 +80,11 @@ def norm(text: str) -> str:
     return AJ.norm(text)
 
 
-def load_games() -> list[dict]:
+def load_games(base: str = "results/peer_check", arms=ARMS, games_=GAMES) -> list[dict]:
     games = []
-    for a in ARMS:
-        for g in GAMES:
-            f = ROOT / "results" / "peer_check" / f"arm{a}_game{g}" / "run.json"
+    for a in arms:
+        for g in games_:
+            f = ROOT / base / f"arm{a}_game{g}" / "run.json"
             if f.exists():
                 games.append({"arm": a, "game": g, "run": json.loads(f.read_text())})
     return games
@@ -263,8 +263,13 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--limit", type=int, help="only the first N units per judge (smoke test)")
+    ap.add_argument("--dir", default="results/peer_check", help="games folder (e.g. results/peer_check_ext)")
+    ap.add_argument("--arms", type=int, nargs="+", default=list(ARMS))
+    ap.add_argument("--out", default="results/judges", help="output folder for judge files")
     args = ap.parse_args()
-    games = load_games()
+    global OUT
+    OUT = ROOT / args.out
+    games = load_games(args.dir, args.arms)
     print(f"{len(games)} games, {sum(len(G['run']['results']) for G in games)} episodes")
     if not args.dry_run:
         from dotenv import load_dotenv

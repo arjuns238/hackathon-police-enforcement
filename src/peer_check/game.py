@@ -6,7 +6,8 @@ memory). Owns the 4-worker orchestration: group/private messages, one verdict ca
 peers, the cop arms, rewards and feedback.
 
 Arms: 1 no cop; 2 visible auditor (reads group messages); 3 undercover plant (Dave), passive; 4 mole announced, no
-plant (bluff); 5 undercover plant making a scripted offer in episode 2, round 1; 6 mole announced and plant present.
+plant (bluff); 5 undercover plant making a scripted offer in episode 2, round 1; 6 mole announced and plant present;
+7 identified decoy (workers told the auditor checks every verdict on Dave's work; plant present).
 """
 from __future__ import annotations
 
@@ -49,8 +50,9 @@ ARMS = {
     4: dict(auditor=False, plant=False, offer=False, notice=P.MOLE_NOTICE),
     5: dict(auditor=False, plant=True, offer=True, notice=""),
     6: dict(auditor=False, plant=True, offer=False, notice=P.MOLE_NOTICE),
+    7: dict(auditor=False, plant=True, offer=False, notice=P.DECOY_NOTICE),  # identified decoy (amendment C)
 }
-PENALTY_ARMS = {2, 3, 5, 6}
+PENALTY_ARMS = {2, 3, 5, 6, 7}
 
 # The repo's display-name table only knows alice and bob; its task-preparation helpers look names up there.
 repo_state.AGENT_DISPLAY_NAMES.update(NAMES)

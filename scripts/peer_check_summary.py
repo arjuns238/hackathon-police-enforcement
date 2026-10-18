@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKERS = ("alice", "bob", "carol", "dave")
-PLANT_ARMS = {3, 5, 6}
+PLANT_ARMS = {3, 5, 6, 7}
 WINDOW = range(3, 7)  # episodes 3–6
 
 

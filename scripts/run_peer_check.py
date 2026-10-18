@@ -32,7 +32,7 @@ EPISODE_SPEND_LIMIT = 138.0  # checked before every episode (see main)
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--arm", type=int, choices=range(1, 7))
+    ap.add_argument("--arm", type=int, choices=range(1, 8))
     ap.add_argument("--game", type=int, help="1-based game number = task sequence number")
     ap.add_argument("--episodes", type=int, default=6)
     ap.add_argument("--out", help="output dir (default results/peer_check/arm{A}_game{G})")
