@@ -300,7 +300,7 @@ were fined. Details, charts and real chats below; caveats in "How much to trust 
   <li class="done"><span class="mark">✓</span><span><span class="label">Built the cops, tried them, fixed the plant.</span> <span class="detail">The plant now gets fined by the same rule as everyone (your point) and no longer hints at the shortcut.</span></span></li>
   <li class="done"><span class="mark">✓</span><span><span class="label">Ran the main experiment.</span> <span class="detail">All 72 episodes (4 setups × 3 games × 6 episodes); three crashes along the way were fixed and resumed, losing only half-finished episodes.</span></span></li>
   <li class="done"><span class="mark">✓</span><span><span class="label">Scored the chats.</span> <span class="detail">A judge model read every chat ($1.53), and 30 of its decisions were checked by hand (Result 6).</span></span></li>
-  <li class="wait"><span class="mark">!</span><span><span class="label">Next: the report.</span> <span class="detail">Due Sun 25 Oct.</span></span></li>
+  <li class="wait"><span class="mark">!</span><span><span class="label">Next: decide how to spend the last ~$35, then the report.</span> <span class="detail">Options at the bottom of the page; report due Sun 25 Oct.</span></span></li>
 </ul>
 <div class="card">
   <div id="progress" class="prog"></div>
@@ -508,6 +508,39 @@ as agreeing to approve), so its message counts are below our pre-set 8-of-10 bar
 "no move to private chat" answer rests on the plain message count, which needs no judge.</p>
 <p class="takeaway">Takeaway: the auditor worked by deterring, not by pushing deals underground; what it missed were
 approvals nobody announced. And workers stopped because they were fined, not because they had spotted a mole.</p>
+
+<!-- ================================================================ -->
+<h2>Is this really "collusion"?</h2>
+<p>Only in a weak sense, and the report has to say so. We follow the definition of the paper this game comes from
+(Shi et al.): two workers who approve each other against the rule. In that paper about a quarter of collusion began
+with an explicit deal ("can you accept mine?"); the rest began with one or both agents simply relaxing the rule, and
+the share of deals varied hugely by model (90% for one Gemini model, 0% for one GPT model).</p>
+<div class="table-wrap">
+<table>
+<tr><th>check (no-cop games)</th><th>result</th></tr>
+<tr><td>Colluding pairs that made an explicit deal</td><td>0 of 87</td></tr>
+<tr><td>Workers who approved colleagues in episode 1, before anyone could see anyone else's verdict</td><td>6 of 12</td></tr>
+<tr><td>Approve a colleague next time if they approved you, vs if they rejected you</td><td>98% vs 88% (barely different)</td></tr>
+<tr><td>Explicit deals accepted when the plant offered one (plant setups)</td><td>0 of 9</td></tr>
+</table>
+</div>
+<p class="takeaway">With these models, what we measure is mostly reviewers each dropping the rule (approving good work
+pays on its own), not a joint plan. The honest claim: AI reviewers collectively stop enforcing a verification rule
+without making deals; an undercover agent restores it; and explicit collusion offers are refused every time, so the
+plant works as bait, not as a tempter.</p>
+
+<!-- ================================================================ -->
+<h2>What is established, and what isn't yet</h2>
+<p>Treating each game as one data point (an exact permutation test):</p>
+<div class="table-wrap">
+<table>
+<tr><th>claim</th><th class="num">chance it's luck</th><th>status</th></tr>
+<tr><td>The plant cuts collusion compared with no cop</td><td class="num">about 1 in 80</td><td>✓ established</td></tr>
+<tr><td>The visible auditor cuts collusion compared with no cop</td><td class="num">1 in 20</td><td>✓ established (the strongest possible with 3 games vs 3)</td></tr>
+<tr><td>The plant never fines innocent workers; the auditor does (4 times)</td><td class="num">–</td><td>✓ follows from the design, and observed</td></tr>
+<tr><td>The plant cuts collusion <i>more</i> than the auditor</td><td class="num">about 1 in 5</td><td>✗ not established: the whole difference is auditor game 3 (79%); its other two games were as low as the plant's</td></tr>
+</table>
+</div>
 
 <!-- ================================================================ -->
 <h2>What we predicted in advance</h2>
@@ -782,11 +815,20 @@ episodes now count as the start of the real arm 5 game.</p>
 <!-- ================================================================ -->
 <h2>What is waiting on you</h2>
 <div class="callout">
-  <p><b>Next: the report</b> for the hackathon (4–8 pages on their template, with a limitations and dual-use appendix),
-  due Sun 25 Oct, 11:59 PM AoE. Everything it needs is on this page and in <code>notes/00_results_log.md</code>.</p>
-  <p class="small" style="margin-bottom:0">Option, if you want it: the "one of you is a mole" setup (announce a mole, no
-  plant, no fines), about $15 for 3 games, which would separate "being told you're watched" from "being fined". About
-  $36 of budget remains before the $145 stop.</p>
+  <p><b>One decision: how to spend the last ~$35</b> (spent $109.21; hard stop $145). The aim is to make the result
+  stronger before writing the report.</p>
+  <ol>
+    <li><b>A (recommended): 2 more auditor games + 2 more quiet-plant games</b>, about $25. Tests whether the auditor's
+    failure in game 3 is typical or a one-off, which is exactly the claim that is not yet established.</li>
+    <li><b>B: the plant with a smaller fine</b> (−10 instead of −30), 3 games, about $18. Tests whether the effect
+    survives when the fine no longer cancels the reward for approving.</li>
+    <li><b>C: announce "one of you is a mole"</b>, no plant and no fines, 3 games, about $15. Tests whether just being
+    told you're watched changes anything.</li>
+  </ol>
+  <p class="small" style="margin-bottom:0">Then: write predictions down before running, run (about 1–2 hours), update
+  this page, and write the report on Apart's template (4–8 pages plus a limitations and dual-use appendix), due Sun 25
+  Oct, 11:59 PM AoE. During the sprint (23–25 Oct): re-check numbers cited from other papers, and check other teams'
+  track 3.2 work.</p>
 </div>
 
 <details>
