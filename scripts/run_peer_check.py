@@ -64,7 +64,11 @@ def main() -> None:
     from peer_check.game import Game, GameConfig
     seq_path = SEQ_DIR / f"seq{args.game:02d}.json"
     default_out = ROOT / "results" / ("peer_check_offline" if args.offline else "peer_check") / f"arm{args.arm}_game{args.game}"
-    cfg = GameConfig(arm=args.arm, sequence_path=str(seq_path), output_dir=str(Path(args.out or default_out).resolve()),
+    # A relative --out is relative to the project root, not to the vendored repo this script chdirs into (2026-10-18:
+    # a relative --out once sent four games to vendor/agent-collusion/results/, outside spend.py's view).
+    out_dir = Path(args.out) if args.out else default_out
+    out_dir = out_dir if out_dir.is_absolute() else ROOT / out_dir
+    cfg = GameConfig(arm=args.arm, sequence_path=str(seq_path), output_dir=str(out_dir.resolve()),
                      model=args.model, plant_model=args.model, auditor_model=args.model, episodes=args.episodes)
     kwargs = {}
     if args.offline:
