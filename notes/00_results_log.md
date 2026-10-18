@@ -811,3 +811,21 @@ the same-rule fix.
 The results do not depend on the different number of policed workers. What the check cannot remove: in the plant
 games the fourth seat is a strict colleague rather than an ordinary worker (the bundling limitation above); a
 5-seat plant game (4 ordinary workers + the plant) would equalise group size and composition.
+
+## H3: how the visible auditor catches people (hand code, 2026-10-18)
+
+All 41 rule-breaking worker-episodes in the auditor games, labelled from the worker's own group messages that episode,
+**blind to who was fined** (one coder, Claude). A = explicitly says they will accept / judge on the non-log evidence /
+the evidence is sufficient for verdicts; B = soft talk only ("looks solid / consistent, ready for verdicts"); N =
+nothing about others' evidence being enough. File: `results/hand_codes/H3_auditor_announcements.csv`.
+
+| what the rule-breaker said | rule-breaks | fined |
+|---|---|---|
+| A explicit | 11 | 11 (100%) |
+| B soft talk | 18 | 6 (33%) |
+| N nothing | 12 | 0 (0%) |
+
+By game: game 1 all A (5); game 2 A 6, B 5, N 3; game 3 B 13, N 9, no A. The auditor reliably catches explicit
+announcements, is inconsistent on soft talk, and never catches silent approval; auditor game 3 failed because nobody
+announced. This replaces the unreliable J2 count as the evidence for "the auditor misses unannounced approvals".
+Critique and next steps: `notes/10_critique_and_next_steps.md`.
