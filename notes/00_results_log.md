@@ -790,3 +790,24 @@ Exact one-sided permutation tests on per-game M1 (episodes 3–6), games as the 
 So "a cop cuts collusion" is supported at the game level; "the plant beats the auditor" is not established with
 n = 3 auditor games (it rests on auditor game 3). More auditor and plant games are what would strengthen the
 visible-vs-undercover claim.
+
+## Checks after asri's questions (2026-10-18): the plant's own verdicts; unequal numbers of policed workers
+
+**Dave's verdicts** (excluded from every collusion measure by registration): 108 verdicts across the 6 plant games;
+approved 10, rejected 98. Against the truth, 93 of 108 were wrong: 90 rejections of correct work (rule-following)
+and 3 approvals of wrong work (arm 3, playing along with announced acceptors). Each of his approvals was fined under
+the same-rule fix.
+
+**Seat-count check.** Plant setups police 3 workers (Dave is the plant), the others 4, so per-arm counts differ (54 vs
+72 worker-episodes). Restricting every setup to the same three seats (Alice, Bob, Carol):
+
+| setup | collusion eps 3–6 per game | caught / rule-breaks | innocent fined |
+|---|---|---|---|
+| no cop | 92, 100, 92 | – (50 rule-breaks) | – |
+| auditor | 0, 17, 83 | 14 / 33 = 42% | 3 |
+| quiet plant | 0, 8, 0 | 14 / 17 = 82% | 0 |
+| plant + offer | 0, 25, 0 | 15 / 15 = 100% | 0 |
+
+The results do not depend on the different number of policed workers. What the check cannot remove: in the plant
+games the fourth seat is a strict colleague rather than an ordinary worker (the bundling limitation above); a
+5-seat plant game (4 ordinary workers + the plant) would equalise group size and composition.
