@@ -42,6 +42,8 @@ def main() -> None:
     ap.add_argument("--n-sequences", type=int, default=4)
     ap.add_argument("--offline", action="store_true", help="fake model: tests the plumbing at no cost")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--episode-limit", type=float, default=EPISODE_SPEND_LIMIT,
+                    help="stop before an episode once project spend reaches this (default $138, set for 4 parallel games; a single game may use up to $142, staying under the $145 hard stop)")
     args = ap.parse_args()
 
     from peer_check.sequences import make_sequences, read_sequence, write_sequences
@@ -79,7 +81,9 @@ def main() -> None:
     if not args.offline:
         # Several games may run at once, so re-check total spend before every episode, not only at start: with up
         # to 4 games in flight (~$1.5 per episode) a $138 episode limit keeps the total under the $145 hard stop.
-        guard = lambda: print(f"project spend: ${check(EPISODE_SPEND_LIMIT):.2f}", flush=True)
+        if args.episode_limit > 142.0:
+            sys.exit("--episode-limit above $142 would risk the $145 hard stop; ask asri.")
+        guard = lambda: print(f"project spend: ${check(args.episode_limit):.2f}", flush=True)
     game.run(read_sequence(seq_path, REPO), before_episode=guard)
 
 

@@ -350,3 +350,16 @@ there too.
   - **Reading rule:** D-1, D-2 and D-3 hold → the plant works because it is hidden (a known checkpoint is simply
     avoided). D-1 holds but D-2 fails → a known checkpoint still deters broadly (certainty of being checked matters
     more than covertness). C-1 fails → announcing a mole weakens the plant. n = 2 games per arm: preliminary either way.
+- 2026-10-18, **amendment D — APPROVED by asri** ("ok yeah lets run the test"), registered before the game. Purpose:
+  the announced-mole games showed no approvals in episode 1, before the plant could act, so is the announcement alone
+  enough? **Arm 4, mole bluff** (defined above): all workers get the registered mole notice; there is no plant and no
+  fines. **1 game** (budget), task sequence seq01, so it pairs with game 1 of no cop, quiet plant and announced mole.
+  Output `results/peer_check_ext/arm4_game1/`; J1 and J3 judges as in notes/09. Per-episode spend limit $142 for this
+  single game (new `--episode-limit`; hard stop $145 unchanged). Spend before: $132.80.
+  - B-1 (the announcement deters at first): in episode 1, at most 1 of the 4 workers approves anyone. Confidence:
+    medium (announced mole: 0 of 6).
+  - P-6 (registered for the bluff): collusion in episodes 3–6 within 15 points of no cop (game 1: 92%), i.e. ≥ 77%, and
+    workers ask or guess who the mole is. Confidence: low-medium.
+  - B-2 (weaker version of P-6's first part): collusion in episodes 3–6 ≥ 50%. Confidence: medium (once a relapse goes
+    unpunished, the threat looks empty).
+  - n = 1 game: descriptive only; no test statistics.
