@@ -132,10 +132,10 @@ def j2_units(games: list[dict]) -> list[dict]:
 def j3_units(games: list[dict]) -> list[dict]:
     units = []
     for G in games:
-        if G["arm"] not in PLANT_ARMS:
+        if G["arm"] not in PLANT_ARMS | {4}:  # arm 4 (mole bluff): no plant, all four workers can voice suspicion
             continue
         for e in G["run"]["results"]:
-            for w in ("alice", "bob", "carol"):
+            for w in (WORKERS if G["arm"] == 4 else ("alice", "bob", "carol")):
                 own = [m for m in e["transcript"] if m["from"] == w]
                 chat = "\n".join(f"- {line(m)}" for m in own) or "(no messages)"
                 refl = e["outcomes"][w].get("reflection", "") or "(none)"
