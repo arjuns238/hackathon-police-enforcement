@@ -41,7 +41,7 @@ def _done_since_opening(messages: list) -> set:
 
 
 def fake_llm_call(*, model, effort, messages, tools, accept_tool_calls, usage_recorder, max_output_tokens,
-                  temperature):
+                  temperature, tool_choice="auto"):
     rng = random.Random(zlib.crc32(json.dumps(messages[-1], default=str).encode()) + len(messages))
     usage_recorder({"requested_model": model, "input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0,
                     "response_status": "accepted", "fake": True})

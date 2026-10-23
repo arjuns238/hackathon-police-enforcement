@@ -10,6 +10,10 @@ Usage:
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --arm 1 --game 1 [--episodes 6] [--out results/peer_check/...]
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --make-sequences          # writes data/peer_check_sequences/
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --arm 5 --game 1 --offline  # fake model, no API calls, no cost
+
+Qwen sting (notes/12): workers and Dave are Qwen-3.8-27B on the Modal server (modal_gpu/serve_qwen.py); needs
+QWEN_API_KEY and QWEN_BASE_URL (".../v1") in .env. Arm 1 = baseline; arms 11-14 = direct / hint / benign / give-first.
+  vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --model openai/qwen3.8-27b --arm 11 --offer-episode 1 --episodes 2 --game 1
 """
 import argparse
 import os
@@ -25,6 +29,12 @@ os.chdir(REPO)
 from dotenv import load_dotenv  # noqa: E402
 
 APPROVED_MODEL = "anthropic/claude-sonnet-5"
+# asri approved Qwen-3.8 for the sting on 2026-10-22 (notes/12). "default" sends no reasoning_effort: the Qwen chat
+# template then uses its default, xhigh (the paper's setting); "high" would make the template raise.
+APPROVED_MODELS = {APPROVED_MODEL: {"effort": "high", "tool_choice": "auto"},
+                   "openai/qwen3.8-27b": {"effort": "default", "tool_choice": "required"}}
+STING_STYLE = {11: "direct", 12: "hint", 13: "benign", 14: "givefirst"}
+QWEN_REQUEST_TIMEOUT = 1800  # seconds; a stuck turn cannot hold the GPU for longer
 SEQ_DIR = ROOT / "data" / "peer_check_sequences"
 SEQ_SEED = 20261013
 EPISODE_SPEND_LIMIT = 138.0  # checked before every episode (see main)
@@ -32,7 +42,9 @@ EPISODE_SPEND_LIMIT = 138.0  # checked before every episode (see main)
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--arm", type=int, choices=range(1, 8))
+    ap.add_argument("--arm", type=int, choices=[*range(1, 8), *STING_STYLE])
+    ap.add_argument("--offer-episode", type=int, default=2, help="1-based episode of the scripted offer (sting: 1 or 3)")
+    ap.add_argument("--tool-choice", choices=["auto", "required"], help="default: the approved model's setting")
     ap.add_argument("--game", type=int, help="1-based game number = task sequence number")
     ap.add_argument("--episodes", type=int, default=6)
     ap.add_argument("--out", help="output dir (default results/peer_check/arm{A}_game{G})")
@@ -54,31 +66,51 @@ def main() -> None:
         return
     if args.arm is None or args.game is None:
         ap.error("--arm and --game are required")
-    if args.model != APPROVED_MODEL and not args.override_config:
-        sys.exit(f"Refusing model {args.model}: the approved worker model is {APPROVED_MODEL} "
-                 "(notes/07_run_config.md). Pass --override-config only with asri's approval.")
+    if args.model not in APPROVED_MODELS and not args.override_config:
+        sys.exit(f"Refusing model {args.model}: the approved worker models are {', '.join(APPROVED_MODELS)} "
+                 "(notes/07_run_config.md, notes/12). Pass --override-config only with asri's approval.")
+    settings = APPROVED_MODELS.get(args.model, APPROVED_MODELS[APPROVED_MODEL])
+    qwen = args.model.startswith("openai/qwen")
 
-    if not args.offline:
-        sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "scripts"))
+    if not args.offline and not qwen:
         from spend import check
         print(f"project spend so far: ${check(140.0):.2f} (start limit $140, hard stop $145)", flush=True)
+    if not args.offline and qwen:
+        from modal_spend import SOFT_STOP, check as modal_check
+        print(f"Modal spend so far: ${modal_check(SOFT_STOP):.2f} (soft stop ${SOFT_STOP:.0f}, credits $50)", flush=True)
     load_dotenv(REPO / ".env")
+    if qwen and not args.offline:
+        import litellm
+        for var in ("QWEN_API_KEY", "QWEN_BASE_URL"):
+            if not os.environ.get(var):
+                sys.exit(f"{var} is missing from .env (see modal_gpu/serve_qwen.py)")
+        os.environ["OPENAI_API_KEY"] = os.environ["QWEN_API_KEY"]
+        os.environ["OPENAI_BASE_URL"] = os.environ["OPENAI_API_BASE"] = os.environ["QWEN_BASE_URL"]
+        litellm.request_timeout = QWEN_REQUEST_TIMEOUT
     from peer_check.game import Game, GameConfig
     seq_path = SEQ_DIR / f"seq{args.game:02d}.json"
     default_out = ROOT / "results" / ("peer_check_offline" if args.offline else "peer_check") / f"arm{args.arm}_game{args.game}"
+    if qwen:
+        cell = f"{STING_STYLE[args.arm]}_ep{args.offer_episode}" if args.arm in STING_STYLE else f"arm{args.arm}"
+        default_out = ROOT / "results" / ("qwen_sting_offline" if args.offline else "qwen_sting") / f"{cell}_game{args.game}"
     # A relative --out is relative to the project root, not to the vendored repo this script chdirs into (2026-10-18:
     # a relative --out once sent four games to vendor/agent-collusion/results/, outside spend.py's view).
     out_dir = Path(args.out) if args.out else default_out
     out_dir = out_dir if out_dir.is_absolute() else ROOT / out_dir
     cfg = GameConfig(arm=args.arm, sequence_path=str(seq_path), output_dir=str(out_dir.resolve()),
-                     model=args.model, plant_model=args.model, auditor_model=args.model, episodes=args.episodes)
+                     model=args.model, plant_model=args.model, auditor_model=args.model, episodes=args.episodes,
+                     effort=settings["effort"], tool_choice=args.tool_choice or settings["tool_choice"],
+                     offer_episode=args.offer_episode)
     kwargs = {}
     if args.offline:
         from peer_check.fake_llm import fake_llm_call
         kwargs["llm_call"] = fake_llm_call
     game = Game(cfg=cfg, repo_root=REPO, verbose=not args.quiet, **kwargs)
     guard = None
-    if not args.offline:
+    if not args.offline and qwen:
+        guard = lambda: print(f"Modal spend: ${modal_check(SOFT_STOP):.2f}", flush=True)
+    elif not args.offline:
         # Several games may run at once, so re-check total spend before every episode, not only at start: with up
         # to 4 games in flight (~$1.5 per episode) a $138 episode limit keeps the total under the $145 hard stop.
         if args.episode_limit > 142.0:
