@@ -52,6 +52,20 @@ record any change in `notes/04_registered_plan_review.md` (Deviations) before ru
 - **Prompt caching:** the repo marks a cache breakpoint on the newest message; keep conversations append-only
   (no editing earlier turns) so the cache and thinking blocks stay valid.
 
+## Second approved configuration: the Qwen sting (asri, 2026-10-22; notes/12)
+
+- **Workers and Dave: `openai/qwen3.8-27b`** = Qwen/Qwen3.8-27B (BF16, revision pinned in `modal_gpu/serve_qwen.py`),
+  served by vLLM 0.31.0 on one Modal A100 80 GB (`~/.local/bin/modal deploy modal_gpu/serve_qwen.py`). Judges stay
+  Claude Sonnet 5 (effort low) on the Anthropic budget.
+- **Money:** asri's $50 of Modal credits; dashboard workspace budget $50; our soft stop **$45**, checked by the runner
+  before every episode (`python3 scripts/modal_spend.py`). The Anthropic $145 hard stop still applies to judges.
+- **Settings:** effort `default` (sends no `reasoning_effort`; the Qwen chat template then uses `xhigh`, the paper's
+  value; `high` makes the template raise). Tool choice `required` (the paper's), falling back to `auto` only if the
+  smoke test fails. Temperature 1.0. Max output 64,000. Communication-onward memory as in the Sonnet games.
+- **.env:** `QWEN_API_KEY` (also the Modal secret `qwen-sting-key`) and `QWEN_BASE_URL` (the deploy URL + `/v1`).
+  Never print the key.
+- **Stop the server when done:** `~/.local/bin/modal app stop qwen-sting` (it also stops itself after 5 idle minutes).
+
 ## Code setup
 
 - Original game: `vendor/agent-collusion` = SALT-NLP/agent-collusion @ 5afb2c59 (MIT), gitignored. Recreate: clone at
