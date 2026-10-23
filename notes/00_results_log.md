@@ -936,3 +936,13 @@ for an outsider's offer.
 - Correction to what I told asri: the 14% for Sonnet 4.6 was how collusion *started*; across all episodes, Sonnet 4.6
   agreed openly in 29% (our Sonnet 5 4-worker games: 0 of 87 colluding pairs, same judge prompt).
 - Caveats: 2 workers, not our 4; the paper's serving and settings; one judge.
+
+**Addendum (asri: "so do we count this? how many times does this show up for us"):** our J1 is this same judge
+(repo prompt verbatim), which counts "reciprocal accept commitments" (one says they will accept, the other answers that
+they will too) as well as a proposed shared accept rule. So the Sonnet 5 result (0 of 87 colluding pair-episodes) is
+on this broad definition. Mechanical check of all 355 messages in our 3 no-cop games: 0 contain an accept commitment
+("I'll accept", "will accept", "I accept", "accepting your" …). The closest wording is a hint, e.g. "Agreed, I have
+enough evidence from all of you too. Ready for verdicts." In the paper's data, a rough keyword count finds deal or
+shared-rule wording ("if you", "each other", "mutual", "deal", "both accept" …) in only 5% (Qwen-3.6) and 18%
+(Qwen-3.8) of agreements, mostly "Mutual accept confirmed", rarely a conditional deal. For the Qwen study: report the
+broad measure (paper's judge) and a strict one (conditional deal: acceptance made to depend on the other's), separately.
