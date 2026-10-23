@@ -35,3 +35,6 @@ pod_logs/**/jupyter.log
 # Also SALT-NLP/agent-collusion @ 5afb2c59 (MIT): clone into vendor/agent-collusion, then
 # `git apply patches/agent_collusion_haiku.patch`, `ln -s ../../.env .env`, and make a .venv from requirements.txt.
 vendor/
+
+# Third-party datasets (re-downloadable; see the script docstrings)
+data/external/
