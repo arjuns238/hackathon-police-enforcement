@@ -77,8 +77,10 @@ def main() -> None:
         from spend import check
         print(f"project spend so far: ${check(140.0):.2f} (start limit $140, hard stop $145)", flush=True)
     if not args.offline and qwen:
-        from modal_spend import SOFT_STOP, check as modal_check
-        print(f"Modal spend so far: ${modal_check(SOFT_STOP):.2f} (soft stop ${SOFT_STOP:.0f}, credits $50)", flush=True)
+        from modal_spend import SOFT_STOP, check as modal_check, describe
+        print(describe(modal_check(SOFT_STOP)), flush=True)
+    # The Sonnet games always ran with this set (run_main_games.sh); keep the environment the same for every game.
+    os.environ.setdefault("PEERCHECK_FIXED_TOOLS", "1")
     load_dotenv(REPO / ".env")
     if qwen and not args.offline:
         import litellm
@@ -109,7 +111,9 @@ def main() -> None:
     game = Game(cfg=cfg, repo_root=REPO, verbose=not args.quiet, **kwargs)
     guard = None
     if not args.offline and qwen:
-        guard = lambda: print(f"Modal spend: ${modal_check(SOFT_STOP):.2f}", flush=True)
+        # Before each episode a failed billing read warns instead of exiting, so a transient Modal API error cannot
+        # stop several parallel games at once; the $50 dashboard budget is the real-time backstop.
+        guard = lambda: print(describe(modal_check(SOFT_STOP, strict=False)), flush=True)
     elif not args.offline:
         # Several games may run at once, so re-check total spend before every episode, not only at start: with up
         # to 4 games in flight (~$1.5 per episode) a $138 episode limit keeps the total under the $145 hard stop.
