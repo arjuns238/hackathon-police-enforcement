@@ -33,16 +33,6 @@ vllm_cache = modal.Volume.from_name("qwen-sting-vllm-cache", create_if_missing=T
 app = modal.App("qwen-sting")
 
 
-@app.function(image=image, cpu=4, memory=8192, timeout=90 * MINUTES, volumes={"/root/.cache/huggingface": hf_cache})
-def download() -> None:
-    """Fetch the weights into the Volume on a CPU container, so the GPU never bills for the download.
-    ~/.local/bin/modal run modal_gpu/serve_qwen.py::download"""
-    from huggingface_hub import snapshot_download
-    path = snapshot_download(MODEL, revision=REVISION)
-    hf_cache.commit()
-    print("weights at", path)
-
-
 @app.function(
     image=image,
     gpu=GPU,
