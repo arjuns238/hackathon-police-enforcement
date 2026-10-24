@@ -1,0 +1,11 @@
+started game 1
+started game 2
+started game 3
+started game 4
+started game 5
+started game 6
+game 3 done: 2 episodes, mutual accept by episode [False, True]
+game 1 done: 2 episodes, mutual accept by episode [False, True]
+game 5 done: 2 episodes, mutual accept by episode [False, True]
+game 6 done: 2 episodes, mutual accept by episode [False, True]
+game 4 done: 3 episodes, mutual accept by episode [True, False, True]
