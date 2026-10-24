@@ -60,4 +60,6 @@ def serve() -> None:
         "--enable-auto-tool-choice", "--tool-call-parser", "qwen3_coder",
         "--limit-mm-per-prompt", '{"image": 0, "video": 0}',  # text only: skip the vision encoder's memory
     ]
-    subprocess.Popen(cmd)
+    # FlashInfer's top-k/top-p sampler compiles a kernel at start-up and needs nvcc, which this image lacks (first
+    # boot 2026-10-24 died with "Could not find nvcc"); vLLM's own sampler needs no compiler.
+    subprocess.Popen(cmd, env={**os.environ, "VLLM_USE_FLASHINFER_SAMPLER": "0"})

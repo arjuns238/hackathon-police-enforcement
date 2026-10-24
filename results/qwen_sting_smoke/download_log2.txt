@@ -1,0 +1,39 @@
+✓ Initialized. View run at 
+https://modal.com/apps/arjun-sriram238/main/ap-3BMbagp1hKl1tKpzk8C5YT
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/asri/Projects/hackathon-police-enforcement/modal_gpu/download_qwen.py
+└── ✓ Created Function download.
+
+[1AFetching 32 files:   0%|          | 0/32 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AFetching 32 files:  12%|█▎        | 4/32 [00:00<00:00, 39.61it/s]
+[1AFetching 32 files:  25%|██▌       | 8/32 [00:00<00:00, 38.71it/s]
+[1AFetching 32 files:  25%|██▌       | 8/32 [00:20<00:00, 38.71it/s]
+[1AFetching 32 files:  28%|██▊       | 9/32 [00:23<01:34,  4.09s/it]
+[1AFetching 32 files:  31%|███▏      | 10/32 [00:39<02:20,  6.38s/it]
+[1AFetching 32 files:  34%|███▍      | 11/32 [00:40<01:49,  5.21s/it]
+[1AFetching 32 files:  41%|████      | 13/32 [00:50<01:39,  5.21s/it]
+[1AFetching 32 files:  44%|████▍     | 14/32 [00:53<01:26,  4.82s/it]
+[1AFetching 32 files:  47%|████▋     | 15/32 [01:04<01:41,  5.98s/it]
+[1AFetching 32 files:  50%|█████     | 16/32 [01:17<01:59,  7.47s/it]
+[1AFetching 32 files:  53%|█████▎    | 17/32 [01:25<01:52,  7.53s/it]
+[1AFetching 32 files:  59%|█████▉    | 19/32 [01:31<01:15,  5.84s/it]
+[1AFetching 32 files:  62%|██████▎   | 20/32 [01:44<01:29,  7.44s/it]
+[1AFetching 32 files:  66%|██████▌   | 21/32 [01:45<01:03,  5.79s/it]
+[1AFetching 32 files:  69%|██████▉   | 22/32 [01:48<00:51,  5.15s/it]
+[1AFetching 32 files:  72%|███████▏  | 23/32 [01:50<00:37,  4.19s/it]
+[1AFetching 32 files:  75%|███████▌  | 24/32 [01:52<00:28,  3.58s/it]
+[1AFetching 32 files:  78%|███████▊  | 25/32 [01:52<00:18,  2.69s/it]
+[1AFetching 32 files:  81%|████████▏ | 26/32 [01:54<00:14,  2.35s/it]
+[1AFetching 32 files:  88%|████████▊ | 28/32 [01:59<00:10,  2.55s/it]
+[1AFetching 32 files:  91%|█████████ | 29/32 [02:03<00:08,  2.82s/it]
+[1AFetching 32 files:  94%|█████████▍| 30/32 [02:08<00:06,  3.27s/it]
+[1AFetching 32 files:  97%|█████████▋| 31/32 [02:09<00:02,  2.83s/it]
+[1AFetching 32 files: 100%|██████████| 32/32 [02:12<00:00,  2.87s/it]Fetching 32 files: 100%|██████████| 32/32 [02:12<00:00,  4.15s/it]
+weights at /__modal/volumes/vo-uoyfaNosSCs8fjLEbZHzkD/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/arjun-sriram238/main/ap-3BMbagp1hKl1tKpzk8C5YT
+EXIT 0

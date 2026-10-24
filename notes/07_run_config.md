@@ -59,8 +59,8 @@ record any change in `notes/04_registered_plan_review.md` (Deviations) before ru
   Claude Sonnet 5 (effort low) on the Anthropic budget.
 - **Money:** asri's $50 of Modal credits; dashboard workspace budget $50; our soft stop **$45**, checked by the runner
   before every episode (`python3 scripts/modal_spend.py`). The Anthropic $145 hard stop still applies to judges.
-- **Settings:** effort `default` (sends no `reasoning_effort`; the Qwen chat template then uses `xhigh`, the paper's
-  value; `high` makes the template raise). Tool choice `required` (the paper's), falling back to `auto` only if the
+- **Settings:** effort **`medium`** (asri, 2026-10-24; the paper used `xhigh`, the template default; `high` is
+  refused by the template; notes/12 deviation D1). Tool choice `required` (the paper's), falling back to `auto` only if the
   smoke test fails. Temperature 1.0. Max output 64,000. Communication-onward memory as in the Sonnet games.
 - **.env:** `QWEN_API_KEY` (also the Modal secret `qwen-sting-key`) and `QWEN_BASE_URL` (the deploy URL + `/v1`).
   Never print the key.

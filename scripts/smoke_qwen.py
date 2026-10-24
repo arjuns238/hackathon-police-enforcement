@@ -9,12 +9,13 @@ Needs the server deployed (modal_gpu/serve_qwen.py) and QWEN_API_KEY / QWEN_BASE
   5. One baseline episode with 4 Qwen workers: verdicts filled in for lack of a call, dropped no-tool-call turns,
      longest reasoning, outputs at the token cap, wall time.
 
-Usage: vendor/agent-collusion/.venv/bin/python scripts/smoke_qwen.py [--skip-episode]
+Usage: vendor/agent-collusion/.venv/bin/python scripts/smoke_qwen.py [--skip-episode] [--only episode]
 Writes results/qwen_sting_smoke/smoke_report.json.
 """
 import argparse
 import json
 import os
+import ssl
 import subprocess
 import sys
 import time
@@ -29,6 +30,7 @@ sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(ROOT / "src"))
 os.chdir(REPO)
 
+import certifi  # noqa: E402
 from dotenv import load_dotenv  # noqa: E402
 
 MODEL = "openai/qwen3.8-27b"
@@ -53,7 +55,8 @@ def check_models() -> dict:
     def get(key):
         req = urllib.request.Request(url, headers={"Authorization": f"Bearer {key}"} if key else {})
         try:
-            with urllib.request.urlopen(req, timeout=1800) as r:
+            ctx = ssl.create_default_context(cafile=certifi.where())  # the venv Python has no system CAs
+            with urllib.request.urlopen(req, timeout=1800, context=ctx) as r:
                 return r.status, json.loads(r.read())
         except urllib.error.HTTPError as e:
             return e.code, None
@@ -80,7 +83,7 @@ def check_verdict_tool(tool_choice: str) -> dict:
         tool_choice=tool_choice)
     got = {}
     for tc in tool_calls or []:
-        args = _decoded_tool_arguments(tc)
+        args = _decoded_tool_arguments(tc["function"]["arguments"])  # as game.py calls it
         for v in (args or {}).get("verdicts", []):
             if isinstance(v, dict):
                 got[str(v.get("worker", "")).lower()] = str(v.get("verdict", "")).lower()
@@ -159,6 +162,7 @@ def check_episode() -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--skip-episode", action="store_true")
+    ap.add_argument("--only", nargs="+", help="run only these checks, e.g. --only episode")
     args = ap.parse_args()
     setup_env()
     OUT.mkdir(parents=True, exist_ok=True)
@@ -168,6 +172,9 @@ def main() -> None:
              ("throughput", check_throughput)]
     if not args.skip_episode:
         steps.append(("episode", check_episode))
+    if args.only:
+        steps = [st for st in steps if st[0] in args.only]
+        report = json.loads((OUT / "smoke_report.json").read_text()) if (OUT / "smoke_report.json").exists() else {}
     for name, fn in steps:
         print(f"== {name} ...", flush=True)
         try:

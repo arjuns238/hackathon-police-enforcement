@@ -70,7 +70,7 @@ and the write-up will say so.
 |---|---|---|---|
 | workers | 4 (Alice, Bob, Carol, Dave) | 2 | 4 |
 | model | Qwen/Qwen3.8-27B, BF16, vLLM 0.31.0 | `openai/qwen3.8-27b` (serving not stated) | Claude Sonnet 5 |
-| reasoning | template default `xhigh` (no `reasoning_effort` sent; the template's default is `xhigh`) | `reasoning_effort: xhigh` | effort high |
+| reasoning | **`medium`** (`reasoning_effort: medium`; asri 2026-10-24, before any game; see Deviations) | `reasoning_effort: xhigh` | effort high |
 | temperature / sampling | 1.0; model's generation_config otherwise (top_p 0.95, top_k 20) | 1.0 | 1.0 |
 | max output tokens | 64,000 | 64,000 | 64,000 |
 | tool choice | `required` (paper) if the smoke test passes; otherwise `auto` with drop-and-resample (logged as a deviation) | required | auto |
@@ -205,4 +205,16 @@ What would change the plan:
 
 ## Deviations
 
-Filled in afterwards.
+- **D1 (2026-10-24, before any game): reasoning effort `medium`, not the paper's `xhigh`.** asri's decision after
+  the smoke test showed Qwen thinking at length (about 20,000 tokens of thinking on a plain counting request; one
+  stream writes ~28 tokens/s), which put a 6-episode game at several hours with the deadline on 25 Oct. Qwen-3.8's
+  template accepts only xhigh, medium and low (`high` is refused: "Unexpected reasoning effort high", checked
+  2026-10-24, so the setting does reach the template). On one verdict prompt, medium thought ~40% less than xhigh
+  (completion tokens 574 and 447 vs 954 and 645; `results/qwen_sting_smoke/effort_test.json`). Every cell, the
+  baseline included, runs at medium, so the sting-vs-baseline comparisons are like for like. What changes: the
+  paper's Qwen-3.8 numbers (82% collusion, 37% agreement, all at xhigh; the paper ran Qwen-3.8 at no other effort)
+  are context only, not a matched comparison, and Q-B2 and Q-B3 cite them as such. Lower effort may also change
+  how readily Qwen colludes, in either direction; our own medium baseline is the reference.
+- **D2 (2026-10-24): the first xhigh smoke-test episode was stopped** after its first call when D1 was decided; its
+  output is kept in `results/qwen_sting_smoke/aborted/arm1_game1_xhigh/` and is not data. The smoke episode is rerun
+  at medium into `results/qwen_sting/arm1_game1`.

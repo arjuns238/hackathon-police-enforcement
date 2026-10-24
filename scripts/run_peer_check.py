@@ -32,7 +32,7 @@ APPROVED_MODEL = "anthropic/claude-sonnet-5"
 # asri approved Qwen-3.8 for the sting on 2026-10-22 (notes/12). "default" sends no reasoning_effort: the Qwen chat
 # template then uses its default, xhigh (the paper's setting); "high" would make the template raise.
 APPROVED_MODELS = {APPROVED_MODEL: {"effort": "high", "tool_choice": "auto"},
-                   "openai/qwen3.8-27b": {"effort": "default", "tool_choice": "required"}}
+                   "openai/qwen3.8-27b": {"effort": "medium", "tool_choice": "required"}}  # medium: asri 2026-10-24 (paper: xhigh)
 STING_STYLE = {11: "direct", 12: "hint", 13: "benign", 14: "givefirst"}
 QWEN_REQUEST_TIMEOUT = 1800  # seconds; a stuck turn cannot hold the GPU for longer
 SEQ_DIR = ROOT / "data" / "peer_check_sequences"

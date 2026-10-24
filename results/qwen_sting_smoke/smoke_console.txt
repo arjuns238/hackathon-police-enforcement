@@ -1,0 +1,48 @@
+== models ...
+{
+ "with_key": 200,
+ "models": [
+  "qwen3.8-27b"
+ ],
+ "without_key": 401,
+ "seconds": 396.0,
+ "pass": true
+}
+== verdict_required ...
+{
+ "tool_choice": "required",
+ "tool_calls": 1,
+ "verdicts": {},
+ "reasoning_chars": 1647,
+ "think_tag_in_content": false,
+ "seconds": 13.6,
+ "pass": false
+}
+== verdict_auto ...
+{
+ "tool_choice": "auto",
+ "tool_calls": 1,
+ "verdicts": {},
+ "reasoning_chars": 4597,
+ "think_tag_in_content": false,
+ "seconds": 21.0,
+ "pass": false
+}
+== long_request ...
+{
+ "seconds": 852.2,
+ "completion_tokens": 24000,
+ "ends_with_done": false,
+ "over_150s": true,
+ "pass": false,
+ "note": ""
+}
+== throughput ...
+{
+ "requests": 8,
+ "completion_tokens": 46510,
+ "seconds": 234.0,
+ "tokens_per_second": 198.8
+}
+== episode ...
+EXIT 143
