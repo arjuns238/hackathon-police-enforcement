@@ -9,7 +9,9 @@ Needs the server deployed (modal_gpu/serve_qwen.py) and QWEN_API_KEY / QWEN_BASE
   5. One baseline episode with 4 Qwen workers: verdicts filled in for lack of a call, dropped no-tool-call turns,
      longest reasoning, outputs at the token cap, wall time.
 
-Usage: vendor/agent-collusion/.venv/bin/python scripts/smoke_qwen.py [--skip-episode] [--only episode]
+Usage: vendor/agent-collusion/.venv/bin/python scripts/smoke_qwen.py [--skip-episode] [--only episode] [--out DIR]
+The episode check writes baseline game 1 (results/qwen_sting/arm1_game1): asri's game. Teammates run with
+--skip-episode.
 Writes results/qwen_sting_smoke/smoke_report.json.
 """
 import argparse
@@ -34,7 +36,7 @@ import certifi  # noqa: E402
 from dotenv import load_dotenv  # noqa: E402
 
 MODEL = "openai/qwen3.8-27b"
-OUT = ROOT / "results" / "qwen_sting_smoke"
+OUT = ROOT / "results" / "qwen_sting_smoke"  # --out changes it (a teammate: results/qwen_sting_smoke_<name>)
 CAP = 64_000
 
 
@@ -106,10 +108,12 @@ def check_long_request() -> dict:
     text = r.choices[0].message.content or ""
     secs = time.time() - t0
     (OUT / "long_request_raw.json").write_text(json.dumps(r.model_dump(), indent=1, default=str))
+    # What is tested is Modal's redirect: a request over 150 s must come back whole. Whether the count reaches DONE
+    # depends on how long the model thinks first (at xhigh it used up the 24,000-token cap; 2026-10-24).
     return {"seconds": round(secs, 1), "completion_tokens": r.usage.completion_tokens,
-            "ends_with_done": text.strip().endswith("DONE"), "over_150s": secs > 150,
-            "pass": text.strip().endswith("DONE"),
-            "note": "conclusive only if over_150s" if secs <= 150 else ""}
+            "finish_reason": r.choices[0].finish_reason, "ends_with_done": text.strip().endswith("DONE"),
+            "over_150s": secs > 150, "pass": secs > 150 and bool(text.strip()),
+            "note": "inconclusive: finished in under 150 s" if secs <= 150 else ""}
 
 
 def check_throughput(n: int = 8) -> dict:
@@ -163,7 +167,11 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--skip-episode", action="store_true")
     ap.add_argument("--only", nargs="+", help="run only these checks, e.g. --only episode")
+    ap.add_argument("--out", help="report folder (default results/qwen_sting_smoke)")
     args = ap.parse_args()
+    global OUT
+    if args.out:
+        OUT = (ROOT / args.out) if not Path(args.out).is_absolute() else Path(args.out)
     setup_env()
     OUT.mkdir(parents=True, exist_ok=True)
     report: dict = {}

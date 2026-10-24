@@ -12,7 +12,8 @@ Usage:
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --arm 5 --game 1 --offline  # fake model, no API calls, no cost
 
 Qwen sting (notes/12): workers and Dave are Qwen-3.8-27B on the Modal server (modal_gpu/serve_qwen.py); needs
-QWEN_API_KEY and QWEN_BASE_URL (".../v1") in .env. Arm 1 = baseline; arms 11-14 = direct / hint / benign / give-first.
+QWEN_API_KEY and QWEN_BASE_URL (".../v1") in .env. Arm 1 = baseline; arms 21-23 = pushy / friendly / subtle Dave
+(approach episode set by --offer-episode), 24 = passive Dave (amendment C). Arms 11-14 (scripted openers) are superseded.
   vendor/agent-collusion/.venv/bin/python scripts/run_peer_check.py --model openai/qwen3.8-27b --arm 11 --offer-episode 1 --episodes 2 --game 1
 """
 import argparse
@@ -73,6 +74,7 @@ def main() -> None:
     settings = APPROVED_MODELS.get(args.model, APPROVED_MODELS[APPROVED_MODEL])
     qwen = args.model.startswith("openai/qwen")
 
+    load_dotenv(REPO / ".env")  # before the spend checks: MODAL_SOFT_STOP / MODAL_SPEND_SINCE may be set there
     sys.path.insert(0, str(ROOT / "scripts"))
     if not args.offline and not qwen:
         from spend import check
@@ -82,7 +84,6 @@ def main() -> None:
         print(describe(modal_check(SOFT_STOP)), flush=True)
     # The Sonnet games always ran with this set (run_main_games.sh); keep the environment the same for every game.
     os.environ.setdefault("PEERCHECK_FIXED_TOOLS", "1")
-    load_dotenv(REPO / ".env")
     if qwen and not args.offline:
         import litellm
         for var in ("QWEN_API_KEY", "QWEN_BASE_URL"):
