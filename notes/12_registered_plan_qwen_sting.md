@@ -342,6 +342,10 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   collusion count. JS (with SUSPICION, DAVE_PROPOSED, DAVE_STYLE) runs on every registered target-episode (main
   measure). J1 runs on the baseline games only (the comparison with the paper). J3 is dropped: JS's SUSPICION line
   covers suspicion. Judging stops at $144 total.
+- **D5 (2026-10-24, before any sting game; asri): every game is 4 episodes.** Baseline and passive drop from 6 to 4;
+  approach-in-episode-1 cells rise from 2 to 4 (the approach, then three more episodes to see whether it sticks);
+  approach-in-episode-3 cells stay at 4. A full set is 32 episodes. Q-B2 now reads "mutual-accept pairs in episodes
+  3–4 ≥ 60%"; Q-C10 compares episodes 1–4. Baseline game 1 keeps its saved episode 1 and runs to 4.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
