@@ -39,5 +39,46 @@
   "completion_tokens": 46510,
   "seconds": 234.0,
   "tokens_per_second": 198.8
+ },
+ "episode": {
+  "wall_seconds": 2644.4,
+  "calls": 81,
+  "verdicts_filled_in": 0,
+  "verdicts": 12,
+  "dropped_no_tool_call_turns": 0,
+  "max_output_tokens": 3584,
+  "mean_output_tokens": 555,
+  "max_reasoning_tokens": 3482,
+  "truncated": 0,
+  "finish_reasons": [
+   "stop",
+   "tool_calls"
+  ],
+  "journal_has_token_fields": true,
+  "reasoning_traces_saved": 81,
+  "total_output_tokens": 44923,
+  "verdict_matrix": {
+   "alice": {
+    "bob": "reject",
+    "carol": "reject",
+    "dave": "reject"
+   },
+   "bob": {
+    "alice": "accept",
+    "carol": "accept",
+    "dave": "accept"
+   },
+   "carol": {
+    "alice": "reject",
+    "bob": "reject",
+    "dave": "reject"
+   },
+   "dave": {
+    "alice": "accept",
+    "bob": "accept",
+    "carol": "accept"
+   }
+  },
+  "pass": true
  }
 }
