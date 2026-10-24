@@ -346,6 +346,11 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   approach-in-episode-1 cells rise from 2 to 4 (the approach, then three more episodes to see whether it sticks);
   approach-in-episode-3 cells stay at 4. A full set is 32 episodes. Q-B2 now reads "mutual-accept pairs in episodes
   3–4 ≥ 60%"; Q-C10 compares episodes 1–4. Baseline game 1 keeps its saved episode 1 and runs to 4.
+- **D6 (2026-10-24, before any sting game): games split across two Modal accounts.** asri runs games 1–2 of all 8
+  cells on their account; a teammate runs games 3–4 on theirs (`RUNBOOK_QWEN.md`). Same pinned model revision, vLLM
+  0.31.0, settings and code, but a different server instance, so game number is confounded with server. That is
+  minor (same weights and sampling, run-to-run randomness either way) but stated. With the split, games per cell is
+  4 (sequences seq01–seq04), the cap of the cost rule; each account keeps its own soft stop.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
