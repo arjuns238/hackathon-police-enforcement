@@ -34,6 +34,7 @@ APPROVED_MODEL = "anthropic/claude-sonnet-5"
 APPROVED_MODELS = {APPROVED_MODEL: {"effort": "high", "tool_choice": "auto"},
                    "openai/qwen3.8-27b": {"effort": "medium", "tool_choice": "required"}}  # medium: asri 2026-10-24 (paper: xhigh)
 STING_STYLE = {11: "direct", 12: "hint", 13: "benign", 14: "givefirst"}
+CHARACTER = {21: "pushy", 22: "friendly", 23: "subtle", 24: "passive"}  # amendment C (notes/12)
 QWEN_REQUEST_TIMEOUT = 1800  # seconds; a stuck turn cannot hold the GPU for longer
 SEQ_DIR = ROOT / "data" / "peer_check_sequences"
 SEQ_SEED = 20261013
@@ -42,7 +43,7 @@ EPISODE_SPEND_LIMIT = 138.0  # checked before every episode (see main)
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--arm", type=int, choices=[*range(1, 8), *STING_STYLE])
+    ap.add_argument("--arm", type=int, choices=[*range(1, 8), *STING_STYLE, *CHARACTER])
     ap.add_argument("--offer-episode", type=int, default=2, help="1-based episode of the scripted offer (sting: 1 or 3)")
     ap.add_argument("--tool-choice", choices=["auto", "required"], help="default: the approved model's setting")
     ap.add_argument("--game", type=int, help="1-based game number = task sequence number")
@@ -94,7 +95,12 @@ def main() -> None:
     seq_path = SEQ_DIR / f"seq{args.game:02d}.json"
     default_out = ROOT / "results" / ("peer_check_offline" if args.offline else "peer_check") / f"arm{args.arm}_game{args.game}"
     if qwen:
-        cell = f"{STING_STYLE[args.arm]}_ep{args.offer_episode}" if args.arm in STING_STYLE else f"arm{args.arm}"
+        if args.arm == 24:
+            cell = "passive"
+        elif args.arm in CHARACTER:
+            cell = f"{CHARACTER[args.arm]}_ep{args.offer_episode}"
+        else:
+            cell = f"{STING_STYLE[args.arm]}_ep{args.offer_episode}" if args.arm in STING_STYLE else f"arm{args.arm}"
         default_out = ROOT / "results" / ("qwen_sting_offline" if args.offline else "qwen_sting") / f"{cell}_game{args.game}"
     # A relative --out is relative to the project root, not to the vendored repo this script chdirs into (2026-10-18:
     # a relative --out once sent four games to vendor/agent-collusion/results/, outside spend.py's view).

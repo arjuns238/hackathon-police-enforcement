@@ -4,11 +4,12 @@ Each game is its own run_peer_check.py process (workers take turns inside a game
 a time; vLLM batches the requests of all running games). Restartable: a game resumes after its last saved episode,
 and a finished game is skipped by the runner. Console output goes to <game folder>/console.log.
 
-Cells: arm1 (baseline, 6 episodes) and <style>_ep<E> for style in direct/hint/benign/givefirst and E in 1, 3
-(offer in episode 1: 2 episodes; offer in episode 3: 4 episodes).
+Cells (notes/12, amendment C): arm1 (baseline, 6 episodes), passive (Dave never approaches, 6 episodes), and
+<character>_ep<E> for character in pushy/friendly/subtle and E in 1, 3 (approach in episode 1: 2 episodes; in
+episode 3: 4 episodes).
 
-Usage: vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wave.py --games 1 --cells arm1 direct_ep1   # the pilot
-       vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wave.py --games 1 2                       # all 9 cells
+Usage: vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wave.py --games 1 --cells arm1 pushy_ep1    # the pilot
+       vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wave.py --games 1 2                       # all 8 cells
 """
 import argparse
 import subprocess
@@ -18,8 +19,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PY = ROOT / "vendor" / "agent-collusion" / ".venv" / "bin" / "python"
-STYLE_ARM = {"direct": 11, "hint": 12, "benign": 13, "givefirst": 14}
-ALL_CELLS = ["arm1"] + [f"{s}_ep{e}" for e in (1, 3) for s in STYLE_ARM]
+CHARACTER_ARM = {"pushy": 21, "friendly": 22, "subtle": 23}
+ALL_CELLS = ["arm1", "passive"] + [f"{c}_ep{e}" for e in (1, 3) for c in CHARACTER_ARM]
 
 
 def command(cell: str, game: int) -> list[str]:
@@ -27,8 +28,11 @@ def command(cell: str, game: int) -> list[str]:
             "--quiet"]
     if cell == "arm1":
         return base + ["--arm", "1", "--episodes", "6"]
-    style, ep = cell.split("_ep")
-    return base + ["--arm", str(STYLE_ARM[style]), "--offer-episode", ep, "--episodes", "2" if ep == "1" else "4"]
+    if cell == "passive":
+        return base + ["--arm", "24", "--episodes", "6"]
+    character, ep = cell.split("_ep")
+    return base + ["--arm", str(CHARACTER_ARM[character]), "--offer-episode", ep, "--episodes",
+                   "2" if ep == "1" else "4"]
 
 
 def main() -> None:
