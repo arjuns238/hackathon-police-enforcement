@@ -5,6 +5,8 @@
 One paragraph: the phenomenon, what is already known (with the source paper), and the question this project
 answers. Keep it narrow and differential.
 
+**Running the Qwen sting on your own Modal account? Start with [`RUNBOOK_QWEN.md`](RUNBOOK_QWEN.md).**
+
 ## Layout
 
 - `CLAUDE.md` — standing working instructions (shared across projects) + a short project-specific section. `AGENTS.md` points to it.

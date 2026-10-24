@@ -65,6 +65,8 @@ Use only if a project needs a GPU Azure will not provide (H100, multi-GPU). Scri
 
 *(Fill in at kickoff; keep short. Everything above is shared across projects, everything below is specific to this one.)*
 
+- **Teammate (or their coding agent) running Qwen sting games on their own Modal account: read `RUNBOOK_QWEN.md` first.** It says which games are yours and which parts of this file apply (the research rules do; the Azure/RunPod GPU sections and the Anthropic budget do not).
+
 - **Question:** hackathon track 3.2, "Can we disrupt collusion through introducing trusted agents?" A trusted agent (held to its role by a strong system prompt) acts like an undercover officer: it offers collusion/coordination opportunities to a group of LLM agents and logs who reciprocates. Do targets accept, reject, or become suspicious depending on how the trusted agent makes the approach? (The track claims this "hasn't been tested"; we check that in the lit scan, `research/01_lit_scan_trusted_agents.md`.)
 - **Models / checkpoints:** Peer-check game workers = **Claude Sonnet 5** (`claude-sonnet-5`), effort high (first study, API only). Second study (Qwen sting, notes/12, approved 2026-10-22): **Qwen-3.8-27B** served with vLLM on a Modal A100 (`modal_gpu/serve_qwen.py`), $50 Modal credits, soft stop $45 (`scripts/modal_spend.py`). Full run configuration below and in `notes/07_run_config.md`.
 - **RUN CONFIGURATION — read `notes/07_run_config.md` before ANY paid API run.** The essentials:
