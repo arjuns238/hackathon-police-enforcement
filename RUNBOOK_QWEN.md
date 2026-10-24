@@ -158,19 +158,59 @@ caffeinate -i nohup vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wav
 
 ## 7. Hand back the results, then stop the server
 
+**What asri needs back: 16 game folders, all complete, untouched.**
+
+| what | where | notes |
+|---|---|---|
+| games 3 and 4 of all 8 setups | `results/qwen_sting/<setup>_game3/`, `results/qwen_sting/<setup>_game4/` | 16 folders; each holds `run.json`, `messages.json`, `llm_usage.jsonl`, `console.log`. Keep every file as written: never edit, rename, clean or re-save them |
+| your smoke test | `results/qwen_sting_smoke_<yourname>/` | `smoke_report.json` and the raw replies beside it |
+| the gate check output | `results/qwen_sting_gate_<yourname>.txt` | `scripts/check_approach.py --games 3 4 > results/qwen_sting_gate_<yourname>.txt` |
+| the wave logs | `results/qwen_sting_wave_game3.txt`, `results/qwen_sting_wave_game4.txt` | |
+| the server log | `results/qwen_sting_smoke_<yourname>/server_log.txt` | `~/.local/bin/modal app logs qwen-sting --timestamps --since 24h > results/qwen_sting_smoke_<yourname>/server_log.txt` |
+
+`<setup>` is one of `arm1 passive pushy_ep1 friendly_ep1 subtle_ep1 pushy_ep3 friendly_ep3 subtle_ep3`.
+
+**1. Check completeness** (free):
+
+```bash
+vendor/agent-collusion/.venv/bin/python scripts/qwen_status.py --games 3 4
+```
+
+Every line should read `4/4 episodes (complete)` with `verdicts filled in 0` and `truncated 0`, and the last line
+`ALL COMPLETE`. If a game is not complete, rerun the same `run_qwen_wave.py` command: it resumes. If you run out of
+time or money, send what you have: partial games are still useful, and say which ones in the pull request.
+
+**2. Push to a branch, never to main:**
+
 ```bash
 git checkout -b results-<yourname>
 git add results/qwen_sting/*_game3 results/qwen_sting/*_game4 results/qwen_sting_smoke_<yourname> \
-        results/qwen_sting_wave_game3.txt results/qwen_sting_wave_game4.txt
+        results/qwen_sting_gate_<yourname>.txt results/qwen_sting_wave_game3.txt results/qwen_sting_wave_game4.txt
+git status --short        # only those paths; nothing under notes/, src/, scripts/ or other games
 git commit -m "Qwen sting games 3-4 (<yourname>'s Modal account)"
-git push -u origin results-<yourname>      # then open a pull request for asri
-
-~/.local/bin/modal app stop qwen-sting -y   # stop the server for good
-~/.local/bin/modal container list           # should list nothing
+git push -u origin results-<yourname>
 ```
 
-Add only your own folders (games 3 and 4). Each game folder holds `run.json` (episodes, transcripts, verdicts,
-Qwen's thinking for every turn), `messages.json`, `llm_usage.jsonl` and `console.log`; keep all of them.
+Do not add games 1–2, `results/qwen_sting_offline/`, `.env`, or any change to code or notes. If you had to change
+anything to make it run, do not commit the change: describe it in the pull request instead.
+
+**3. Open a pull request for asri** with this description filled in:
+
+```text
+Account / when: <Modal workspace name>, games run <start> to <end> (time zone)
+Completeness: <paste the qwen_status.py output>
+Gate: <PASS or FAIL, plus anything odd you saw in Dave's messages>
+Spend: <GPU hours from container start/stop times> x $2.50 = $<...>; Modal billing showed $<...>
+Problems and restarts: <crashes, reruns, server restarts, or "none">
+Changes made to get it running: <none, or what and why (not committed)>
+```
+
+**4. Stop the server for good:**
+
+```bash
+~/.local/bin/modal app stop qwen-sting -y
+~/.local/bin/modal container list           # should list nothing
+```
 
 ## 8. If something goes wrong
 
