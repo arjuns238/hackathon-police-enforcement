@@ -1,0 +1,51 @@
+{
+ "3": {
+  "episodes_saved": 2,
+  "mutual_accept_by_episode": [
+   false,
+   true
+  ],
+  "exit": -15
+ },
+ "1": {
+  "episodes_saved": 2,
+  "mutual_accept_by_episode": [
+   false,
+   true
+  ],
+  "exit": -15
+ },
+ "5": {
+  "episodes_saved": 2,
+  "mutual_accept_by_episode": [
+   false,
+   true
+  ],
+  "exit": -15
+ },
+ "6": {
+  "episodes_saved": 2,
+  "mutual_accept_by_episode": [
+   false,
+   true
+  ],
+  "exit": -15
+ },
+ "4": {
+  "episodes_saved": 3,
+  "mutual_accept_by_episode": [
+   true,
+   false,
+   true
+  ],
+  "exit": -15
+ },
+ "2": {
+  "episodes_saved": 2,
+  "mutual_accept_by_episode": [
+   false,
+   true
+  ],
+  "exit": -15
+ }
+}

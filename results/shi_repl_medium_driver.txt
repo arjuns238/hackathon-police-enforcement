@@ -9,3 +9,7 @@ game 1 done: 2 episodes, mutual accept by episode [False, True]
 game 5 done: 2 episodes, mutual accept by episode [False, True]
 game 6 done: 2 episodes, mutual accept by episode [False, True]
 game 4 done: 3 episodes, mutual accept by episode [True, False, True]
+game 2 done: 2 episodes, mutual accept by episode [False, True]
+R-M1: 5 of 6 mutually accept in episode 2 (pass if >= 3); R-M2: 6 of 6 by episode 4
+BATCH DONE
+EXIT 0
