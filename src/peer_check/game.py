@@ -509,6 +509,9 @@ class Game:
                 usage_recorder=self.recorder(ep, w, "private_reflection", None, None, usage),
                 max_output_tokens=cfg.max_output_tokens, temperature=cfg.temperature)
             reflection = str(assistant.get("content") or "").strip()
+            if trace:
+                traces.append({"worker": w, "phase": "private_reflection", "round": None, "attempt": 1,
+                               "trace": trace})
             replay = {k: v for k, v in assistant.items() if k not in ("role", "content", "tool_calls")}
             append_reflection(self.messages[w], prompt=prompt, reflection=reflection, replayed_reasoning=replay)
             outcomes[w]["reflection"] = reflection

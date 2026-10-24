@@ -85,6 +85,8 @@ def check_verdict_tool(tool_choice: str) -> dict:
             if isinstance(v, dict):
                 got[str(v.get("worker", "")).lower()] = str(v.get("verdict", "")).lower()
     content = assistant.get("content") or ""
+    (OUT / f"verdict_{tool_choice}_raw.json").write_text(json.dumps(
+        {"assistant": assistant, "tool_calls": tool_calls, "trace": trace}, indent=1, default=str))
     return {"tool_choice": tool_choice, "tool_calls": len(tool_calls or []), "verdicts": got,
             "reasoning_chars": len(str(trace or "")), "think_tag_in_content": "<think>" in content,
             "seconds": round(time.time() - t0, 1),
@@ -100,6 +102,7 @@ def check_long_request() -> dict:
         "After the last number, write DONE.")}])
     text = r.choices[0].message.content or ""
     secs = time.time() - t0
+    (OUT / "long_request_raw.json").write_text(json.dumps(r.model_dump(), indent=1, default=str))
     return {"seconds": round(secs, 1), "completion_tokens": r.usage.completion_tokens,
             "ends_with_done": text.strip().endswith("DONE"), "over_150s": secs > 150,
             "pass": text.strip().endswith("DONE"),
@@ -121,7 +124,9 @@ def check_throughput(n: int = 8) -> dict:
 
 
 def check_episode() -> dict:
-    out = OUT / "arm1_episode1"
+    # Written straight into baseline game 1: the pilot reruns that folder with --episodes 6 and resumes after this
+    # episode, so it is not paid for twice. If the smoke test changes any setting, move the folder aside (not delete).
+    out = ROOT / "results" / "qwen_sting" / "arm1_game1"
     t0 = time.time()
     proc = subprocess.run([sys.executable, str(ROOT / "scripts" / "run_peer_check.py"), "--model", MODEL, "--arm", "1",
                            "--game", "1", "--episodes", "1", "--out", str(out), "--quiet"],
@@ -135,13 +140,20 @@ def check_episode() -> dict:
                  for w in e["verdict_reasoning"].values() for v in w.values())
     dropped = sum(1 for ev in e["events"] if ev.get("dropped_no_tool_call"))
     journal = [json.loads(l) for l in (out / "llm_usage.jsonl").read_text().splitlines() if l.strip()]
-    outs = [j.get("provider_output_tokens") or j.get("output_tokens") or 0 for j in journal]
+    # vLLM's completion_tokens include the thinking; finish_reason "length" is the direct truncation signal.
+    outs = [(j.get("raw_usage") or {}).get("completion_tokens") or j.get("provider_output_tokens") or 0
+            for j in journal]
     reasoning = [j.get("reasoning_tokens") or 0 for j in journal]
+    truncated = sum(j.get("finish_reason") == "length" or o >= CAP - 50 for j, o in zip(journal, outs))
+    traces = e.get("reasoning_traces", [])
     return {"wall_seconds": round(secs, 1), "calls": len(journal), "verdicts_filled_in": filled, "verdicts": 12,
             "dropped_no_tool_call_turns": dropped, "max_output_tokens": max(outs, default=0),
-            "max_reasoning_tokens": max(reasoning, default=0), "at_cap": sum(o >= CAP - 50 for o in outs),
-            "total_output_tokens": sum(outs), "mutual_accept_pairs": None,
-            "pass": filled == 0 and dropped <= 0.1 * len(journal) and not any(o >= CAP - 50 for o in outs)}
+            "mean_output_tokens": round(sum(outs) / max(len(outs), 1)), "max_reasoning_tokens": max(reasoning, default=0),
+            "truncated": truncated, "finish_reasons": sorted({str(j.get("finish_reason")) for j in journal}),
+            "journal_has_token_fields": all("raw_usage" in j for j in journal), "reasoning_traces_saved": len(traces),
+            "total_output_tokens": sum(outs), "verdict_matrix": e.get("verdicts"),
+            "pass": filled == 0 and dropped <= 0.1 * len(journal) and truncated == 0 and bool(journal)
+                    and all("raw_usage" in j for j in journal)}
 
 
 def main() -> None:

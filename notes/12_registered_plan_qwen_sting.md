@@ -3,7 +3,7 @@
 *2026-10-22, Claude + asri. Written BEFORE running. Generation only (no training). Workers and the trusted agent:
 Qwen-3.8-27B (BF16) served with vLLM on one Modal A100 80 GB GPU, paid from asri's $50 of Modal credits (dashboard
 budget set to $50). Judges: Claude Sonnet 5 from the Anthropic budget (judges only; that budget's $145 hard stop
-still applies). Status: DRAFT, awaiting asri's approval; nothing deploys until then.*
+still applies). Status: APPROVED by asri 2026-10-24 ("yeah lets do it"), with the rule that every result worth keeping is saved so nothing needs rerunning. The smoke-test episode is written straight into baseline game 1 (results/qwen_sting/arm1_game1) and counts as its episode 1 if the smoke test changes no setting.*
 
 ## In plain terms (read this part)
 
