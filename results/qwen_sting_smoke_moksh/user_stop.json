@@ -1,0 +1,10 @@
+{
+  "stopped_utc": "2026-10-25T02:13:54.311836+00:00",
+  "reason": "User explicitly requested stopping the whole experiment",
+  "automation": "deleted",
+  "local_game_processes": "terminated and verified absent",
+  "modal_app": "qwen-sting stopped; zero tasks; no containers",
+  "saved_game3_episodes": 12,
+  "game4_started": false,
+  "raw_results": "preserved unchanged"
+}

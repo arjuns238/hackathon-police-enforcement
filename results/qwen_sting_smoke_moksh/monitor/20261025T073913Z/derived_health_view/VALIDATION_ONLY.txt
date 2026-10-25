@@ -1,0 +1,1 @@
+Derived health checkpoints; never resume. Original raw files unchanged. Validity exclusions are in skipped_games_moksh.json.

@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-25T07:49:58.406164+00:00",
+  "cell": "friendly_ep1_game3",
+  "failed_episode": 3,
+  "rule_failed": 5,
+  "reason": "Episode3 Dave emitted malformed nested arguments, then delivered a corrected retry. No lost turn, but required rule5 fails; the M1 exception requires saved direct arguments and does not cover wrappers.",
+  "stop_pid": 64727,
+  "raw_modified": false,
+  "automatic_resume_allowed": false
+}

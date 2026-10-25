@@ -1,0 +1,14 @@
+diff --git a/scripts/run_peer_check.py b/scripts/run_peer_check.py
+index a9f5891..0a03c04 100644
+--- a/scripts/run_peer_check.py
++++ b/scripts/run_peer_check.py
+@@ -116,6 +116,9 @@ def main() -> None:
+         from peer_check.fake_llm import fake_llm_call
+         kwargs["llm_call"] = fake_llm_call
+     game = Game(cfg=cfg, repo_root=REPO, verbose=not args.quiet, **kwargs)
++    if qwen and not args.offline:
++        from peer_check.capture import install_model_capture
++        install_model_capture(game)  # observation only: persist every provider request/reply before parsing
+     guard = None
+     if not args.offline and qwen:
+         # Before each episode a failed billing read warns instead of exiting, so a transient Modal API error cannot

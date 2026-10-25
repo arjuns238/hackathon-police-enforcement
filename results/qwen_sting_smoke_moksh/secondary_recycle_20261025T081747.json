@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-25T08:35:39.040457+00:00",
+  "server": "game4",
+  "old_container": "ta-01M5RWC9EQSVWKFVQQ6GYHAQ1R",
+  "shutdown_logged_utc": "2026-10-25T08:17:47+00:00",
+  "replacement_container": "ta-01M5S26C9G2838CQVRV0JHHWYR",
+  "replacement_ready_utc": "2026-10-25T08:20:50+00:00",
+  "symptoms": "SIGINT/API shutdown aborted six in-flight engine requests; HTTP500; automatic replacement.",
+  "root_cause": "Cause of shutdown signal not established. A Modal GPU scheduling/capacity message precedes shutdown.",
+  "new_outer_completion_errors_in_active_games": 0,
+  "completed_episodes_replayed": false,
+  "workers_restarted_by_us": false,
+  "evidence": "results/qwen_sting_smoke_moksh/server_logs/full24h_20261025T083357Z_game4.txt",
+  "note": "Internal SDK/proxy transport retry behavior is below the capture wrapper. Active workers continued and latest saved-valid health passed; no new skipped game."
+}

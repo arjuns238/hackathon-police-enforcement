@@ -1,0 +1,9 @@
+{
+  "offline_tests_passed": 4,
+  "real_call_path_with_stub_provider": "passed",
+  "provider_calls": 1,
+  "paid_model_calls": 0,
+  "request_response_and_reasoning_saved": true,
+  "actor_phase_metadata_saved": true,
+  "note": "Capture wraps the actual retry/parser path; only the provider endpoint is stubbed."
+}

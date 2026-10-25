@@ -1,0 +1,74 @@
+[
+  {
+    "pid": 64700,
+    "game": "3",
+    "arm": "24",
+    "offer_episode": null
+  },
+  {
+    "pid": 64727,
+    "game": "3",
+    "arm": "22",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 64737,
+    "game": "3",
+    "arm": "23",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 64746,
+    "game": "3",
+    "arm": "21",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 64756,
+    "game": "3",
+    "arm": "22",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 69473,
+    "game": "3",
+    "arm": "21",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 69496,
+    "game": "4",
+    "arm": "24",
+    "offer_episode": null
+  },
+  {
+    "pid": 69508,
+    "game": "4",
+    "arm": "21",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 69517,
+    "game": "4",
+    "arm": "22",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 69537,
+    "game": "4",
+    "arm": "21",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 69549,
+    "game": "4",
+    "arm": "22",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 69562,
+    "game": "4",
+    "arm": "23",
+    "offer_episode": "3"
+  }
+]

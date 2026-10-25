@@ -1,0 +1,109 @@
+{
+  "checked_utc": "2026-10-25T07:51:30.403942+00:00",
+  "raw_saved": 33,
+  "validated_saved": 30,
+  "health_valid_complete_games": 4,
+  "skipped_games": 5,
+  "conservative_allowance_usd": 30.98,
+  "billed_usd": 0.03,
+  "validated_subset_health": "HEALTH: PASS",
+  "free_disk_gib": 15.63,
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "raw_saved": 4,
+      "validated_saved": 4,
+      "status": "complete"
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "raw_saved": 3,
+      "validated_saved": 2,
+      "status": "skipped/partial"
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "raw_saved": 4,
+      "validated_saved": 4,
+      "status": "complete"
+    },
+    {
+      "cell": "passive_game3",
+      "raw_saved": 3,
+      "validated_saved": 2,
+      "status": "skipped/partial"
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "raw_saved": 4,
+      "validated_saved": 4,
+      "status": "complete"
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "raw_saved": 2,
+      "validated_saved": 2,
+      "status": "running"
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "raw_saved": 4,
+      "validated_saved": 3,
+      "status": "skipped/partial"
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "raw_saved": 4,
+      "validated_saved": 4,
+      "status": "complete"
+    },
+    {
+      "cell": "arm1_game4",
+      "raw_saved": 0,
+      "validated_saved": 0,
+      "status": "skipped/partial"
+    },
+    {
+      "cell": "friendly_ep1_game4",
+      "raw_saved": 1,
+      "validated_saved": 1,
+      "status": "running"
+    },
+    {
+      "cell": "friendly_ep3_game4",
+      "raw_saved": 1,
+      "validated_saved": 1,
+      "status": "running"
+    },
+    {
+      "cell": "passive_game4",
+      "raw_saved": 1,
+      "validated_saved": 1,
+      "status": "running"
+    },
+    {
+      "cell": "pushy_ep1_game4",
+      "raw_saved": 0,
+      "validated_saved": 0,
+      "status": "running"
+    },
+    {
+      "cell": "pushy_ep3_game4",
+      "raw_saved": 1,
+      "validated_saved": 1,
+      "status": "running"
+    },
+    {
+      "cell": "subtle_ep1_game4",
+      "raw_saved": 0,
+      "validated_saved": 0,
+      "status": "skipped/partial"
+    },
+    {
+      "cell": "subtle_ep3_game4",
+      "raw_saved": 1,
+      "validated_saved": 1,
+      "status": "running"
+    }
+  ]
+}

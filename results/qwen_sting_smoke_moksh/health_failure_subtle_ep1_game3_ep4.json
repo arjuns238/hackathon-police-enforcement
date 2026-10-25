@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-10-25T07:36:52.820727+00:00",
+  "cell": "subtle_ep1_game3",
+  "status": "stopped_finished_but_episode4_fails_required_health",
+  "excluded_episodes": [
+    4
+  ],
+  "retained_healthy_episodes": [
+    1,
+    2,
+    3
+  ],
+  "reason": "Dave lost communication round1 after malformed nested arguments; two unrecovered empty-recipient errors. M1 does not apply.",
+  "health_rules_failed": [
+    1,
+    5
+  ],
+  "raw_modified": false,
+  "automatic_resume_allowed": false,
+  "user_authorization": "overnight_skip_authorization.json"
+}

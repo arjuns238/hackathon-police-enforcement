@@ -1,0 +1,112 @@
+{
+  "checked_utc": "2026-10-25T03:58:38.351666+00:00",
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "calls": 21,
+      "phases": {
+        "task": 16,
+        "communication": 5
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 2807,
+      "last_recorded_at": "2026-10-25T03:58:08.638635+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "calls": 19,
+      "phases": {
+        "task": 16,
+        "communication": 3
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 3203,
+      "last_recorded_at": "2026-10-25T03:57:03.866378+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "calls": 30,
+      "phases": {
+        "task": 16,
+        "communication": 14
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 3313,
+      "last_recorded_at": "2026-10-25T03:58:29.966662+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "passive_game3",
+      "calls": 22,
+      "phases": {
+        "task": 16,
+        "communication": 6
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 3012,
+      "last_recorded_at": "2026-10-25T03:58:00.190164+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "calls": 21,
+      "phases": {
+        "task": 16,
+        "communication": 5
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 3037,
+      "last_recorded_at": "2026-10-25T03:57:10.085834+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "calls": 20,
+      "phases": {
+        "task": 16,
+        "communication": 4
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 2695,
+      "last_recorded_at": "2026-10-25T03:55:48.391601+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "calls": 25,
+      "phases": {
+        "task": 16,
+        "communication": 9
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 2315,
+      "last_recorded_at": "2026-10-25T03:58:16.116143+00:00",
+      "raw_capture_started": false
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "calls": 26,
+      "phases": {
+        "task": 16,
+        "communication": 10
+      },
+      "nonaccepted_statuses": {},
+      "truncated": 0,
+      "max_completion_tokens": 2414,
+      "last_recorded_at": "2026-10-25T03:57:50.051284+00:00",
+      "raw_capture_started": false
+    }
+  ],
+  "saved_episodes": 0,
+  "conservative_budget_reserve_usd": 11.11,
+  "raw_capture_status": "Waiting for first saved episode before reload; current usage journals are fsynced per call"
+}

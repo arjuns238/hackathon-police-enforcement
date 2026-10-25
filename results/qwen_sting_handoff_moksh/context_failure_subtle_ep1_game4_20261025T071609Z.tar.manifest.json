@@ -1,0 +1,21 @@
+{
+  "files": {
+    "results/qwen_sting/subtle_ep1_game4/llm_usage.jsonl": {
+      "bytes": 46336,
+      "sha256": "4b714e5a688f90a0ab5b8797cc74a02d5372715aa5ae343490830c4b9363f65c"
+    },
+    "results/qwen_sting/subtle_ep1_game4/console.log": {
+      "bytes": 8872,
+      "sha256": "1854aeea67d0bee80fd300ae347d197a59719a371a19df0b960619c21ab35def"
+    },
+    "results/qwen_sting/subtle_ep1_game4/run_backend.json": {
+      "bytes": 419,
+      "sha256": "9af0d2dcec40e50ee3b8b266b6994ff7d9a5c7d66ea337d482e5a7efa9352af3"
+    },
+    "results/qwen_sting/subtle_ep1_game4/raw_model_calls.jsonl": {
+      "bytes": 3732814,
+      "sha256": "eb3b7a4957e4ddecb39dd717439835715f75c52167b107a8ace75d0532386798"
+    }
+  },
+  "archive_sha256": "73c9a4c85776150a25adcb1008d4ec33b9c286ae2aac97f13e98ea937a5d560d"
+}

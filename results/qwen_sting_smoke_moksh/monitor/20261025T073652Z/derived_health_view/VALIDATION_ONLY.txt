@@ -1,0 +1,1 @@
+Derived checkpoints for free health audit only. Never resume or treat these copies as raw data. Excludes subtle_ep1_game3 episode4 under skipped_games_moksh.json. Raw files unchanged.

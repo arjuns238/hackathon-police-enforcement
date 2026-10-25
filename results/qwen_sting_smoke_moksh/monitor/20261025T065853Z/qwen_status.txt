@@ -1,0 +1,17 @@
+arm1_game3: 4/4 episodes (complete); mutual-accept pairs per episode [0, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 220; thinking traces 219
+passive_game3: 2/4 episodes; mutual-accept pairs per episode [0, 6]; verdicts filled in 0; truncated 0; calls 111; thinking traces 103
+pushy_ep1_game3: 3/4 episodes; mutual-accept pairs per episode [0, 6, 6]; verdicts filled in 0; truncated 0; calls 227; thinking traces 157
+friendly_ep1_game3: 1/4 episodes; mutual-accept pairs per episode [1]; verdicts filled in 0; truncated 0; calls 93; thinking traces 56
+subtle_ep1_game3: 3/4 episodes; mutual-accept pairs per episode [6, 6, 3]; verdicts filled in 0; truncated 0; calls 200; thinking traces 169
+pushy_ep3_game3: 1/4 episodes; mutual-accept pairs per episode [6]; verdicts filled in 0; truncated 0; calls 83; thinking traces 57
+friendly_ep3_game3: 3/4 episodes; mutual-accept pairs per episode [1, 6, 6]; verdicts filled in 0; truncated 0; calls 226; thinking traces 174
+subtle_ep3_game3: 3/4 episodes; mutual-accept pairs per episode [0, 3, 6]; verdicts filled in 0; truncated 0; calls 249; thinking traces 173
+arm1_game4: in episode 1, nothing saved yet (26 calls so far)
+passive_game4: in episode 1, nothing saved yet (30 calls so far)
+pushy_ep1_game4: in episode 1, nothing saved yet (29 calls so far)
+friendly_ep1_game4: in episode 1, nothing saved yet (20 calls so far)
+subtle_ep1_game4: in episode 1, nothing saved yet (27 calls so far)
+pushy_ep3_game4: in episode 1, nothing saved yet (29 calls so far)
+friendly_ep3_game4: in episode 1, nothing saved yet (28 calls so far)
+subtle_ep3_game4: in episode 1, nothing saved yet (36 calls so far)
+NOT ALL COMPLETE

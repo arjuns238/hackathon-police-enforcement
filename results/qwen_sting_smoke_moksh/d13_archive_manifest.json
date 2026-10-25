@@ -1,0 +1,60 @@
+{
+  "archived_utc": "2026-10-25T04:49:42.969565+00:00",
+  "source_commit": "740c410",
+  "excluded": {
+    "passive_game3": {
+      "path": "results/qwen_sting_excluded/pre_D13/moksh/passive_game3",
+      "sha256": {
+        "llm_usage.jsonl": "5ec94541e2d64355f0580c68104df313193d3e1ac9e693ecd2ea09905b486578",
+        "messages.json": "91ceefe0eeaddeac3c05fa18ca5f192ed946cdba4daeb3b745040d530d33c876",
+        "console.log": "07ab33a773dc59e086e076e8a0582cc25dab23c6fb0f75fa6ea45d4bc69b946a",
+        "run.json": "e160c4e54f698d973b5ab6b11eee1433cd88aec19be7e1ed2bf62f32d8d2e7bd",
+        "raw_model_calls.jsonl": "328c45ec0d2cefdab51cf286b4c0750b014f562de8e922934aca12d9b68aa90a"
+      }
+    },
+    "friendly_ep1_game3": {
+      "path": "results/qwen_sting_excluded/pre_D13/moksh/friendly_ep1_game3",
+      "sha256": {
+        "llm_usage.jsonl": "a638430108e291a09fa6f6242a6bcde2f289007f25746b44738f2f8b58c78b56",
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "pushy_ep3_game3": {
+      "path": "results/qwen_sting_excluded/pre_D13/moksh/pushy_ep3_game3",
+      "sha256": {
+        "llm_usage.jsonl": "db961a303f6fc1346279e04ecd6a1f19a3f0495f687b65bd8b7d22ba03543716",
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "qwen_sting_wave_game3.txt": {
+      "path": "results/qwen_sting_excluded/pre_D13/moksh/qwen_sting_wave_game3.txt",
+      "sha256": "bbf8eabbf2b0c008716d21c6db9a9962dad3777af4d9487438797be82e447a6a"
+    },
+    "qwen_sting_capture_reload.txt": {
+      "path": "results/qwen_sting_excluded/pre_D13/moksh/qwen_sting_capture_reload.txt",
+      "sha256": "a664c9449a6c1c29ae96e0f627d29f464292e74b4c411eb32a7779ae170d55c8"
+    }
+  },
+  "retained": {
+    "arm1_game3": {
+      "run.json": "68b8ee795e27bcfd7da78f3f1ba6f08ce492f793f6aa3c711dc3cb9fab0c8cf8",
+      "messages.json": "aa96ffb2b6c20399e5e6d2e777f7cce2c5bedf5932c6555e40f3851469babff6"
+    },
+    "pushy_ep1_game3": {
+      "run.json": "04df1d18c46dd5ea8e2ea0469054fd97ff34a23a9db89686e384929c28976746",
+      "messages.json": "cea0c6ad4052e99ad54e25aad6df6ad2a11f6ba657d33bfe7c765f4a622ec575"
+    },
+    "subtle_ep1_game3": {
+      "run.json": "dce2e8f2f5b1ae150bca41a9de33f9bf15c02d70587e921fd7e84465a7f75636",
+      "messages.json": "75a97452f774c379055c88927a2ae6468412fbbfc3fa9e290d82e8c8c9c92435"
+    },
+    "friendly_ep3_game3": {
+      "run.json": "158790a69b8113dd93c09361a4e661c1c91921b9928f5e9e016ea25f99949a66",
+      "messages.json": "ab0058aee768ab30cd4efd2dc982459803622cdcb4156afe00fbb03603339939"
+    },
+    "subtle_ep3_game3": {
+      "run.json": "56f6fee11d813c8ec189298416c4fee600c8599bdf37f30a10b17f4e7cdba832",
+      "messages.json": "606f3eeb1be1cc14c3f5ff736bed6f5a07d87b034d107d0a9324cb7ed9bc8139"
+    }
+  }
+}

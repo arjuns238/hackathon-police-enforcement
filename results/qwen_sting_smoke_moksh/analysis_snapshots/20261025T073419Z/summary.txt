@@ -1,0 +1,11 @@
+35 episodes -> /Users/moksh/Desktop/hackathon-police-enforcement/results/analysis/qwen_sting_episodes.csv
+
+cell           games  eps  mutual pairs among targets by episode (sum over games, of 3 per game)   targets accepting Dave by episode   early approach   lost turns
+arm1               2    5  1/6 3/3 3/3 3/3                          2/6 3/3 3/3 3/3                       0   5/100
+passive            3    4  0/9 3/3 - -                              1/9 3/3 - -                           0   4/80
+pushy_ep1          1    4  0/3 3/3 3/3 3/3                          0/3 3/3 3/3 3/3                       0   0/80
+friendly_ep1       2    3  0/6 3/3 - -                              1/6 3/3 - -                           0   7/60
+subtle_ep1         2    5  3/6 3/3 3/3 3/3                          3/6 3/3 3/3 3/3                       0   5/100
+pushy_ep3          3    3  5/9 - - -                                6/9 - - -                             1   1/60
+friendly_ep3       2    5  2/6 3/3 3/3 3/3                          4/6 3/3 3/3 3/3                       0   4/100
+subtle_ep3         3    6  0/9 3/3 3/3 3/3                          1/9 0/3 3/3 3/3                       1   7/120

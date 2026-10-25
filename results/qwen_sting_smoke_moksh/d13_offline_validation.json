@@ -1,0 +1,27 @@
+{
+  "source_commit": "740c410",
+  "paid_calls": 0,
+  "three_reports_then_verdict": {
+    "passed": true,
+    "tool_calls": [
+      "report",
+      "report",
+      "report",
+      "submit_verdict"
+    ]
+  },
+  "three_reports_then_message": {
+    "passed": true,
+    "tool_calls": [
+      "report",
+      "report",
+      "report",
+      "send_message"
+    ]
+  },
+  "report_only_loop_is_bounded": {
+    "passed": true,
+    "calls": 8
+  },
+  "registered_free_report_turns": 5
+}

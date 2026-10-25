@@ -1,0 +1,20 @@
+arm1_game3: 2 episodes, 164 calls | lost turns {'over 200 characters': 1} | unwrapped 6 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep3_game3: 2 episodes, 149 calls | lost turns 0 | unwrapped 4 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+passive_game3: 1 episodes, 56 calls | lost turns 0 | unwrapped 0 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep1_game3: 2 episodes, 166 calls | lost turns 0 | unwrapped 6 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep1_game3: 2 episodes, 161 calls | lost turns 0 | unwrapped 5 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game3: 2 episodes, 172 calls | lost turns 0 | unwrapped 6 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+
+failed calls by reason (all games):
+    96  send_message: exceeds 200 char limit
+     1  resolve_records: ProtocolError: after save_final_answer succeeds, only get_log may be c
+
+lost turns by reason: {'over 200 characters': 1}
+
+PASS  1 no turn lost except to over-long messages
+PASS  2 turns lost to over-long messages, reported only (1/220 = 0%)
+PASS  3 no verdict filled in
+PASS  4 no truncation, dropped <= 5% (0/868)
+PASS  5 wrapped calls unwrapped (27), none failed for a missing argument
+PASS  6 approach gate (GATE (active characters): PASS {'pushy_ep1_game3': True, 'subtle_ep1_game3': True})
+HEALTH: PASS

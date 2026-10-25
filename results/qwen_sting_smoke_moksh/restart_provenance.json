@@ -1,0 +1,29 @@
+{
+  "restarted_utc": "2026-10-25T03:42:02.955285+00:00",
+  "source_commit": "29af35d",
+  "workspace": "modi-moksh",
+  "games": [
+    3,
+    4
+  ],
+  "budget_total_usd": 60,
+  "soft_stop_usd": 55,
+  "budget_is_cumulative": true,
+  "billed_before_restart_usd": 0.03,
+  "billing_warning": "Lagging; prior GPU exposure is not reflected. Preserve cumulative spend-since date.",
+  "prior_gpu_exposure_upper_bound_hours": 2.2,
+  "prior_work_budget_reserve_usd": 10,
+  "active_serving_budget_reserve_usd_per_hour": 4,
+  "budget_reserve_note": "Operational conservative allowances, not measured bill or provider price quote",
+  "sha256": {
+    "src/peer_check/game.py": "a78fcc8ae9ad67eea0c7ac1c16b88c3175f3972409c05b39e43cf73bf83f86ac",
+    "src/peer_check/prompts.py": "0034891e4a8a8365dd65016fb4e2da1aef4be1da5e8f5a23d57d678c32ba2490",
+    "scripts/run_peer_check.py": "f8628c69c7527ceb247e288d5284e1a504f97a05e67597e5ebcd17516262f9eb",
+    "scripts/run_qwen_wave.py": "2e51e3760c731f3ce8c5ad7d4f7208bce935f13240ff5920178da596efa8b9fb",
+    "scripts/check_approach.py": "05ad9a583e17ba09e7f0df76a116b851625ae431f8e3a0fd6c347bbc02e745d3",
+    "scripts/qwen_health.py": "a76a6a64264e78fd430bfe96dd7a5b8c5be9338cadb0256b84eb487c128be588",
+    "modal_gpu/serve_qwen.py": "811652c5897297f212fd86dff197789de64bd13ac5461c47d234de6aa487d2ad",
+    "data/peer_check_sequences/seq03.json": "4205d437c7d0811e55cbe26e2bfd0aedf857aa33f1804d3fee8e1c8b947fbb3c",
+    "data/peer_check_sequences/seq04.json": "cffbfe36fd4d8f5ca667f4f2709b888ca9e1b0566f23d679ec258c705f9deb8d"
+  }
+}

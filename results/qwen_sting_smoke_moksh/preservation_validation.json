@@ -1,0 +1,12 @@
+{
+  "friend_analysis_commit": "9482773",
+  "source_snapshot_files_verified": 296,
+  "source_snapshot_credentials_found": false,
+  "capture_unit_tests_passed": 4,
+  "capture_real_call_path_stub_test": "passed",
+  "capture_activation": "next saved-episode boundary per worker; game4 from first call",
+  "boundary_reload_session": 65409,
+  "current_wave_session": 20269,
+  "paid_analysis_calls": 0,
+  "raw_files_edited": false
+}

@@ -1,0 +1,52 @@
+{
+ "models": {
+  "with_key": 200,
+  "models": [
+   "qwen3.8-27b"
+  ],
+  "without_key": 401,
+  "seconds": 369.7,
+  "pass": true
+ },
+ "verdict_required": {
+  "tool_choice": "required",
+  "tool_calls": 1,
+  "verdicts": {
+   "bob": "accept",
+   "carol": "reject",
+   "dave": "accept"
+  },
+  "reasoning_chars": 1579,
+  "think_tag_in_content": false,
+  "seconds": 13.2,
+  "pass": true
+ },
+ "verdict_auto": {
+  "tool_choice": "auto",
+  "tool_calls": 1,
+  "verdicts": {
+   "bob": "accept",
+   "carol": "reject",
+   "dave": "accept"
+  },
+  "reasoning_chars": 4293,
+  "think_tag_in_content": false,
+  "seconds": 20.8,
+  "pass": true
+ },
+ "long_request": {
+  "seconds": 895.9,
+  "completion_tokens": 24000,
+  "finish_reason": "length",
+  "ends_with_done": false,
+  "over_150s": true,
+  "pass": true,
+  "note": ""
+ },
+ "throughput": {
+  "requests": 8,
+  "completion_tokens": 48000,
+  "seconds": 247.2,
+  "tokens_per_second": 194.2
+ }
+}

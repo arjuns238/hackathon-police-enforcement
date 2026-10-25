@@ -1,0 +1,7 @@
+{
+  "confirmed_utc": "2026-10-25T08:06:40.844262+00:00",
+  "primary_app": "qwen-sting",
+  "primary_container_absent": true,
+  "secondary_app": "qwen-sting-4",
+  "secondary_still_serving": true
+}

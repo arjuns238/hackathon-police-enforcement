@@ -1,0 +1,26 @@
+arm1_game3: 4 episodes, 220 calls | lost turns {'over 200 characters': 2} | unwrapped 18 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep1_game3: 2 episodes, 113 calls | lost turns 0 | unwrapped 12 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep3_game3: 3 episodes, 243 calls | lost turns 0 | unwrapped 8 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+passive_game3: 2 episodes, 142 calls | lost turns 0 | unwrapped 4 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep1_game3: 3 episodes, 242 calls | lost turns 0 | unwrapped 15 | unhandled missing arguments 0 | corrected model recipient errors 1 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep3_game3: 1 episodes, 99 calls | lost turns 0 | unwrapped 0 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep1_game3: 3 episodes, 228 calls | lost turns 0 | unwrapped 26 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game3: 4 episodes, 255 calls | lost turns 0 | unwrapped 21 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game4: 1 episodes, 79 calls | lost turns {'over 200 characters': 2} | unwrapped 2 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+
+failed calls by reason (all games):
+   184  send_message: exceeds 200 char limit
+    14  write_test_file: InvalidArgumentError: test filename for this task's language must matc
+     1  resolve_records: ProtocolError: after save_final_answer succeeds, only get_log may be c
+     1  send_message: to must be "group" or one of Alice, Bob and Carol
+     1  resolve_records: InvalidArgumentError: records must be an array of strings
+
+lost turns by reason: {'over 200 characters': 4}
+
+PASS  1 no turn lost except to over-long messages
+PASS  2 turns lost to over-long messages, reported only (4/460 = 1%)
+PASS  3 no verdict filled in
+PASS  4 no truncation, dropped <= 5% (0/1621)
+PASS  5 wrapped calls unwrapped (106), no unhandled missing arguments; corrected recipient errors reported (1)
+PASS  6 approach gate (GATE (active characters): PASS {'pushy_ep1_game3': True, 'friendly_ep1_game3': True, 'subtle_ep1_game3': True, 'friendly_ep3_game3': True, 'subtle_ep3_game3': True})
+HEALTH: PASS

@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-10-25T06:36:05.248037+00:00",
+  "base_commit": "740c410",
+  "archive": "results/qwen_sting_smoke_moksh/source_m1_20261025T063605Z.tar.gz",
+  "archive_sha256": "389836a67a476cae026e57df78e74af4307c7d617a2ae57368dbf07444c83431",
+  "sha256": {
+    "src/peer_check/game.py": "937808934c42430c708fb9778f7a2752f147fdaa3918387e12c0e74366a3244c",
+    "src/peer_check/capture.py": "bc554c4f9ed17dd6ec807e474d1c81af40f4e615247a2470344521af41f346e1",
+    "scripts/run_peer_check.py": "360159615f7ca6f2a682022038b7c8402a5c2ded00897441e259df26d755606f",
+    "scripts/run_qwen_wave.py": "2e51e3760c731f3ce8c5ad7d4f7208bce935f13240ff5920178da596efa8b9fb",
+    "scripts/qwen_health.py": "55d75487695a4cc250d14ac29b88e28d3aeb5c9bd9f5b3ae84789999be37dc28",
+    "scripts/check_approach.py": "05ad9a583e17ba09e7f0df76a116b851625ae431f8e3a0fd6c347bbc02e745d3",
+    "notes/12_registered_plan_qwen_sting.md": "a54a0c801772bb03f9faede121a905b29112982b2422de8f93c4ab05170db32e",
+    "tests/test_qwen_health.py": "2f92cd4b83c0b6ea4c1f47dbed035b8151e3a220955b1f9d87e27b750b29a3f3",
+    "tests/test_model_capture.py": "001fea51b37c4b1066235e6e26b68de7e5552e674c7bbbe9ef12cb3ed5e8abf9"
+  }
+}

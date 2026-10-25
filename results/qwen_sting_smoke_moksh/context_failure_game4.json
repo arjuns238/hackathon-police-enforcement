@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-10-25T07:05:37.037125+00:00",
+  "cell": "arm1_game4",
+  "status": "stopped_awaiting_user_recovery_preference",
+  "saved_episodes": 0,
+  "phase": "communication",
+  "actor": "dave",
+  "round": 1,
+  "failed_call_id": "16b18012df1b44d8a1cc87543be2c533",
+  "error_type": "ContextWindowExceededError",
+  "cause": "Dave requested read_source 80 times in one task-phase reply; repeated source/tool history and full get_log response exceeded input space left by the fixed output reserve.",
+  "tokenizer_count": 80821,
+  "registered_max_output_tokens": 64000,
+  "registered_context_limit": 131072,
+  "tokenization_diagnostic": "context_failure_tokenization.json",
+  "raw_preserved": true,
+  "raw_modified": false,
+  "other_setups_continue": true,
+  "automatic_resume_allowed": false,
+  "candidate_only": "32,000 output tokens would leave 18,251 tokens beyond this diagnostic input, but no setting or live code has been changed."
+}
