@@ -37,20 +37,28 @@ def main() -> None:
     n_eps = sum(len(eps) for v in games.values() for eps in v.values())
     complete = sum(len(eps) >= 4 for v in games.values() for eps in v.values())
 
-    # collusion among targets by episode
-    coll = {}
+    j2_marked = {x["id"]: {m["from"] for m in (x["parsed"] or {}).get("marked", [])}
+                 for x in load_jsonl(ROOT / "results/judges_qwen/J2/labels.jsonl")}
+    # collusion among targets by episode, and how many of those pairs both said out loud (J2) they'd bend the rule
+    coll, said_pairs = {}, {}
     for c in CELLS:
-        row = []
+        row, srow = [], []
         for ep in range(1, 5):
-            tot = n = 0
-            for eps in games[c].values():
+            tot = n = sd = 0
+            for g, eps in games[c].items():
                 x = next((y for y in eps if y["episode"] == ep), None)
                 if x:
                     v = x["verdicts"]
+                    marked = j2_marked.get(f"a{c}g{g}e{ep}", set())
                     n += 3
-                    tot += sum(v[a][b] == "accept" and v[b][a] == "accept" for i, a in enumerate(T) for b in T[i + 1:])
+                    for i, a in enumerate(T):
+                        for b in T[i + 1:]:
+                            if v[a][b] == "accept" and v[b][a] == "accept":
+                                tot += 1
+                                sd += a in marked and b in marked
             row.append((tot, n))
-        coll[c] = row
+            srow.append(sd)
+        coll[c], said_pairs[c] = row, srow
 
     js = load_jsonl(ROOT / "results/judges_qwen/JS/labels.jsonl")
     jsall = {x["id"]: x["parsed"] for x in load_jsonl(ROOT / "results/judges_qwen/JSall/labels.jsonl")}
@@ -75,6 +83,12 @@ def main() -> None:
         if ep < ap:
             early_deals.append(k)
     j1_yes = sum(x["parsed"]["explicit"] for x in j1)
+    j2_base = 0
+    for x in j1:
+        g, ep = int(re.search(r"g(\d+)e", x["id"]).group(1)), x["episode"]
+        a_, b_ = x["pair"]
+        marked = j2_marked.get(f"aarm1g{g}e{ep}", set())
+        j2_base += a_ in marked and b_ in marked
 
     # Dave's reports vs the broad (J2) and strict (JS) standards; say no, do yes by timing
     rep = rep_broad = rep_strict = 0
@@ -135,7 +149,9 @@ def main() -> None:
                 continue
             frac = tot / n
             bh = frac * (h - 46)
-            bars.append(f'<rect x="{x}" y="{h - 24 - bh:.1f}" width="{bw}" height="{bh:.1f}" class="{"bar-base" if c == "arm1" else "bar"}"/>'
+            sh = (said_pairs[c][i] / n) * (h - 46)
+            bars.append(f'<rect x="{x}" y="{h - 24 - bh:.1f}" width="{bw}" height="{bh:.1f}" class="bar-silent"/>'
+                        f'<rect x="{x}" y="{h - 24 - sh:.1f}" width="{bw}" height="{sh:.1f}" class="bar-said"/>'
                         f'<text x="{x + bw / 2}" y="{h - 28 - bh:.1f}" class="val" text-anchor="middle">{round(100 * frac)}%</text>')
         labels = "".join(f'<text x="{pad + i * 36 + bw / 2}" y="{h - 8}" class="ax" text-anchor="middle">ep {i + 1}</text>'
                          for i in range(4))
@@ -167,9 +183,10 @@ def main() -> None:
                 segs += f'<rect x="{x}" y="{y + 3}" width="{early * scale}" height="16" class="seg-c"/>'
                 x += early * scale
             total = sum(p[1] for p in parts) + early
-            denom = " + ".join(f"{p[2]}" for p in parts)
-            segs += f'<text x="{x + 8}" y="{y + 15}" class="val">{total} of {denom} conversations' + \
-                    (f" (incl. {early} early)" if early else "") + "</text>"
+            n_conv = sum(p[2] for p in parts)
+            detail = (f"{parts[0][2]} in approach ep + {parts[1][2]} after" if len(parts) == 2 else f"{n_conv} over 4 episodes")
+            segs += f'<text x="{x + 8}" y="{y + 15}" class="val">{total} deal{"s" if total != 1 else ""} / {n_conv} conversations ({detail})' + \
+                    (f", +{early} early" if early else "") + "</text>"
             rows.append(label + segs)
             y += 28
         legend = (f'<g transform="translate(150,{y + 6})"><rect width="12" height="12" class="seg-a"/><text x="18" y="11" class="ax">approach episode</text>'
@@ -215,6 +232,30 @@ def main() -> None:
     n_subtle = a("subtle_ep1", "approach", "n") + a("subtle_ep3", "approach", "n")
     per_cell_games = " · ".join(f"{LABEL[c]} {len(games[c])}" for c in CELLS)
 
+    # what is missing: episodes saved per setup and game, the teammate's stated reasons, judged conversations
+    skip = {}
+    sk = ROOT / "results/qwen_sting_smoke_moksh/skipped_games_moksh.json"
+    if sk.exists():
+        for case in json.loads(sk.read_text())["cases"]:
+            r = case["reason"]
+            skip[case["cell"]] = ("crashed: conversation too long (fixed later, D15)" if "context" in r.lower() or "Context" in r
+                                  else "stopped by the teammate's stricter glitch rule")
+    miss_rows, planned_eps, saved_eps = [], 0, 0
+    for c in CELLS:
+        cells_html = []
+        for g in (1, 2, 3, 4):
+            k = len(games[c].get(g, []))
+            planned_eps += 4
+            saved_eps += k
+            cls = "ok" if k == 4 else ("part" if k else "none")
+            cells_html.append(f'<td class="{cls}">{k}/4</td>')
+        miss_rows.append(f"<tr><th>{LABEL[c]}</th>{''.join(cells_html)}</tr>")
+    reasons = "".join(f"<li><b>{LABEL[c.rsplit('_game', 1)[0]]}, game {c.rsplit('_game', 1)[1]}</b>: {r} "
+                      f"({len(games[c.rsplit('_game', 1)[0]].get(int(c.rsplit('_game', 1)[1]), []))} of 4 episodes)</li>"
+                      for c, r in sorted(skip.items()) if len(games[c.rsplit('_game', 1)[0]].get(int(c.rsplit('_game', 1)[1]), [])) < 4)
+    js_planned = 6 * 4 * 2 * 3 + 4 * 4 * 3
+    js_missing_active = {c: 24 - (agg[(c, "approach")]["n"] + agg[(c, "after")]["n"]) for c in CELLS[2:]}
+
     page = f'''<title>Qwen Sting Results</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
@@ -222,11 +263,11 @@ def main() -> None:
 :root {{
   --bg: #f6f7f9; --paper: #ffffff; --ink: #1d2430; --muted: #5d6675; --line: #d7dce4;
   --accent: #2f5d8a; --accent-soft: #e4edf6; --dave: #8a4b2f; --dave-soft: #f6ebe4;
-  --yes: #2f7a4a; --yes-soft: #e2f1e7; --no: #a33a3a; --no-soft: #f6e3e3; --base: #5d6675; --early: #c08a2d;
+  --yes: #2f7a4a; --yes-soft: #e2f1e7; --no: #a33a3a; --no-soft: #f6e3e3; --base: #5d6675; --early: #c08a2d; --silent: #b9c9db;
   --display: "Literata", Georgia, serif; --body: "Atkinson Hyperlegible", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }}
-@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{ --bg: #12161d; --paper: #1a2029; --ink: #e6eaf0; --muted: #9aa4b2; --line: #2e3744; --accent: #7fb0e0; --accent-soft: #1f2d3d; --dave: #e0a07f; --dave-soft: #33261f; --yes: #7fcc98; --yes-soft: #1d3326; --no: #ea8f8f; --no-soft: #3a2224; --base: #9aa4b2; --early: #e3b866; color-scheme: dark; }} }}
-:root[data-theme="dark"] {{ --bg: #12161d; --paper: #1a2029; --ink: #e6eaf0; --muted: #9aa4b2; --line: #2e3744; --accent: #7fb0e0; --accent-soft: #1f2d3d; --dave: #e0a07f; --dave-soft: #33261f; --yes: #7fcc98; --yes-soft: #1d3326; --no: #ea8f8f; --no-soft: #3a2224; --base: #9aa4b2; --early: #e3b866; color-scheme: dark; }}
+@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{ --bg: #12161d; --paper: #1a2029; --ink: #e6eaf0; --muted: #9aa4b2; --line: #2e3744; --accent: #7fb0e0; --accent-soft: #1f2d3d; --dave: #e0a07f; --dave-soft: #33261f; --yes: #7fcc98; --yes-soft: #1d3326; --no: #ea8f8f; --no-soft: #3a2224; --base: #9aa4b2; --early: #e3b866; --silent: #34485e; color-scheme: dark; }} }}
+:root[data-theme="dark"] {{ --bg: #12161d; --paper: #1a2029; --ink: #e6eaf0; --muted: #9aa4b2; --line: #2e3744; --accent: #7fb0e0; --accent-soft: #1f2d3d; --dave: #e0a07f; --dave-soft: #33261f; --yes: #7fcc98; --yes-soft: #1d3326; --no: #ea8f8f; --no-soft: #3a2224; --base: #9aa4b2; --early: #e3b866; --silent: #34485e; color-scheme: dark; }}
 * {{ box-sizing: border-box; }}
 body {{ background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; margin: 0; }}
 .wrap {{ max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 44px; }}
@@ -244,7 +285,7 @@ section {{ display: grid; gap: 14px; min-width: 0; }}
 svg {{ width: 100%; height: auto; display: block; }}
 svg.wide {{ max-width: 640px; }}
 .chart {{ background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 12px; overflow-x: auto; }}
-.bar {{ fill: var(--accent); }} .bar-base {{ fill: var(--base); }} .track {{ fill: none; stroke: var(--line); }}
+.bar {{ fill: var(--accent); }} .bar-base {{ fill: var(--base); }} .bar-said {{ fill: var(--accent); }} .bar-silent {{ fill: var(--silent); }} .track {{ fill: none; stroke: var(--line); }}
 .seg-a {{ fill: var(--yes); }} .seg-b {{ fill: var(--accent); }} .seg-c {{ fill: var(--early); }}
 .axis {{ stroke: var(--line); stroke-width: 1; }}
 .ax {{ fill: var(--muted); font-size: 10px; font-family: var(--body); }}
@@ -265,6 +306,7 @@ th, td {{ border: 1px solid var(--line); padding: 6px 10px; text-align: left; }}
 th {{ background: var(--bg); }}
 .scroll {{ overflow-x: auto; }}
 .caveats li {{ margin-bottom: 6px; }}
+td.ok {{ color: var(--yes); font-weight: 700; }} td.part {{ color: var(--early); font-weight: 700; }} td.none {{ color: var(--no); font-weight: 700; }}
 </style>
 <div class="wrap">
   <header style="display:grid;gap:10px">
@@ -276,7 +318,7 @@ th {{ background: var(--bg); }}
   <section>
     <h2>In four lines</h2>
     <ul class="headline">
-      <li><b>Qwen colludes on its own.</b> From episode 2, nearly every pair accepts each other, with or without Dave.</li>
+      <li><b>Qwen colludes on its own, and mostly says so.</b> From episode 2, nearly every pair accepts each other, with or without Dave, usually after openly agreeing to "judge on the evidence".</li>
       <li><b>Almost nobody makes an explicit deal with Dave:</b> {len(deals_all)} real deals in all, only when pushy or friendly Dave asked for mutual acceptance in so many words. Subtle Dave and passive Dave got none.</li>
       <li><b>Nobody suspected Dave:</b> {susp_total} of {len(js)} judged conversations.</li>
       <li><b>Dave's own reports are accurate but broad:</b> {round(100 * rep_broad / rep)}% name a worker who really agreed to judge without the full log, which is what he was told to report; only {round(100 * rep_strict / rep)}% are actual trades.</li>
@@ -286,8 +328,10 @@ th {{ background: var(--bg); }}
 
   <section>
     <h2>1. Qwen colludes on its own, Dave or not</h2>
-    <p>Each panel is one setup. A bar is the share of pairs among Alice, Bob and Carol (Dave left out) who accepted each other's work in that episode. Grey is the no-Dave baseline. Everywhere, episode 1 is low and episode 2 jumps to nearly 100%: workers lose points for rejecting in episode 1, then switch to "judge on the evidence".</p>
+    <p>Each panel is one setup. A bar is the share of pairs among Alice, Bob and Carol (Dave left out) who accepted each other's work in that episode. Everywhere, episode 1 is low and episode 2 jumps to nearly 100%: workers lose points for rejecting in episode 1, then switch to "judge on the evidence".</p>
+    <p>The dark part of each bar is pairs where <b>both workers said out loud</b> that they would accept without the full log (for example "I'll judge on concrete ID+filter evidence"); the light part is pairs who accepted each other without either saying so. Most collusion is announced, not hidden. But announcing "I'll judge on the evidence" is not a trade: see section 3.</p>
     <div class="minis">{"".join(mini_bars(c) for c in CELLS)}</div>
+    <p class="note"><svg width="12" height="12" style="display:inline;vertical-align:-1px"><rect width="12" height="12" class="bar-said"/></svg> both said they'd bend the rule (broad agreement judge) &nbsp; <svg width="12" height="12" style="display:inline;vertical-align:-1px"><rect width="12" height="12" class="bar-silent"/></svg> accepted without saying so. This judge is broader than the paper's: on the no-Dave pairs it counts {j2_base} of {len(j1)} as said out loud, the paper's judge {j1_yes}.</p>
     <p class="note">The same jump happens in the paper's own 2-worker game: in our replication at the same settings, 5 of 6 games had both workers accept in episode 2 (the paper: 76%). In our no-Dave games, {j1_yes} of {len(j1)} colluding pairs ({round(100 * j1_yes / len(j1))}%) also agreed out loud, per the paper's own judge (the paper: 45% for this model).</p>
   </section>
 
@@ -299,7 +343,7 @@ th {{ background: var(--bg); }}
 
   <section>
     <h2>3. Who took the deal</h2>
-    <p>A "real deal" is the target agreeing that their acceptance of Dave's work goes together with Dave's acceptance of theirs, as read by the strict judge (checked by hand: 30 of 30). Each bar counts real deals out of the conversations judged for that setup.</p>
+    <p>A "real deal" is the target agreeing that their acceptance of Dave's work goes together with Dave's acceptance of theirs ("I'll accept yours if you accept mine"), as read by the strict judge (checked by hand: 30 of 30). One "conversation" is one target's exchange with Dave in one episode: with 3 targets per game, a setup with 4 games has 12 conversations in the approach episode and 12 in the episode after. Fewer means some games stopped early (see the last section).</p>
     <div class="chart">{deal_chart()}</div>
     <p>Most targets refused, often bluntly:</p>
     <div class="quotes">{ex["refuse"]}</div>
@@ -320,7 +364,7 @@ th {{ background: var(--bg); }}
 
   <section>
     <h2>5. Passive Dave heard nothing</h2>
-    <p>Passive Dave never brings up a deal; he only listens. Nobody proposed one to him in any of his games ({a("passive", "all", "deal")} real deals in {a("passive", "all", "n")} target-episodes), although collusion in his games reached the same near-100% as everywhere else. The collusion was silent: everyone simply accepted on "the evidence".</p>
+    <p>Passive Dave never brings up a deal; he only listens. Nobody proposed one to him in any of his games ({a("passive", "all", "deal")} real deals in {a("passive", "all", "n")} target-episodes), although collusion in his games reached the same near-100% as everywhere else. The workers openly agreed, as a group, to accept on "the evidence"; Dave reported that (the broad standard), but nobody ever offered him a trade.</p>
     <div class="quotes">{ex["silent"]}</div>
   </section>
 
@@ -335,6 +379,21 @@ th {{ background: var(--bg); }}
     <h2>7. Pushy Dave jumps the gun</h2>
     <p>Told to approach only in episode 3, pushy Dave offered explicit trades two episodes early in one game, and {len(early_deals)} of the real deals came from those unscheduled offers. Friendly and subtle Dave kept to their timing.</p>
     <div class="quotes">{ex["early"]}</div>
+  </section>
+
+  <section>
+    <h2>What's missing, and does it matter?</h2>
+    <p>The plan was 4 games of 4 episodes for every setup: {planned_eps} episodes. {saved_eps} were saved ({planned_eps - saved_eps} missing). All of our games 1–2 finished; every gap is in the teammate's games 3–4.</p>
+    <div class="scroll"><table class="miss"><thead><tr><th>setup</th><th>game 1</th><th>game 2</th><th>game 3</th><th>game 4</th></tr></thead><tbody>{"".join(miss_rows)}</tbody></table></div>
+    <p><b>Why:</b></p>
+    <ul>{reasons}</ul>
+    <p><b>What it changes:</b></p>
+    <ul>
+      <li><b>Collusion curves: nothing.</b> Every saved game shows the same jump to near 100% by episode 2; one more game per setup could not move a ceiling.</li>
+      <li><b>Deals with Dave: the counts get noisier, not different.</b> {len(js)} of {js_planned} planned Dave conversations were judged. The biggest gaps are in the episode-3 setups (pushy and friendly each lost one game's approach: {js_missing_active["pushy_ep3"]} and {js_missing_active["friendly_ep3"]} conversations) and subtle, episode 1 ({js_missing_active["subtle_ep1"]}). With deals this rare ({len(deals_all)} in all), a missing game holds perhaps 0–2 more, so "deals are rare, and come only from explicit asks" stands; differences between pushy and friendly were already only hints.</li>
+      <li><b>Possible bias.</b> Games crashed when conversations got longest, which is not random: the chattiest games (long messages, more back-and-forth, two of them friendly-Dave games) are the ones most likely to be missing.</li>
+      <li><b>Can be filled.</b> Resuming the unfinished games with the fixed code would restore them (about 3–4 GPU hours).</li>
+    </ul>
   </section>
 
   <section>

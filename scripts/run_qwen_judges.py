@@ -137,7 +137,7 @@ def main() -> None:
             units = js_units(load(active, args.games), all_episodes=True)
         elif j == "J2":
             units = RJ.j2_units([{"arm": G["cell"], "game": G["game"], "run": G["run"]}
-                                 for G in load(CHARACTER_CELLS, args.games)])
+                                 for G in load([*CHARACTER_CELLS, "arm1"], args.games)])  # baseline too (D16)
         else:
             units = RJ.j1_units([{"arm": 1, "game": G["game"], "run": G["run"]} for G in load(["arm1"], args.games)])
         if args.limit:
