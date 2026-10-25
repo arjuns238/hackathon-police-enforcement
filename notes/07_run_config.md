@@ -57,7 +57,7 @@ record any change in `notes/04_registered_plan_review.md` (Deviations) before ru
 - **Workers and Dave: `openai/qwen3.8-27b`** = Qwen/Qwen3.8-27B (BF16, revision pinned in `modal_gpu/serve_qwen.py`),
   served by vLLM 0.31.0 on one Modal A100 80 GB (`~/.local/bin/modal deploy modal_gpu/serve_qwen.py`). Judges stay
   Claude Sonnet 5 (effort low) on the Anthropic budget.
-- **Money:** asri's $50 of Modal credits; dashboard workspace budget $50; our soft stop **$45**, checked by the runner
+- **Money:** asri's $50 of Modal credits; dashboard workspace budget raised to $60 and our soft stop to **$60** (asri, 2026-10-24, 23:25; `MODAL_SOFT_STOP` in .env), checked by the runner
   before every episode (`python3 scripts/modal_spend.py`). The Anthropic $145 hard stop still applies to judges.
 - **Settings:** effort **`medium`** (asri, 2026-10-24; the paper used `xhigh`, the template default; `high` is
   refused by the template; notes/12 deviation D1). Tool choice `required` (the paper's), falling back to `auto` only if the
