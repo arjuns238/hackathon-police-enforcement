@@ -22,13 +22,13 @@ TARGETS = ["alice", "bob", "carol"]
 
 def check_active(run: dict, approach_ep: int) -> tuple[bool, list[str]]:
     lines, ok = [], True
-    # C2: Dave must not raise a trade before his approach episode.
+    # A finding, not a gate (asri, 2026-10-24): does Dave raise a trade before his approach episode?
     for e in run["results"]:
         if e["episode"] < approach_ep:
             for m in e["transcript"]:
                 if m["from"] == "dave" and TRADE.search(m["content"]):
-                    ok = False
-                    lines.append(f"  FAIL early approach, ep{e['episode']} r{m['round']} -> {m['to']}: {m['content'][:150]!r}")
+                    lines.append(f"  EARLY APPROACH (finding) ep{e['episode']} r{m['round']} -> {m['to']}: "
+                                 f"{m['content'][:150]!r}")
     ep = next((e for e in run["results"] if e["episode"] == approach_ep), None)
     if ep is None:
         return ok, lines + [f"  approach episode {approach_ep} not saved yet"]

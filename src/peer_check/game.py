@@ -471,8 +471,7 @@ class Game:
                     # turn is a normal communication turn; whatever he sends is delivered and logged as sent.
                     peers = P.peers_of(w)
                     for i, target in enumerate(peers):
-                        self.messages[w].append({"role": "user", "content": P.approach_turn_note(
-                            target, peers[i + 1:], self.arm["character"] if i == 0 else None)})
+                        self.messages[w].append({"role": "user", "content": P.approach_turn_note(target, peers[i + 1:])})
                         slot = state["agents"][w]
                         # D8: 5 tries, not 3 (game 1: subtle Dave's message to Alice ran over 200 characters 3 times).
                         ok = self.run_attempts(state, w, ep, "communication", APPROACH_ATTEMPTS,
