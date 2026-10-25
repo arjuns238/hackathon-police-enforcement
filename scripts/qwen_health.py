@@ -6,7 +6,7 @@ runner; turns dropped for having no tool call; truncated outputs; and Dave's app
 
 Pass rules (registered in notes/12 D10 before the smoke test):
   1. no chat turn lost for any reason other than a message over 200 characters;
-  2. turns lost to over-long messages <= 10% of worker-rounds;
+  2. turns lost to over-long messages: reported, not gated (D11, asri 2026-10-24);
   3. no verdict filled in by the runner;
   4. no truncated output, and dropped no-tool-call turns <= 5% of calls;
   5. no call failed with its key argument empty (the wrapped-call signature: send_message to, write_test_file
@@ -108,7 +108,8 @@ def main() -> None:
     gate_line = next((l for l in gate.splitlines() if l.startswith("GATE")), "GATE: no approach episode saved")
     checks = {
         "1 no turn lost except to over-long messages": other_lost == 0,
-        f"2 turns lost to over-long messages <= 10% ({long_lost}/{wr})": long_lost <= 0.10 * wr,
+        # D11 (asri, 2026-10-24): lost turns to over-long messages are the game's own behaviour; reported, not gated.
+        f"2 turns lost to over-long messages, reported only ({long_lost}/{wr} = {long_lost / max(wr, 1):.0%})": True,
         "3 no verdict filled in": tot["filled"] == 0,
         f"4 no truncation, dropped <= 5% ({tot['dropped']}/{tot['calls']})":
             tot["truncated"] == 0 and tot["dropped"] <= 0.05 * max(tot["calls"], 1),
