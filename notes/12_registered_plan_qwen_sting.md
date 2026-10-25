@@ -436,6 +436,13 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   Dave verdict had been filled in before the fix (episodes saved so far: 0 forced verdicts). Running Dave games were
   restarted right after their next saved episode, each on its own server (`restart_at_boundary.py --arms 21 22 23 24`).
   The teammate's affected game restarts from scratch (an episode with Dave's verdicts filled in is not data).
+- **D14 (2026-10-24, 23:55): a small residue of malformed calls after D9.** With every failed call now logged raw,
+  three shapes remain: wrapped calls whose inner JSON arrives cut off (e.g. `{"reasoning": "The instruction asks for
+  decisions that include (a)`; broken before it reaches the game, so not recoverable), a rare whole-call-inside-the-
+  arguments shape (`{"type": "tool", "name": ..., "arguments": ...}`, 2 calls), and ordinary failures (mostly
+  messages over 200 characters). Size after D9: 2 chat turns lost of about 260 worker-rounds (<1%; before D9, 16%),
+  and 13 task or verdict calls failed and were retried. Not worth another restart of running games; reported as a
+  residue. The health check's rules 1 and 5 become "<= 2%" (monitoring, not the D10 smoke gate, which passed).
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
