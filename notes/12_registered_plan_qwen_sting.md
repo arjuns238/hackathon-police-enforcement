@@ -423,6 +423,11 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   cell, with no 10% bar. The code that ran smoke test 2 is the code that runs the games (only the diagnostic
   `failed_call_raw` logging was added), so smoke-test episodes count as episode 1 of game 1 for 7 setups; pushy ep1
   game 1 was stopped before saving and restarts (`results/qwen_sting_excluded/smoke2_pushy_ep1_stopped/`).
+- **D12 (2026-10-24, 23:20; asri: "sure").** 16 games on one A100 filled its KV cache (98%) and cut total generation
+  from ~170 to ~118 tokens/s, so game 2 was stopped about a quarter into episode 1 (partial folders in
+  `results/qwen_sting_excluded/game2_paused_2315/`, not data) and restarted from scratch on a second, identical
+  server (`qwen-sting-2`: same image, weights, revision, vLLM flags; `QWEN_APP_NAME`). Game 1 stays on the first
+  server. Game number is now also server instance, as with the teammate's games (D6); same weights and sampling.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
