@@ -449,6 +449,12 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   retried with half the allowance (32k, then 16k, then 8k); replies so far peak near 17k tokens, so no reply is
   expected to be cut. The paper's 64k allowance is unchanged for every request that fits. The crashed game resumed
   from its 2 saved episodes; running games were restarted at their next saved episode to pick the fix up.
+- **D16 (2026-10-25, after the main results; supplementary analyses, labelled as such).** (a) J2 (the notes/09
+  agreement-message classifier, verbatim) on all 56 Dave-game episodes, to score Dave's reports against the standard
+  he was told to report (agreeing to accept without the complete raw log), since JS measures only strict trades. (b)
+  JS on every episode of the six active cells (`results/judges_qwen/JSall/`), so deals outside the registered window
+  are counted. (c) Q-C8 split by approach timing. Registered JS (approach episode and the one after) stays primary.
+  Anthropic cost $0.77; total $140.05.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 

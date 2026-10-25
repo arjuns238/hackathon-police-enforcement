@@ -7,6 +7,11 @@ JS  the strict "real deal" judge (main measure), one call per target (Alice, Bob
     messages are inserted, under "Messages:", before the reply format (the registered text has no slot for them).
 J1  the paper's agreement judge (verbatim, as in notes/09) on every collusive pair-episode of the baseline games
     only (D4), reusing scripts/run_judges.py.
+Supplementary (D16, after the main results, labelled as such):
+J2     the agreement-message classifier of notes/09 (verbatim) on every episode of the Dave games: marks messages that
+       propose or agree to accept without the complete raw log, the same standard as Dave's report instruction.
+JSall  JS on every episode of the six active-character cells, so deals outside the registered window (early approaches)
+       are counted somewhere; kept apart from JS in results/judges_qwen/JSall/.
 
 Transcript for JS: every group message plus the private messages between the target and Dave, in round order, as
 `[round r] Sender -> group | Receiver: text`. Replies are cached in results/judges_qwen/<J>/calls.jsonl (reruns are
@@ -70,12 +75,12 @@ def load(cells, games) -> list[dict]:
     return out
 
 
-def js_units(games: list[dict]) -> list[dict]:
+def js_units(games: list[dict], all_episodes: bool = False) -> list[dict]:
     units = []
     for G in games:
         character, approach = CHARACTER_CELLS[G["cell"]]
         for e in G["run"]["results"]:
-            if approach is not None and e["episode"] not in (approach, approach + 1):
+            if approach is not None and e["episode"] not in (approach, approach + 1) and not all_episodes:
                 continue
             for t in TARGETS:
                 msgs = [m for m in e["transcript"] if m["to"] == "group" or {m["from"], m["to"]} == {t, "dave"}]
@@ -109,7 +114,7 @@ def parse_js(raw: str, u: dict) -> dict | None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--judge", nargs="+", default=["JS", "J1"], choices=["JS", "J1"])
+    ap.add_argument("--judge", nargs="+", default=["JS", "J1"], choices=["JS", "J1", "J2", "JSall"])
     ap.add_argument("--games", type=int, nargs="+", default=[1, 2, 3, 4])
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--workers", type=int, default=8)
@@ -118,6 +123,7 @@ def main() -> None:
     _check_verbatim()
     RJ.OUT = OUT
     RJ.PARSERS["JS"] = parse_js
+    RJ.PARSERS["JSall"] = parse_js
     if not args.dry_run:
         from dotenv import load_dotenv
         from spend import check
@@ -126,6 +132,12 @@ def main() -> None:
     for j in args.judge:
         if j == "JS":
             units = js_units(load(CHARACTER_CELLS, args.games))
+        elif j == "JSall":
+            active = [c for c in CHARACTER_CELLS if c != "passive"]
+            units = js_units(load(active, args.games), all_episodes=True)
+        elif j == "J2":
+            units = RJ.j2_units([{"arm": G["cell"], "game": G["game"], "run": G["run"]}
+                                 for G in load(CHARACTER_CELLS, args.games)])
         else:
             units = RJ.j1_units([{"arm": 1, "game": G["game"], "run": G["run"]} for G in load(["arm1"], args.games)])
         if args.limit:
