@@ -1,0 +1,10 @@
+{
+  "files_checked": 1148,
+  "archive_members_checked": 1027,
+  "credential_values_checked": 1,
+  "credential_hits": [],
+  "supplemental_files_checked": 6,
+  "total_staged_files": 1154,
+  "staged_byte_integrity": "PASS",
+  "note": "Generated CSV CRLF and raw log whitespace are preserved exactly; no data formatting changes."
+}

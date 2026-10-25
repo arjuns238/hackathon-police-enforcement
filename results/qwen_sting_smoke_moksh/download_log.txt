@@ -1,0 +1,373 @@
+2026-10-24 18:57:19-05:00 Building image im-QGfirsSBceG5mJbzmHkMXk
+2026-10-24 18:57:19-05:00 
+2026-10-24 18:57:19-05:00 => Step 0: FROM base
+2026-10-24 18:57:19-05:00 
+2026-10-24 18:57:19-05:00 => Step 1: COPY --from=ghcr.io/astral-sh/uv:latest /uv /.uv/uv
+2026-10-24 18:57:20-05:00 Getting image source signatures
+2026-10-24 18:57:20-05:00 Copying blob sha256:c8ca5d962b54eadac791008a11730a7a89f7d2aeec5d4cbb9f4f1d2181b18142
+2026-10-24 18:57:20-05:00 Copying blob sha256:7c79a68fb7de557c5181ba22e4558a1efd745dfdcdb341514122d5690616b057
+2026-10-24 18:57:20-05:00 Copying config sha256:2ded3f959e5d71c0de7340c3dba896a4c03ecbc00c24f2720f9a560ec5ec4b1c
+2026-10-24 18:57:20-05:00 Writing manifest to image destination
+2026-10-24 18:57:20-05:00 Unpacking OCI image
+2026-10-24 18:57:20-05:00    • unpacking rootfs ...     
+2026-10-24 18:57:20-05:00    • ... done                 
+2026-10-24 18:57:20-05:00    • unpacked image rootfs: /tmp/task-data/ta-01M5R5HW5ZZTT82Y0J3W7P26SB/registry-unpack1j75De
+2026-10-24 18:57:20-05:00 
+2026-10-24 18:57:20-05:00 => Step 2: RUN /.uv/uv pip install --python $(command -v python) --compile-bytecode vllm==0.31.0
+2026-10-24 18:57:21-05:00 Using Python 3.12.10 environment at: /usr/local
+2026-10-24 18:57:22-05:00 Resolved 199 packages in 1.22s
+2026-10-24 18:57:22-05:00 Downloading nvidia-cudnn-cu13 (349.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cufft (204.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cusparselt-cu13 (162.3MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cuda-nvrtc (86.0MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-nccl-cu13 (196.4MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cusolver (191.6MiB)
+2026-10-24 18:57:22-05:00 Downloading torch (502.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cusparse (139.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-nvshmem-cu13 (57.6MiB)
+2026-10-24 18:57:22-05:00 Downloading tokenspeed-triton (89.0MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-curand (56.8MiB)
+2026-10-24 18:57:22-05:00 Downloading opencv-python-headless (58.4MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-nvvm (69.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cublas (403.5MiB)
+2026-10-24 18:57:22-05:00 Downloading tilelang (48.2MiB)
+2026-10-24 18:57:22-05:00 Downloading triton (188.6MiB)
+2026-10-24 18:57:22-05:00 Downloading llvmlite (53.7MiB)
+2026-10-24 18:57:22-05:00 Downloading vllm (305.7MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cutlass-dsl-libs-cu13 (84.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cutlass-dsl-libs-cu12 (84.6MiB)
+2026-10-24 18:57:22-05:00 Downloading cuda-core (6.3MiB)
+2026-10-24 18:57:22-05:00 Downloading cryptography (4.5MiB)
+2026-10-24 18:57:22-05:00 Downloading pillow (6.8MiB)
+2026-10-24 18:57:22-05:00 Downloading grpcio (6.8MiB)
+2026-10-24 18:57:22-05:00 Downloading oss-harmony (3.4MiB)
+2026-10-24 18:57:22-05:00 Downloading mistral-common (6.3MiB)
+2026-10-24 18:57:22-05:00 Downloading pycountry (7.7MiB)
+2026-10-24 18:57:22-05:00 Downloading torchvision (7.3MiB)
+2026-10-24 18:57:22-05:00 Downloading pynvvideocodec (41.2MiB)
+2026-10-24 18:57:22-05:00 Downloading flashinfer-python (32.1MiB)
+2026-10-24 18:57:22-05:00 Downloading torchcodec (9.5MiB)
+2026-10-24 18:57:22-05:00 Downloading numpy (15.8MiB)
+2026-10-24 18:57:22-05:00 Downloading nccl-extensions (21.5MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cuda-cupti (10.2MiB)
+2026-10-24 18:57:22-05:00 Downloading cuda-bindings (6.8MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cudnn-frontend (9.7MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cuda-nvcc (45.5MiB)
+2026-10-24 18:57:22-05:00 Downloading z3-solver (27.9MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-nvjitlink (40.5MiB)
+2026-10-24 18:57:22-05:00 Downloading uvloop (4.3MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cuda-cccl (3.7MiB)
+2026-10-24 18:57:22-05:00 Downloading numba (3.6MiB)
+2026-10-24 18:57:22-05:00 Downloading nccl4py (3.5MiB)
+2026-10-24 18:57:22-05:00 Downloading hf-xet (4.0MiB)
+2026-10-24 18:57:22-05:00 Downloading instanttensor (6.2MiB)
+2026-10-24 18:57:22-05:00 Downloading nvidia-cuda-nvdisasm (5.0MiB)
+2026-10-24 18:57:22-05:00 Downloading sympy (6.0MiB)
+2026-10-24 18:57:22-05:00 Downloading transformers (11.7MiB)
+2026-10-24 18:57:22-05:00 Downloading llguidance (2.9MiB)
+2026-10-24 18:57:22-05:00 Downloading tokenizers (3.2MiB)
+2026-10-24 18:57:23-05:00  Downloaded llguidance
+2026-10-24 18:57:23-05:00  Downloaded nvidia-cuda-nvdisasm
+2026-10-24 18:57:23-05:00  Downloaded tokenizers
+2026-10-24 18:57:23-05:00 Downloading fastsafetensors (2.6MiB)
+2026-10-24 18:57:23-05:00  Downloaded oss-harmony
+2026-10-24 18:57:23-05:00 Downloading nvidia-cutlass-dsl-libs-base (2.7MiB)
+2026-10-24 18:57:23-05:00 Downloading apache-tvm-ffi (2.6MiB)
+2026-10-24 18:57:23-05:00  Downloaded hf-xet
+2026-10-24 18:57:23-05:00  Downloaded cuda-bindings
+2026-10-24 18:57:23-05:00  Downloaded cryptography
+2026-10-24 18:57:23-05:00 Downloading outlines-core (2.2MiB)
+2026-10-24 18:57:23-05:00  Downloaded nccl4py
+2026-10-24 18:57:23-05:00  Downloaded grpcio
+2026-10-24 18:57:23-05:00  Downloaded mistral-common
+2026-10-24 18:57:23-05:00  Downloaded instanttensor
+2026-10-24 18:57:23-05:00 Downloading openai (2.2MiB)
+2026-10-24 18:57:23-05:00 Downloading nvidia-cuda-runtime (2.1MiB)
+2026-10-24 18:57:23-05:00  Downloaded nvidia-cuda-cupti
+2026-10-24 18:57:23-05:00  Downloaded uvloop
+2026-10-24 18:57:23-05:00 Downloading anthropic (2.1MiB)
+2026-10-24 18:57:23-05:00 Downloading pydantic-core (2.1MiB)
+2026-10-24 18:57:23-05:00 Downloading networkx (2.0MiB)
+2026-10-24 18:57:23-05:00  Downloaded fastsafetensors
+2026-10-24 18:57:23-05:00  Downloaded outlines-core
+2026-10-24 18:57:23-05:00  Downloaded pillow
+2026-10-24 18:57:23-05:00 Downloading aiohttp (1.8MiB)
+2026-10-24 18:57:23-05:00  Downloaded torchvision
+2026-10-24 18:57:23-05:00 Downloading torchaudio (1.7MiB)
+2026-10-24 18:57:23-05:00  Downloaded cuda-core
+2026-10-24 18:57:23-05:00 Downloading sentencepiece (1.3MiB)
+2026-10-24 18:57:23-05:00 Downloading xgrammar (1.2MiB)
+2026-10-24 18:57:23-05:00 Downloading pygments (1.2MiB)
+2026-10-24 18:57:23-05:00 Downloading nvidia-cutlass-dsl-libs-core (1.2MiB)
+2026-10-24 18:57:23-05:00  Downloaded nvidia-cutlass-dsl-libs-base
+2026-10-24 18:57:23-05:00 Downloading nvidia-cufile (1.2MiB)
+2026-10-24 18:57:23-05:00  Downloaded torchcodec
+2026-10-24 18:57:23-05:00  Downloaded pydantic-core
+2026-10-24 18:57:23-05:00  Downloaded nvidia-cuda-runtime
+2026-10-24 18:57:23-05:00 Downloading tiktoken (1.1MiB)
+2026-10-24 18:57:23-05:00  Downloaded apache-tvm-ffi
+2026-10-24 18:57:23-05:00 Downloading setuptools (1.0MiB)
+2026-10-24 18:57:23-05:00  Downloaded sentencepiece
+2026-10-24 18:57:23-05:00  Downloaded nvidia-cufile
+2026-10-24 18:57:23-05:00  Downloaded aiohttp
+2026-10-24 18:57:23-05:00  Downloaded xgrammar
+2026-10-24 18:57:23-05:00  Downloaded tiktoken
+2026-10-24 18:57:23-05:00  Downloaded torchaudio
+2026-10-24 18:57:24-05:00  Downloaded nvidia-cutlass-dsl-libs-core
+2026-10-24 18:57:24-05:00  Downloaded pygments
+2026-10-24 18:57:24-05:00  Downloaded nccl-extensions
+2026-10-24 18:57:24-05:00  Downloaded numba
+2026-10-24 18:57:24-05:00  Downloaded pycountry
+2026-10-24 18:57:24-05:00  Downloaded setuptools
+2026-10-24 18:57:24-05:00  Downloaded networkx
+2026-10-24 18:57:25-05:00  Downloaded z3-solver
+2026-10-24 18:57:25-05:00  Downloaded nvidia-cudnn-frontend
+2026-10-24 18:57:25-05:00  Downloaded numpy
+2026-10-24 18:57:25-05:00  Downloaded sympy
+2026-10-24 18:57:26-05:00  Downloaded pynvvideocodec
+2026-10-24 18:57:26-05:00  Downloaded nvidia-nvjitlink
+2026-10-24 18:57:26-05:00  Downloaded nvidia-cuda-nvcc
+2026-10-24 18:57:26-05:00  Downloaded nvidia-curand
+2026-10-24 18:57:26-05:00  Downloaded opencv-python-headless
+2026-10-24 18:57:26-05:00  Downloaded llvmlite
+2026-10-24 18:57:27-05:00  Downloaded nvidia-cuda-cccl
+2026-10-24 18:57:27-05:00  Downloaded nvidia-nvshmem-cu13
+2026-10-24 18:57:27-05:00  Downloaded openai
+2026-10-24 18:57:27-05:00  Downloaded nvidia-nvvm
+2026-10-24 18:57:27-05:00  Downloaded anthropic
+2026-10-24 18:57:27-05:00  Downloaded nvidia-cutlass-dsl-libs-cu13
+2026-10-24 18:57:27-05:00  Downloaded nvidia-cutlass-dsl-libs-cu12
+2026-10-24 18:57:27-05:00  Downloaded nvidia-cuda-nvrtc
+2026-10-24 18:57:27-05:00  Downloaded transformers
+2026-10-24 18:57:28-05:00  Downloaded tokenspeed-triton
+2026-10-24 18:57:28-05:00  Downloaded nvidia-cusparse
+2026-10-24 18:57:28-05:00  Downloaded nvidia-cusparselt-cu13
+2026-10-24 18:57:28-05:00  Downloaded nvidia-cusolver
+2026-10-24 18:57:28-05:00  Downloaded nvidia-nccl-cu13
+2026-10-24 18:57:28-05:00  Downloaded nvidia-cufft
+2026-10-24 18:57:29-05:00  Downloaded triton
+2026-10-24 18:57:29-05:00  Downloaded nvidia-cudnn-cu13
+2026-10-24 18:57:29-05:00  Downloaded nvidia-cublas
+2026-10-24 18:57:30-05:00  Downloaded tilelang
+2026-10-24 18:57:30-05:00  Downloaded flashinfer-python
+2026-10-24 18:57:33-05:00  Downloaded vllm
+2026-10-24 18:57:39-05:00  Downloaded torch
+2026-10-24 18:57:39-05:00 Prepared 199 packages in 16.67s
+2026-10-24 18:57:49-05:00 Installed 199 packages in 10.50s
+2026-10-24 18:58:00-05:00 Bytecode compiled 25017 files in 11.13s
+2026-10-24 18:58:00-05:00  + agent-detector==2.0.0
+2026-10-24 18:58:00-05:00  + aiohappyeyeballs==2.7.1
+2026-10-24 18:58:00-05:00  + aiohttp==3.14.5
+2026-10-24 18:58:00-05:00  + aiosignal==1.4.0
+2026-10-24 18:58:00-05:00  + annotated-doc==0.0.5
+2026-10-24 18:58:00-05:00  + annotated-types==0.8.0
+2026-10-24 18:58:00-05:00  + anthropic==2.3.0
+2026-10-24 18:58:00-05:00  + anyio==4.15.1
+2026-10-24 18:58:00-05:00  + apache-tvm-ffi==0.1.11
+2026-10-24 18:58:00-05:00  + astor==0.8.1
+2026-10-24 18:58:00-05:00  + attrs==26.1.0
+2026-10-24 18:58:00-05:00  + blake3==1.0.11
+2026-10-24 18:58:00-05:00  + cachetools==7.2.4
+2026-10-24 18:58:00-05:00  + cbor2==6.1.5
+2026-10-24 18:58:00-05:00  + certifi==2026.10.23
+2026-10-24 18:58:00-05:00  + cffi==2.1.1
+2026-10-24 18:58:00-05:00  + charset-normalizer==3.5.2
+2026-10-24 18:58:00-05:00  + click==8.5.0
+2026-10-24 18:58:00-05:00  + cloudpickle==3.1.2
+2026-10-24 18:58:00-05:00  + compressed-tensors==0.17.0
+2026-10-24 18:58:00-05:00  + cryptography==50.0.2
+2026-10-24 18:58:00-05:00  + cuda-bindings==13.4.4
+2026-10-24 18:58:00-05:00  + cuda-core==1.2.2
+2026-10-24 18:58:00-05:00  + cuda-pathfinder==1.8.4
+2026-10-24 18:58:00-05:00  + cuda-python==13.4.4
+2026-10-24 18:58:00-05:00  + cuda-tile==1.7.0
+2026-10-24 18:58:00-05:00  + cuda-toolkit==13.0.3.0
+2026-10-24 18:58:00-05:00  + depyf==0.20.0
+2026-10-24 18:58:00-05:00  + detect-installer==0.2.1
+2026-10-24 18:58:00-05:00  + dill==0.4.1
+2026-10-24 18:58:00-05:00  + dnspython==2.9.0
+2026-10-24 18:58:00-05:00  + docstring-parser==0.18.0
+2026-10-24 18:58:00-05:00  + einops==0.8.2
+2026-10-24 18:58:00-05:00  + email-validator==2.3.0
+2026-10-24 18:58:00-05:00  + fastapi==0.136.3
+2026-10-24 18:58:00-05:00  + fastapi-cli==0.0.32
+2026-10-24 18:58:00-05:00  + fastapi-cloud-cli==0.26.0
+2026-10-24 18:58:00-05:00  + fastar==0.12.0
+2026-10-24 18:58:00-05:00  + fastsafetensors==0.5.0
+2026-10-24 18:58:00-05:00  + filelock==4.2.4
+2026-10-24 18:58:00-05:00  + flashinfer-python==0.7.0.post1
+2026-10-24 18:58:00-05:00  + frozenlist==1.8.0
+2026-10-24 18:58:00-05:00  + fsspec==2026.9.0
+2026-10-24 18:58:00-05:00  + googleapis-common-protos==1.76.0
+2026-10-24 18:58:00-05:00  + grpcio==1.84.1
+2026-10-24 18:58:00-05:00  + h11==0.16.0
+2026-10-24 18:58:00-05:00  + hf-xet==1.7.0
+2026-10-24 18:58:00-05:00  + ==1.0.
+2026-10-24 18:58:00-05:00   httpcore2==16.0  httptools0.9
+2026-10-24 18:58:00-05:00  + httpx0.28
+2026-10-24 18:58:00-05:00 + ==20  ==10  ==1.+idna3.20  ==30
+2026-10-24 18:58:00-05:00 +instanttensor==.2
+2026-10-24 18:58:00-05:00 +interegular==33  ==36
+2026-10-24 18:58:00-05:00 +jiter==.18.
+2026-10-24 18:58:00-05:00 +jmespath==110+jsonschema==.0  jsonschema-specifications==2025.1+ ==22 llguidance..6 + llvmlite==0.0 + lm-format-enforcer.3
+2026-10-24 18:58:00-05:00 + loguru07.
+2026-10-24 18:58:00-05:00  + markdown-it-py==4..0 +markupsafe==.04
+2026-10-24 18:58:00-05:00  +mcp==2.0
+2026-10-24 18:58:00-05:00   mcp-types==..
+2026-10-24 18:58:00-05:00   mdurl==..2  mistral-common==1120
+2026-10-24 18:58:00-05:00 +ml-dtypes==0. +model-hosting-container-standards0.16
+2026-10-24 18:58:00-05:00 + ==130 + ==0220
+2026-10-24 18:58:00-05:00 + multidict==7..1 +nccl-extensions==010 +nccl4py==..0 +networkx.7+ ==.132 + numba==.65.
+2026-10-24 18:58:00-05:00 + ==..5
+2026-10-24 18:58:00-05:00   nvidia-cublas==13.1.3
+2026-10-24 18:58:00-05:00 + nvidia-cuda-cccl==.4..1
+2026-10-24 18:58:00-05:00   nvidia-cuda-crt13.492
+2026-10-24 18:58:00-05:00  +nvidia-cuda-cupti==13..85
+2026-10-24 18:58:00-05:00 + ==13492 +nvidia-cuda-nvdisasm==13.92+ nvidia-cuda-nvrtc==13.0.88
+2026-10-24 18:58:00-05:00  + nvidia-cuda-runtime==13. +nvidia-cudnn-cu13==...48 +nvidia-cudnn-frontend==131.0+ nvidia-cufft==12.0.
+2026-10-24 18:58:00-05:00  + nvidia-cufile==1.15.16
+2026-10-24 18:58:00-05:00 + nvidia-curand10.4.35
+2026-10-24 18:58:00-05:00   nvidia-cusolver==12.0..
+2026-10-24 18:58:00-05:00 + nvidia-cusparse==.3.3 + nvidia-cusparselt-cu13==08.+ nvidia-cutlass-dsl==4.7. + nvidia-cutlass-dsl-libs-base47
+2026-10-24 18:58:00-05:00  + nvidia-cutlass-dsl-libs-core==4.
+2026-10-24 18:58:00-05:00  +nvidia-cutlass-dsl-libs-cu12==4..
+2026-10-24 18:58:00-05:00 + nvidia-cutlass-dsl-libs-cu13==.71 + ==13615.71  nvidia-nccl-cu13.29
+2026-10-24 18:58:00-05:00   nvidia-nvjitlink==13.
+2026-10-24 18:58:00-05:00   nvidia-nvshmem-cu13==.4
+2026-10-24 18:58:00-05:00  + nvidia-nvtx==..
+2026-10-24 18:58:00-05:00  + nvidia-nvvm==.4
+2026-10-24 18:58:00-05:00  + nvtx==0..
+2026-10-24 18:58:00-05:00  +openai==337.
+2026-10-24 18:58:00-05:00 + ==50..93
+2026-10-24 18:58:00-05:00  + opentelemetry-api==45.1
+2026-10-24 18:58:00-05:00   opentelemetry-exporter-http-transport==.66b1 + ==1.1
+2026-10-24 18:58:00-05:00  + ==066b
+2026-10-24 18:58:00-05:00 + opentelemetry-exporter-otlp-proto-common==1.451
+2026-10-24 18:58:00-05:00 + opentelemetry-exporter-otlp-proto-grpc==1.45.
+2026-10-24 18:58:00-05:00  +opentelemetry-exporter-otlp-proto-http==.45
+2026-10-24 18:58:00-05:00  +opentelemetry-proto==.451+ opentelemetry-sdk==1.45.1 +opentelemetry-semantic-conventions==0.b
+2026-10-24 18:58:00-05:00  + opentelemetry-semantic-conventions-ai051
+2026-10-24 18:58:00-05:00  + oss-harmony==.0
+2026-10-24 18:58:00-05:00  + outlines-core==..14
+2026-10-24 18:58:00-05:00 + ==26 +partial-json-parser==.21.post7
+2026-10-24 18:58:00-05:00 + pillow==1300 +prometheus-client==026
+2026-10-24 18:58:00-05:00  +prometheus-fastapi-instrumentator==.10
+2026-10-24 18:58:00-05:00 + propcache==.5.
+2026-10-24 18:58:00-05:00   protobuf==7362
+2026-10-24 18:58:00-05:00   psutil==7.2 +py-cpuinfo==9.0 +pybase64==.5
+2026-10-24 18:58:00-05:00  + pycountry==26216
+2026-10-24 18:58:00-05:00 + pycparser==.12
+2026-10-24 18:58:00-05:00  +pydantic==2..1
+2026-10-24 18:58:00-05:00   pydantic-core==250.1
+2026-10-24 18:58:00-05:00 + pydantic-extra-types==211
+2026-10-24 18:58:00-05:00  +==2.1
+2026-10-24 18:58:00-05:00  + pygments==..
+2026-10-24 18:58:00-05:00   pyjwt==2..
+2026-10-24 18:58:00-05:00  + pynvvideocodec==2..+ python-dotenv==1..4
+2026-10-24 18:58:00-05:00  + python-json-logger==4.0
+2026-10-24 18:58:00-05:00  + ==0032
+2026-10-24 18:58:00-05:00 + pyyaml0.
+2026-10-24 18:58:00-05:00  +pyzmq==27..0
+2026-10-24 18:58:00-05:00  + quack-kernels06.
+2026-10-24 18:58:00-05:00  + referencing0.37
+2026-10-24 18:58:00-05:00  +regex==.9.29
+2026-10-24 18:58:00-05:00   requests==2..2
+2026-10-24 18:58:00-05:00   rich==15.0
+2026-10-24 18:58:00-05:00  + rich-toolkit==0.206 + ==01
+2026-10-24 18:58:00-05:00   ==2026.9
+2026-10-24 18:58:00-05:00 + safetensors==08.0
+2026-10-24 18:58:00-05:00  + sentencepiece==.
+2026-10-24 18:58:00-05:00  + sentry-sdk==73.0
+2026-10-24 18:58:00-05:00  + setproctitle==.38
+2026-10-24 18:58:00-05:00  + setuptools.10
+2026-10-24 18:58:00-05:00  + shellingham==1.5+ ==.17.
+2026-10-24 18:58:00-05:00   sniffio13.
+2026-10-24 18:58:00-05:00  + sse-starlette==35.
+2026-10-24 18:58:00-05:00  + starlette==1.10.
+2026-10-24 18:58:00-05:00  + supervisor==4.3. + sympy==1.14.0
+2026-10-24 18:58:00-05:00 + tabulate==010.
+2026-10-24 18:58:00-05:00  tiktoken==014
+2026-10-24 18:58:00-05:00 + tilelang==.1
+2026-10-24 18:58:00-05:00  +tokenizers==0..3
+2026-10-24 18:58:00-05:00  +tokenspeed-mla==0.1.
+2026-10-24 18:58:00-05:00   tokenspeed-triton==.910.post20261008
+2026-10-24 18:58:00-05:00 + ==2130
+2026-10-24 18:58:00-05:00 + torch-c-dlpack-ext==01.5 +torchaudio==..
+2026-10-24 18:58:00-05:00 + torchcodec==0..
+2026-10-24 18:58:00-05:00 + torchvision==0280
+2026-10-24 18:58:00-05:00  + tqdm==4701
+2026-10-24 18:58:00-05:00  + transformers==5..0 + triton==.7.1 +truststore==.10
+2026-10-24 18:58:00-05:00   typer==03
+2026-10-24 18:58:00-05:00  typing-extensions==4.0
+2026-10-24 18:58:00-05:00   typing-inspection==0.4
+2026-10-24 18:58:00-05:00 + ==28.0 +uvicorn==.54.0
+2026-10-24 18:58:00-05:00  +uvloop==0.0
+2026-10-24 18:58:00-05:00   vllm==..0
+2026-10-24 18:58:00-05:00 + watchfiles==1.30
+2026-10-24 18:58:00-05:00  + ==
+2026-10-24 18:58:00-05:00  xgrammar==0.7
+2026-10-24 18:58:00-05:00 + yarl==.25.
+2026-10-24 18:58:00-05:00  +z3-solver==..4.0
+2026-10-24 18:58:03-05:00 Saving image...
+2026-10-24 18:58:22-05:00 Image saved, took 19.03s
+2026-10-24 18:58:22-05:00 
+2026-10-24 18:58:22-05:00 Built image im-QGfirsSBceG5mJbzmHkMXk in 63.12s
+2026-10-24 18:58:22-05:00 
+2026-10-24 18:58:22-05:00 
+2026-10-24 18:58:33-05:00 
+2026-10-24 18:58:33-05:00 [1A2026-10-24 18:58:33-05:00 Fetching 32 files:   0%|          | 0/32 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-24 18:58:34-05:00 
+2026-10-24 18:58:34-05:00 [1A2026-10-24 18:58:34-05:00 Fetching 32 files:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]
+2026-10-24 18:58:34-05:00 [1AFetching 32 files:  25%|██▌       | 8/32 [00:00<00:00, 28.96it/s]
+2026-10-24 18:58:53-05:00 
+2026-10-24 18:58:53-05:00 [1AFetching 32 files:  25%|██▌       | 8/32 [00:20<00:00, 28.96it/s]
+2026-10-24 18:59:17-05:00 
+2026-10-24 18:59:17-05:00 [1AFetching 32 files:  28%|██▊       | 9/32 [00:43<02:36,  6.80s/it]
+2026-10-24 18:59:22-05:00 
+2026-10-24 18:59:22-05:00 [1AFetching 32 files:  31%|███▏      | 10/32 [00:48<02:23,  6.54s/it]
+2026-10-24 18:59:34-05:00 
+2026-10-24 18:59:34-05:00 [1AFetching 32 files:  34%|███▍      | 11/32 [01:00<02:17,  6.54s/it]
+2026-10-24 18:59:36-05:00 
+2026-10-24 18:59:36-05:00 [1AFetching 32 files:  38%|███▊      | 12/32 [01:02<02:13,  6.69s/it]
+2026-10-24 18:59:48-05:00 
+2026-10-24 18:59:48-05:00 [1AFetching 32 files:  41%|████      | 13/32 [01:14<02:25,  7.68s/it]
+2026-10-24 18:59:54-05:00 
+2026-10-24 18:59:54-05:00 [1AFetching 32 files:  44%|████▍     | 14/32 [01:20<02:12,  7.37s/it]
+2026-10-24 19:00:06-05:00 
+2026-10-24 19:00:06-05:00 [1AFetching 32 files:  44%|████▍     | 14/32 [01:32<02:12,  7.37s/it]
+2026-10-24 19:00:12-05:00 
+2026-10-24 19:00:12-05:00 [1AFetching 32 files:  47%|████▋     | 15/32 [01:38<02:48,  9.91s/it]
+2026-10-24 19:00:17-05:00 
+2026-10-24 19:00:17-05:00 [1AFetching 32 files:  50%|█████     | 16/32 [01:43<02:16,  8.56s/it]
+2026-10-24 19:00:22-05:00 
+2026-10-24 19:00:22-05:00 [1AFetching 32 files:  53%|█████▎    | 17/32 [01:49<01:56,  7.78s/it]
+2026-10-24 19:00:42-05:00 
+2026-10-24 19:00:42-05:00 [1AFetching 32 files:  56%|█████▋    | 18/32 [02:08<02:35, 11.09s/it]
+2026-10-24 19:00:55-05:00 
+2026-10-24 19:00:55-05:00 [1A2026-10-24 19:00:55-05:00 Fetching 32 files:  59%|█████▉    | 19/32 [02:21<02:30, 11.57s/it]
+2026-10-24 19:00:55-05:00 [1AFetching 32 files:  62%|██████▎   | 20/32 [02:21<01:39,  8.30s/it]
+2026-10-24 19:00:56-05:00 
+2026-10-24 19:00:56-05:00 [1AFetching 32 files:  66%|██████▌   | 21/32 [02:22<01:05,  5.98s/it]
+2026-10-24 19:01:01-05:00 
+2026-10-24 19:01:01-05:00 [1AFetching 32 files:  69%|██████▉   | 22/32 [02:27<00:57,  5.79s/it]
+2026-10-24 19:01:10-05:00 
+2026-10-24 19:01:10-05:00 [1A2026-10-24 19:01:10-05:00 Fetching 32 files:  72%|███████▏  | 23/32 [02:36<01:00,  6.73s/it]
+2026-10-24 19:01:10-05:00 [1A2026-10-24 19:01:10-05:00 Fetching 32 files:  75%|███████▌  | 24/32 [02:36<00:38,  4.78s/it]
+2026-10-24 19:01:10-05:00 [1AFetching 32 files:  78%|███████▊  | 25/32 [02:37<00:24,  3.48s/it]
+2026-10-24 19:01:11-05:00 
+2026-10-24 19:01:11-05:00 [1AFetching 32 files:  81%|████████▏ | 26/32 [02:37<00:15,  2.64s/it]
+2026-10-24 19:01:23-05:00 
+2026-10-24 19:01:23-05:00 [1AFetching 32 files:  84%|████████▍ | 27/32 [02:49<00:27,  5.48s/it]
+2026-10-24 19:01:35-05:00 
+2026-10-24 19:01:35-05:00 [1AFetching 32 files:  88%|████████▊ | 28/32 [03:01<00:29,  7.35s/it]
+2026-10-24 19:01:38-05:00 
+2026-10-24 19:01:38-05:00 [1AFetching 32 files:  91%|█████████ | 29/32 [03:04<00:18,  6.04s/it]
+2026-10-24 19:01:48-05:00 
+2026-10-24 19:01:48-05:00 [1AFetching 32 files:  94%|█████████▍| 30/32 [03:14<00:14,  7.24s/it]
+2026-10-24 19:01:51-05:00 
+2026-10-24 19:01:51-05:00 [1AFetching 32 files:  97%|█████████▋| 31/32 [03:17<00:05,  5.90s/it]
+2026-10-24 19:01:54-05:00 
+2026-10-24 19:01:54-05:00 [1A2026-10-24 19:01:54-05:00 Fetching 32 files: 100%|██████████| 32/32 [03:20<00:00,  4.97s/it]
+2026-10-24 19:01:54-05:00 [1A2026-10-24 19:01:54-05:00 Fetching 32 files: 100%|██████████| 32/32 [03:20<00:00,  6.26s/it]
+2026-10-24 19:02:03-05:00 weights at /__modal/volumes/vo-qbu8s6vzRaTojs6sEyEsBl/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+2026-10-24 19:02:03-05:00 Stopping app - local entrypoint completed.

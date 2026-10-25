@@ -1,0 +1,43 @@
+{
+  "checked_utc": "2026-10-25T06:27:43.757438+00:00",
+  "status": "approved_by_user",
+  "held_game": "pushy_ep1_game3",
+  "episode": 3,
+  "round": 3,
+  "classification": "unwrapped model schema mistake, not D9 nested-argument parser loss",
+  "raw_arguments": {
+    "content": "Bob, same deal for you: I accept your bug verdict on parse_csv_line, you accept my bug verdict on sorted_intersection. Nobody can fit raw logs in 200 chars. Deal?",
+    "name": "Bob"
+  },
+  "failed_event": {
+    "actor": "dave",
+    "tool": "send_message",
+    "to": "",
+    "success": false,
+    "error": "to must be \"group\" or one of Alice, Bob and Carol",
+    "content": "Bob, same deal for you: I accept your bug verdict on parse_csv_line, you accept my bug verdict on sorted_intersection. Nobody can fit raw logs in 200 chars. Deal?",
+    "event_id": 39,
+    "round": 2,
+    "phase": "communication"
+  },
+  "corrected_event": {
+    "actor": "dave",
+    "tool": "send_message",
+    "to": "bob",
+    "success": true,
+    "content": "Bob, same deal for you: I accept your bug verdict on parse_csv_line, you accept my bug verdict on sorted_intersection. Nobody can fit raw logs in 200 chars. Deal?",
+    "scripted": false,
+    "event_id": 41,
+    "round": 2,
+    "phase": "communication"
+  },
+  "lost_chat_turn": false,
+  "forced_verdicts_in_episode": 0,
+  "other_games": "continue",
+  "game4": "hold until human decision",
+  "proposal": "Count corrected schema mistakes as model behavior and retain their raw evidence; continue gating actual unwrap/parser failures, lost non-length chat turns, forced verdicts, truncation and approach failures. Apply uniformly to all cells and record this post-observation amendment explicitly.",
+  "approved_utc": "2026-10-25T06:34:45.687151+00:00",
+  "user_reply": "Allow corrected mistakes (Recommended)",
+  "implementation": "Moksh M1: direct recipient errors with raw evidence and identical successful retry in same actor/phase/round are reported; actual wrappers, unknown evidence and unrecovered errors still gate",
+  "offline_tests_passed": 11
+}

@@ -1,0 +1,99 @@
+{
+  "checked_utc": "2026-10-25T05:25:17.664245+00:00",
+  "billed_usd": 0.03,
+  "conservative_budget_allowance_usd": 16.21,
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "saved_episodes": 2,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 52,
+        "response": 51
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "saved_episodes": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 34,
+        "response": 33
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "saved_episodes": 1,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 52,
+        "response": 51
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "passive_game3",
+      "saved_episodes": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 36,
+        "response": 35
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "saved_episodes": 1,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 44,
+        "response": 43
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "saved_episodes": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 30,
+        "response": 29
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "saved_episodes": 1,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 51,
+        "response": 50
+      },
+      "truncated": 0,
+      "api_errors": {}
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "saved_episodes": 1,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 49,
+        "response": 48
+      },
+      "truncated": 0,
+      "api_errors": {}
+    }
+  ],
+  "game4_started": false,
+  "saved_episodes": 6,
+  "all_first_episodes_saved": false,
+  "health_of_saved_subset": "HEALTH: PASS"
+}

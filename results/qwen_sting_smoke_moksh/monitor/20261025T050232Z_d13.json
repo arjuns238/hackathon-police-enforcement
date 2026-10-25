@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-10-25T05:02:32.176712+00:00",
+  "source_commit": "740c410",
+  "saved_episodes": 5,
+  "capture": {
+    "arm1_game3": {
+      "capture_started": 1,
+      "request": 15,
+      "response": 14
+    },
+    "friendly_ep1_game3": {
+      "capture_started": 1,
+      "request": 14,
+      "response": 13
+    },
+    "friendly_ep3_game3": {
+      "capture_started": 1,
+      "request": 17,
+      "response": 16
+    },
+    "passive_game3": {
+      "capture_started": 1,
+      "request": 10,
+      "response": 9
+    },
+    "pushy_ep1_game3": {
+      "capture_started": 1,
+      "request": 10,
+      "response": 9
+    },
+    "pushy_ep3_game3": {
+      "capture_started": 1,
+      "request": 10,
+      "response": 9
+    },
+    "subtle_ep1_game3": {
+      "capture_started": 1,
+      "request": 18,
+      "response": 17
+    },
+    "subtle_ep3_game3": {
+      "capture_started": 1,
+      "request": 14,
+      "response": 13
+    }
+  },
+  "truncated_outputs": 0,
+  "nonaccepted_api_statuses": {},
+  "conservative_budget_allowance_usd": 14.69,
+  "lagging_billing_usd": 0.03,
+  "game4_started": false
+}

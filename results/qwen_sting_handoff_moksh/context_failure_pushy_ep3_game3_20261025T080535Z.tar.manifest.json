@@ -1,0 +1,29 @@
+{
+  "files": {
+    "results/qwen_sting/pushy_ep3_game3/llm_usage.jsonl": {
+      "bytes": 169452,
+      "sha256": "10689976ce996d784c2f99913edad855148e93287c789d74a00705baa3cf5c2e"
+    },
+    "results/qwen_sting/pushy_ep3_game3/messages.json": {
+      "bytes": 606871,
+      "sha256": "f3c16a0d8b29378cadc203d3c53b23413558cd428ba1dc37ec388b14a89e24c3"
+    },
+    "results/qwen_sting/pushy_ep3_game3/console.log": {
+      "bytes": 9068,
+      "sha256": "90792d35ddc66d23f261b08af17cefc80497f8464fb0f2a2373712c0ed7d78a4"
+    },
+    "results/qwen_sting/pushy_ep3_game3/run_backend.json": {
+      "bytes": 410,
+      "sha256": "767da4b393ab4483723828fe7b258c11dc04bef83f8bdfdb0ffb3cc29e71ece0"
+    },
+    "results/qwen_sting/pushy_ep3_game3/run.json": {
+      "bytes": 727411,
+      "sha256": "eb00134a5e5459912b70b50978852ff62f50f7da64539d4a95bfe486e5f509be"
+    },
+    "results/qwen_sting/pushy_ep3_game3/raw_model_calls.jsonl": {
+      "bytes": 17498772,
+      "sha256": "4beba604e1e00ff8708a2c14bbc46c22183cda46f9c1dda81c2a86b04269dca9"
+    }
+  },
+  "archive_sha256": "4301f9251c12ab3047bd9302867a008f763ef96eef06c91272d938a7badd4316"
+}

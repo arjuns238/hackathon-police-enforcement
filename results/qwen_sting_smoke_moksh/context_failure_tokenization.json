@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-25T07:02:41.384959+00:00",
+  "cell": "arm1_game4",
+  "failed_call_id": "16b18012df1b44d8a1cc87543be2c533",
+  "diagnostic": "tokenization only, no generation",
+  "payload_sha256": "f3865ec061dcc949dedbb8f62cb4025a2c4976e0f47b36728fa5982a77274c01",
+  "source_journal": "results/qwen_sting/arm1_game4/raw_model_calls.jsonl",
+  "status_code": 200,
+  "tokenization_result": {
+    "count": 80821,
+    "max_model_len": 131072,
+    "token_strs": null
+  }
+}

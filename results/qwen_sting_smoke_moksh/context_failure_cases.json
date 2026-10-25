@@ -1,0 +1,14 @@
+{
+  "status": "baseline_partial_by_user_decision; other_context_failure_remains_stopped",
+  "cells": [
+    "arm1_game4",
+    "subtle_ep1_game4"
+  ],
+  "raw_preserved": true,
+  "resume_authorized": false,
+  "decided_utc": "2026-10-25T07:23:04.714055+00:00",
+  "user_reply": "Leave this baseline partial; finish the others",
+  "baseline_disposition": "Leave arm1_game4 partial; do not restart or change settings",
+  "other_failed_cell_disposition": "subtle_ep1_game4 remains stopped. No recovery amendment was authorized. Finish remaining runnable setups and disclose both partial folders.",
+  "pending_user_recovery_question": false
+}

@@ -1,0 +1,14 @@
+started arm1_game3
+started passive_game3
+started pushy_ep1_game3
+started friendly_ep1_game3
+started subtle_ep1_game3
+started pushy_ep3_game3
+started friendly_ep3_game3
+started subtle_ep3_game3
+FAILED (exit -15) subtle_ep3_game3
+FAILED (exit -15) pushy_ep1_game3
+FAILED (exit -15) friendly_ep3_game3
+FAILED (exit -15) subtle_ep1_game3
+FAILED (exit -15) passive_game3
+FAILED (exit -15) arm1_game3

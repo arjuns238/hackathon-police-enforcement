@@ -1,0 +1,91 @@
+{
+  "checked_utc": "2026-10-25T06:29:56.602374+00:00",
+  "billed_usd": 0.03,
+  "budget_allowance_usd": 20.52,
+  "game4_started": false,
+  "held_game": "pushy_ep1_game3",
+  "reason": "Legacy rule5 flags a corrected model argument typo; human decision pending",
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "saved_episodes": 3,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 151,
+        "response": 150
+      }
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "saved_episodes": 1,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 71,
+        "response": 70
+      }
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "saved_episodes": 3,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 127,
+        "response": 126
+      }
+    },
+    {
+      "cell": "passive_game3",
+      "saved_episodes": 1,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 91,
+        "response": 90
+      }
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "saved_episodes": 3,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 116,
+        "response": 115
+      }
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "saved_episodes": 1,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 60,
+        "response": 59
+      }
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "saved_episodes": 2,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 104,
+        "response": 103
+      }
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "saved_episodes": 3,
+      "truncated": 0,
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 131,
+        "response": 130
+      }
+    }
+  ],
+  "saved_episodes": 17
+}

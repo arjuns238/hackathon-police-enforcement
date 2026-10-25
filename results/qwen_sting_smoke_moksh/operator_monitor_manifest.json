@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-25T08:08:39.791590+00:00",
+  "path": "scripts/monitor_qwen_moksh.py",
+  "sha256": "f7ad331cf060bddba72fe7b76539d075708a9761776e6aeba523915c385c6a54",
+  "purpose": "Observation-only audit and redacted evidence snapshots; no generation, experiment stopping/restarting, raw file edits or registered setting changes.",
+  "validated_against": "Existing scripts and current checkpoints; raw35/valid32/complete4; derived health PASS; only secondary container and six game4 workers present.",
+  "updated_utc": "2026-10-25T08:35:39.040457+00:00",
+  "log_capture": "--since1h, container IDs, timeout30s; complete24h backfill saved for both apps"
+}

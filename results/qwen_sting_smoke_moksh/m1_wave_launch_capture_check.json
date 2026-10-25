@@ -1,0 +1,70 @@
+{
+  "checked_utc": "2026-10-25T06:40:34.535235+00:00",
+  "game4": [
+    {
+      "cell": "arm1_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "friendly_ep1_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "friendly_ep3_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "passive_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "pushy_ep1_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "pushy_ep3_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "subtle_ep1_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    },
+    {
+      "cell": "subtle_ep3_game4",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    }
+  ],
+  "resumed_setup_first_new_episode": 4
+}

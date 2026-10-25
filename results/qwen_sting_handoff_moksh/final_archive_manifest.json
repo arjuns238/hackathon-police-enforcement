@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-25T16:03:42.821188+00:00",
+  "archive": "results/qwen_sting_handoff_moksh/final_qwen_sting_moksh_20261025T160342Z.tar.gz",
+  "archive_bytes": 121624793,
+  "archive_sha256": "3d09c12e3103e4d4c7fb82d341e29d420a0287e39b96cdd863532330412fa3a8",
+  "inventory": "results/qwen_sting_handoff_moksh/final_output_inventory.json",
+  "payload_files": 1149,
+  "payload_bytes": 648730643,
+  "verified_members": 1150
+}

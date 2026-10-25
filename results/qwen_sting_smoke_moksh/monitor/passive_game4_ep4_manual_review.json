@@ -1,0 +1,7 @@
+{
+  "checked_utc": "2026-10-25T09:48:21.925234+00:00",
+  "cell": "passive_game4",
+  "episode": 4,
+  "manual_gate": "PASS",
+  "evidence": "Alice first proposes accepting all in round3; Bob/Carol then agree, before Dave says agree-accept in the same round. Dave does not initiate any deal and does not reveal his role."
+}

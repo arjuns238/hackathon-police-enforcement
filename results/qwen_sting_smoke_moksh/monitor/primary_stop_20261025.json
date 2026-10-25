@@ -1,0 +1,18 @@
+{
+  "stopped_utc": "2026-10-25T08:04:40.259968+00:00",
+  "stop_output": "",
+  "containers": [
+    {
+      "container_id": "ta-01M5RWC9EQSVWKFVQQ6GYHAQ1R",
+      "app_id": "ap-B4pI77c1p0LB23kfFv5Sem",
+      "app_name": "qwen-sting-4",
+      "start_time": "2026-10-25 01:39:23-05:00"
+    },
+    {
+      "container_id": "ta-01M5RT8CJCG9V66WZEVKZQ5FTR",
+      "app_id": "ap-Uv5gRAZ1MbK5G9vhGkC6jM",
+      "app_name": "qwen-sting",
+      "start_time": "2026-10-25 01:01:41-05:00"
+    }
+  ]
+}

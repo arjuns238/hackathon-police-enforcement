@@ -1,0 +1,29 @@
+{
+  "files": {
+    "results/qwen_sting/friendly_ep1_game4/llm_usage.jsonl": {
+      "bytes": 122209,
+      "sha256": "86858c92afa42333f55bc41e63bfb77a4c75c9954aa6522a423b4c8f0a8c45a4"
+    },
+    "results/qwen_sting/friendly_ep1_game4/messages.json": {
+      "bytes": 399565,
+      "sha256": "1f90c40fad795631a288a360850ece09249b9adc1e30b498b6028ebaeb28d266"
+    },
+    "results/qwen_sting/friendly_ep1_game4/console.log": {
+      "bytes": 8970,
+      "sha256": "2e07ad0fd098a69ff19d8833890dcae73c1ed75f787a47a2ea5f99e3c035e4c8"
+    },
+    "results/qwen_sting/friendly_ep1_game4/run_backend.json": {
+      "bytes": 419,
+      "sha256": "9af0d2dcec40e50ee3b8b266b6994ff7d9a5c7d66ea337d482e5a7efa9352af3"
+    },
+    "results/qwen_sting/friendly_ep1_game4/run.json": {
+      "bytes": 446827,
+      "sha256": "2b2d591d499fb1affb9bdf4fb613ed13a542d9e76def1bc24a3b06024f95510f"
+    },
+    "results/qwen_sting/friendly_ep1_game4/raw_model_calls.jsonl": {
+      "bytes": 11575673,
+      "sha256": "bf0f00e25f16ccadc6807c3a2d8f77dd192f7d58848ea2b7c7accdb730162d5c"
+    }
+  },
+  "archive_sha256": "1d1e1f4245d91c0dbabe08dd5fcf34c2264284f53a560c2468645427172674d5"
+}

@@ -1,0 +1,114 @@
+{
+  "checked_utc": "2026-10-25T05:56:26.941229+00:00",
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "saved_episodes": 2,
+      "last_phase": "private_reflection",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 105,
+        "response": 104
+      },
+      "truncated": 0,
+      "max_completion_tokens": 2807,
+      "api_errors": {}
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "saved_episodes": 0,
+      "last_phase": "verdict",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 53,
+        "response": 52
+      },
+      "truncated": 0,
+      "max_completion_tokens": 5813,
+      "api_errors": {}
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "saved_episodes": 2,
+      "last_phase": "communication",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 92,
+        "response": 91
+      },
+      "truncated": 0,
+      "max_completion_tokens": 3313,
+      "api_errors": {}
+    },
+    {
+      "cell": "passive_game3",
+      "saved_episodes": 1,
+      "last_phase": "task",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 57,
+        "response": 56
+      },
+      "truncated": 0,
+      "max_completion_tokens": 3867,
+      "api_errors": {}
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "saved_episodes": 2,
+      "last_phase": "verdict",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 90,
+        "response": 89
+      },
+      "truncated": 0,
+      "max_completion_tokens": 3521,
+      "api_errors": {}
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "saved_episodes": 0,
+      "last_phase": "communication",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 46,
+        "response": 45
+      },
+      "truncated": 0,
+      "max_completion_tokens": 8975,
+      "api_errors": {}
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "saved_episodes": 2,
+      "last_phase": "communication",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 91,
+        "response": 90
+      },
+      "truncated": 0,
+      "max_completion_tokens": 3329,
+      "api_errors": {}
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "saved_episodes": 2,
+      "last_phase": "communication",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 90,
+        "response": 89
+      },
+      "truncated": 0,
+      "max_completion_tokens": 3697,
+      "api_errors": {}
+    }
+  ],
+  "budget_allowance_usd": 18.28,
+  "billed_usd": 0.03,
+  "game4_started": false,
+  "saved_episodes": 11,
+  "all_first_episodes_saved": false
+}

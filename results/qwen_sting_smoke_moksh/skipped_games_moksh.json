@@ -1,0 +1,110 @@
+{
+  "updated_utc": "2026-10-25T16:00:19.577158+00:00",
+  "cases": [
+    {
+      "cell": "arm1_game4",
+      "completed_episodes": 0,
+      "excluded_episodes": [],
+      "reason": "context limit; user chose partial"
+    },
+    {
+      "cell": "subtle_ep1_game4",
+      "completed_episodes": 0,
+      "excluded_episodes": [],
+      "reason": "context limit; no recovery"
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "completed_episodes": 4,
+      "excluded_episodes": [
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2,
+        3
+      ],
+      "reason": "Dave lost communication round1 after malformed nested arguments; two unrecovered empty-recipient errors. M1 does not apply."
+    },
+    {
+      "cell": "passive_game3",
+      "completed_episodes": 3,
+      "excluded_episodes": [
+        3,
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2
+      ],
+      "reason": "Carol lost communication round4 after two malformed nested argument errors and an overlong final attempt in episode3; not recovered under M1. Worker64700 stopped by SIGTERM under overnight authorization."
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "completed_episodes": 3,
+      "excluded_episodes": [
+        3,
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2
+      ],
+      "reason": "Episode3 Dave emitted malformed nested arguments, then delivered a corrected retry. No lost turn, but required rule5 fails; the M1 exception requires saved direct arguments and does not cover wrappers.",
+      "stopped_pid": 64727
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "completed_episodes": 2,
+      "excluded_episodes": [
+        3,
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2
+      ],
+      "reason": "ContextWindowExceededError for Dave in episode3 communication before approach checkpoint; input too large alongside fixed output reserve. Worker exited; user overnight skip policy."
+    },
+    {
+      "cell": "friendly_ep1_game4",
+      "completed_episodes": 1,
+      "excluded_episodes": [
+        2,
+        3,
+        4
+      ],
+      "retained_healthy_episodes": [
+        1
+      ],
+      "reason": "ContextWindowExceededError at09:12:30UTC for Bob in episode2 communication round5 before checkpoint; worker exited. Retain healthy episode1, skip remaining under overnight authorization."
+    },
+    {
+      "cell": "friendly_ep3_game4",
+      "completed_episodes": 2,
+      "excluded_episodes": [
+        3,
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2
+      ],
+      "reason": "ContextWindowExceededError at09:53:40UTC for Carol in episode3 communication round5 before checkpoint; worker exited. Retain healthy episodes1/2; skip remaining under overnight authorization."
+    },
+    {
+      "cell": "pushy_ep1_game4",
+      "completed_episodes": 3,
+      "excluded_episodes": [
+        4
+      ],
+      "retained_healthy_episodes": [
+        1,
+        2,
+        3
+      ],
+      "reason": "ContextWindowExceededError at10:37:27UTC for Alice in episode4 communication round5 before checkpoint; last worker exited. Retain healthy episodes1\u20133; skip final episode under overnight authorization."
+    }
+  ],
+  "policy": "Preserve original files. Exclude episode4 of subtle_ep1_game3 from validated analyses. Keep its first3 episodes as partial data; do not count the game as health-valid complete."
+}

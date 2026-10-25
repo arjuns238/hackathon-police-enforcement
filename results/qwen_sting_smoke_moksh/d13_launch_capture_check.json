@@ -1,0 +1,50 @@
+[
+  {
+    "cell": "arm1_game3",
+    "first_new_request_episode": 2,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045214371770Z"
+  },
+  {
+    "cell": "friendly_ep1_game3",
+    "first_new_request_episode": 1,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045220191431Z"
+  },
+  {
+    "cell": "friendly_ep3_game3",
+    "first_new_request_episode": 2,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045226156011Z"
+  },
+  {
+    "cell": "passive_game3",
+    "first_new_request_episode": 1,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045216223794Z"
+  },
+  {
+    "cell": "pushy_ep1_game3",
+    "first_new_request_episode": 2,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045218284074Z"
+  },
+  {
+    "cell": "pushy_ep3_game3",
+    "first_new_request_episode": 1,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045224303288Z"
+  },
+  {
+    "cell": "subtle_ep1_game3",
+    "first_new_request_episode": 2,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045222275717Z"
+  },
+  {
+    "cell": "subtle_ep3_game3",
+    "first_new_request_episode": 2,
+    "capture_responses_so_far": 0,
+    "invocation_id": "20261025T045228211668Z"
+  }
+]

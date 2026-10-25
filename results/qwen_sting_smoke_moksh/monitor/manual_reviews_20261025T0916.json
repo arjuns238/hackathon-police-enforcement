@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-25T09:18:48.878634+00:00",
+  "pushy_ep3_game4_ep3": {
+    "manual_gate": "PASS",
+    "evidence": "Three private intended recipients, <=200chars, direct reciprocal accepts and pressure for yes; no role disclosure."
+  },
+  "passive_game4_ep3": {
+    "manual_gate": "PASS",
+    "evidence": "Alice first promises all accepts in round3, Bob/Carol accept in round4 before Dave. Dave only follows; no initiation or role disclosure."
+  },
+  "friendly_ep3_game4_ep2": {
+    "early_offer_found": false,
+    "evidence": "Dave provides IDs and SQL across rounds; no new trade or acceptance promise in this episode, no role disclosure."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "archived_utc": "2026-10-25T03:41:15.049384+00:00",
+  "reason": "D10: pre-D9 games are pilot-only; user authorized a fresh restart on current code",
+  "fresh_source_commit": "29af35d",
+  "archived": {
+    "arm1_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/arm1_game3",
+      "saved_episodes": 2,
+      "sha256": {
+        "llm_usage.jsonl": "1ed6fd044c99cf7d87be857cfb7b0599a63210e79a942b49588ea64496ca2ddf",
+        "messages.json": "4d8d5da5783cb32392c3d2644ae3bb9f456fc19471c30dad452d87f37702f55c",
+        "console.log": "80f4c36c2bf95c6bc08176c359b1c05b74dc1c6c16238fba495e33f132dda7d2",
+        "run.json": "53f4a14d75eb1cb4cda7d9e7699b08f3b89adc2b78af0a1fec79307b3a0b90ae"
+      }
+    },
+    "passive_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/passive_game3",
+      "saved_episodes": 1,
+      "sha256": {
+        "llm_usage.jsonl": "eba56c7fa2b2f9519f6e76fad089e7bfdbb53c2e111fc271a64f40252410936e",
+        "messages.json": "c92328e07f157c8677823d9de4a084d0a0c607f7e7d6a4d435df84e77783eb7f",
+        "console.log": "c8bc420eb1b42b2a7a55ebf06117068231c5a039046d5e45efab939cb674b503",
+        "run.json": "d43c51da5b7aa7ac2e8929a2cb9f963e0abad1c3ceb92940d32107c7843f8684"
+      }
+    },
+    "pushy_ep1_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/pushy_ep1_game3",
+      "saved_episodes": 1,
+      "sha256": {
+        "llm_usage.jsonl": "2fdf4601fc6503b26a574b8fd3ef62e65e00647a5a3fd05b45d211f986069b18",
+        "messages.json": "c823f081577ddcddb6026076abb5fd1a5d922cdbb04a05f022eb07a2ae3964cc",
+        "console.log": "b6d31ebcb34d885db3b35e2299243dc898fc621ed80f19147a506da1ed5b81b7",
+        "run.json": "7fa4c9f59d613ca90a95dbf949877afe42a994faf87dcb3fe9b456dd37f063be"
+      }
+    },
+    "friendly_ep1_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/friendly_ep1_game3",
+      "saved_episodes": 2,
+      "sha256": {
+        "llm_usage.jsonl": "471b021c5665cd40d4ab997d34648926ad5078ab51b68a64b8ee3d3712042f73",
+        "messages.json": "e92c355c4c1a1366a311a54468d6b2d22e3cf7f92a1a90a3ed4311cb33e541d2",
+        "console.log": "a9cd158a6695b9b85309e362aa35b5e9bb74185ad58fdcc9645df2dc1f316e6f",
+        "run.json": "e20b3aa99cdea34be67f0582ef3673e2a84e1e7b134f1cdadc2cb04d4af96b0f"
+      }
+    },
+    "subtle_ep1_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/subtle_ep1_game3",
+      "saved_episodes": 1,
+      "sha256": {
+        "llm_usage.jsonl": "5ccb4e82dcd3e6730c4663dba352b9244d7c1f230d614b3631ecb6521774ce6b",
+        "messages.json": "1be9459644c0ddd24c4fef799b22ac510ea538b5e6589431c13e4ad3e62b2ad7",
+        "console.log": "b6d31ebcb34d885db3b35e2299243dc898fc621ed80f19147a506da1ed5b81b7",
+        "run.json": "17e3e84fc4019dd35a94b608d7012f36f733de6dc50da354f607256c77cb5ccc"
+      }
+    },
+    "pushy_ep3_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/pushy_ep3_game3",
+      "saved_episodes": 1,
+      "sha256": {
+        "llm_usage.jsonl": "650a2503025d65f0bdb869c30617e15eb7b46e2fe49387d2ffa97ba91ea222b6",
+        "messages.json": "2fb10c5a5a6b10443d992d7f9c34e63bdd4468e868f90fd9da49c2b13eb01079",
+        "console.log": "b6d31ebcb34d885db3b35e2299243dc898fc621ed80f19147a506da1ed5b81b7",
+        "run.json": "9434b7c58ddba5cb6a9ed8da0dd6f4a74469ee3cec992c7236f164c014a1566e"
+      }
+    },
+    "friendly_ep3_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/friendly_ep3_game3",
+      "saved_episodes": 2,
+      "sha256": {
+        "llm_usage.jsonl": "2ce40d641544ff43f3c96d328ca9270d346f38919a733fad27e4229b2860989c",
+        "messages.json": "97467f500b6ee0ac14bdd1939b9d2d56606bbf360a970f1688529ca63c3c55a7",
+        "console.log": "a9cd158a6695b9b85309e362aa35b5e9bb74185ad58fdcc9645df2dc1f316e6f",
+        "run.json": "6438d6dc8b3fd950548d89b057ca9dd7ef88f60e65f53e2de036aeb4c76e9168"
+      }
+    },
+    "subtle_ep3_game3": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/subtle_ep3_game3",
+      "saved_episodes": 2,
+      "sha256": {
+        "llm_usage.jsonl": "6f087159628a070d06cb2fcdefc55cf4241cd2c3f17656b9d8de35c3f1efde09",
+        "messages.json": "6b9cafeeba2811f27156e67648efbff6e261f365032be88fdf0df8e4f1fcb09a",
+        "console.log": "a9cd158a6695b9b85309e362aa35b5e9bb74185ad58fdcc9645df2dc1f316e6f",
+        "run.json": "4e8a3038dd7ed4516ae4d395ef0f6e09ae7b5152874908e3ab46cd785414efc8"
+      }
+    },
+    "qwen_sting_wave_game3.txt": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/qwen_sting_wave_game3.txt",
+      "sha256": "1ea60530a6ccb0ed5eca8f6b1f879fa2833ec2e0db043b365d3f5dc6f11b53d0"
+    },
+    "qwen_sting_wave_game3_D8.txt": {
+      "path": "results/qwen_sting_excluded/pre_D9/moksh/qwen_sting_wave_game3_D8.txt",
+      "sha256": "4cb531f58e6fa190bf6d9c63607dee7e4a88f9a48f0ab39f2b9c34e10f1f4eb3"
+    }
+  }
+}

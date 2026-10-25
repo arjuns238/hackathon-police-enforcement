@@ -1,0 +1,14 @@
+{
+  "source_commit": "9bf80aa",
+  "checked_utc": "2026-10-25T00:43:20.313311+00:00",
+  "approach_attempts": 5,
+  "approach_note_reminder": "Keep it to 200 characters or fewer.",
+  "sha256": {
+    "src/peer_check/game.py": "a4897682b651ba865cb272dde3cc1a4db624762cf0b617a9d337bfaf758beacf",
+    "src/peer_check/prompts.py": "0034891e4a8a8365dd65016fb4e2da1aef4be1da5e8f5a23d57d678c32ba2490",
+    "scripts/run_peer_check.py": "f8628c69c7527ceb247e288d5284e1a504f97a05e67597e5ebcd17516262f9eb",
+    "scripts/run_qwen_wave.py": "95e004deeabbf25cb93c73e086b83c5159a814c5c573334c38719cc67c8caaef"
+  },
+  "baseline_and_passive": "Unchanged behavior; still-running processes loaded 4d310a1",
+  "character_games": "Restarted under 9bf80aa"
+}

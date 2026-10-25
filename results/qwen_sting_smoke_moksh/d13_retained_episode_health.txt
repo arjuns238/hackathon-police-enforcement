@@ -1,0 +1,18 @@
+arm1_game3: 1 episodes, 61 calls | lost turns {'over 200 characters': 1} | unwrapped 0 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep3_game3: 1 episodes, 63 calls | lost turns 0 | unwrapped 0 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep1_game3: 1 episodes, 78 calls | lost turns 0 | unwrapped 2 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep1_game3: 1 episodes, 72 calls | lost turns 0 | unwrapped 0 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game3: 1 episodes, 83 calls | lost turns 0 | unwrapped 2 | failed calls with a missing argument 0 | verdicts filled in 0 | dropped 0 | truncated 0
+
+failed calls by reason (all games):
+    66  send_message: exceeds 200 char limit
+
+lost turns by reason: {'over 200 characters': 1}
+
+PASS  1 no turn lost except to over-long messages
+PASS  2 turns lost to over-long messages, reported only (1/100 = 1%)
+PASS  3 no verdict filled in
+PASS  4 no truncation, dropped <= 5% (0/357)
+PASS  5 wrapped calls unwrapped (4), none failed for a missing argument
+PASS  6 approach gate (GATE (active characters): PASS {'pushy_ep1_game3': True, 'subtle_ep1_game3': True})
+HEALTH: PASS

@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-25T07:07:29.683307+00:00",
+  "status": "failed first episode, preserved before any recovery",
+  "files": {
+    "results/qwen_sting/arm1_game4/console.log": {
+      "bytes": 8872,
+      "sha256": "0436901443074c3b8bc849a2dd1a49da046351f3533970f3f43bed58af11e726"
+    },
+    "results/qwen_sting/arm1_game4/llm_usage.jsonl": {
+      "bytes": 30880,
+      "sha256": "0de5fe47f7a06732b0781f1c2fdc830a43eb4dcdc20a6380b79288d2e5718038"
+    },
+    "results/qwen_sting/arm1_game4/raw_model_calls.jsonl": {
+      "bytes": 1810602,
+      "sha256": "cf43dbe1c186a95f6174f2717a5cb3042ba44073cff9189ef2bfb646b4de66cb"
+    },
+    "results/qwen_sting/arm1_game4/run_backend.json": {
+      "bytes": 419,
+      "sha256": "9af0d2dcec40e50ee3b8b266b6994ff7d9a5c7d66ea337d482e5a7efa9352af3"
+    }
+  },
+  "archive": "results/qwen_sting_handoff_moksh/context_failure_arm1_game4_20261025T070729Z.tar.gz",
+  "archive_sha256": "b7ec5093e9a5bcd8410e749feb0e77b3493abe0e65557dfda0d76c96b5b1e17a"
+}

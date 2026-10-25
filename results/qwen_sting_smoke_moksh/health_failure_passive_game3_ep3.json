@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-10-25T07:38:05.992149+00:00",
+  "cell": "passive_game3",
+  "failed_episode": 3,
+  "actor": "carol",
+  "phase": "communication",
+  "round": 4,
+  "rules_failed": [
+    1,
+    5
+  ],
+  "stop_pid": 64700,
+  "retained_healthy_episodes": [
+    1,
+    2
+  ],
+  "raw_modified": false,
+  "automatic_resume_allowed": false
+}

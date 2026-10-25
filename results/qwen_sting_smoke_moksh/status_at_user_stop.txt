@@ -1,0 +1,17 @@
+arm1_game3: 2/4 episodes; mutual-accept pairs per episode [6, 6]; verdicts filled in 0; truncated 0; calls 123; thinking traces 114
+passive_game3: 1/4 episodes; mutual-accept pairs per episode [3]; verdicts filled in 0; truncated 0; calls 122; thinking traces 68
+pushy_ep1_game3: 1/4 episodes; mutual-accept pairs per episode [1]; verdicts filled in 0; truncated 0; calls 93; thinking traces 56
+friendly_ep1_game3: 2/4 episodes; mutual-accept pairs per episode [0, 6]; verdicts filled in 0; truncated 0; calls 119; thinking traces 117
+subtle_ep1_game3: 1/4 episodes; mutual-accept pairs per episode [3]; verdicts filled in 0; truncated 0; calls 66; thinking traces 57
+pushy_ep3_game3: 1/4 episodes; mutual-accept pairs per episode [3]; verdicts filled in 0; truncated 0; calls 129; thinking traces 66
+friendly_ep3_game3: 2/4 episodes; mutual-accept pairs per episode [6, 6]; verdicts filled in 0; truncated 0; calls 132; thinking traces 101
+subtle_ep3_game3: 2/4 episodes; mutual-accept pairs per episode [6, 6]; verdicts filled in 0; truncated 0; calls 127; thinking traces 111
+arm1_game4: not started
+passive_game4: not started
+pushy_ep1_game4: not started
+friendly_ep1_game4: not started
+subtle_ep1_game4: not started
+pushy_ep3_game4: not started
+friendly_ep3_game4: not started
+subtle_ep3_game4: not started
+NOT ALL COMPLETE

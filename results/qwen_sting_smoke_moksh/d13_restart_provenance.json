@@ -1,0 +1,83 @@
+{
+  "restart_utc": "2026-10-25T04:52:10.485004+00:00",
+  "source_commit": "740c410",
+  "workspace": "modi-moksh",
+  "budget_total_usd": 60,
+  "soft_stop_usd": 55,
+  "prior_work_budget_reserve_usd": 14,
+  "budget_allowance_per_gpu_hour_usd": 4,
+  "allowance_note": "Conservative operational reserve, not measured billing. Count primary and secondary separately. Budget is cumulative.",
+  "user_authorized_two_gpus": true,
+  "servers": {
+    "game3": {
+      "app": "qwen-sting",
+      "base_url": "https://modi-moksh--qwen-sting-serve.us-east.modal.run/v1",
+      "wave_started_utc": "2026-10-25T04:52:10.485004+00:00",
+      "wave_stopped_utc": "2026-10-25T08:06:40.844262+00:00",
+      "stop_reason": "No runnable unfinished game3 games remain; pushy_ep3 context failure skipped under overnight authorization",
+      "stop_requested_utc": "2026-10-25T08:04:40.259968+00:00",
+      "stop_confirmed_utc": "2026-10-25T08:06:40.844262+00:00",
+      "container_absence_verified": true
+    },
+    "game4": {
+      "app": "qwen-sting-4",
+      "base_url": "https://modi-moksh--qwen-sting-4-serve.us-east.modal.run/v1",
+      "wave_started_utc": "2026-10-25T06:36:05.248037+00:00",
+      "stop_requested_utc": "2026-10-25T15:44:57.388791+00:00",
+      "wave_stopped_utc": "2026-10-25T11:00:55.484524+00:00",
+      "stop_reason": "Last runnable game failed context admission; all experiments finished or skipped under overnight authorization",
+      "app_stop_requested_utc": "2026-10-25T15:44:57.388791+00:00",
+      "serving_absence_observed_utc": "2026-10-25T11:00:55.484524+00:00",
+      "stop_confirmed_utc": "2026-10-25T16:00:19.577158+00:00",
+      "container_absence_verified": true,
+      "allowance_end_basis": "Conservative upper bound: no experiment containers observed in saved11:00UTC snapshot, after final client failed10:37UTC. Explicit app stop confirmed later; this does not imply serving continued until app-stop request.",
+      "absence_evidence": "results/qwen_sting_smoke_moksh/monitor/20261025T110055484524Z/containers.json"
+    }
+  },
+  "retained_episodes": 5,
+  "restart_strategy": "d13_resume_strategy.json",
+  "capture": "enabled from first new call in every process",
+  "source_manifest": "source_d13_manifest.json",
+  "game3_wave_session": 69339,
+  "runtime_incidents": [
+    {
+      "observed_utc": "2026-10-25T06:13:24.015446+00:00",
+      "server": "game3",
+      "old_container": "ta-01M5RPDYHTP08SFZ4T0CNCSSRR",
+      "shutdown_logged_utc": "2026-10-25T05:59:03+00:00",
+      "replacement_container": "ta-01M5RT8CJCG9V66WZEVKZQ5FTR",
+      "replacement_ready_utc": "2026-10-25T06:01:41+00:00",
+      "symptoms": "API shutdown, EngineDeadError and HTTP 500s, followed by automatic replacement",
+      "root_cause": "Not established from available logs",
+      "agent_wrapper_errors_observed": 0,
+      "completed_episodes_replayed": false,
+      "note": "Internal SDK/proxy retries may recover below the completion wrapper; server logs retain those transport failures even when capture shows only a completed outer call."
+    },
+    {
+      "observed_utc": "2026-10-25T08:35:39.040457+00:00",
+      "server": "game4",
+      "old_container": "ta-01M5RWC9EQSVWKFVQQ6GYHAQ1R",
+      "shutdown_logged_utc": "2026-10-25T08:17:47+00:00",
+      "replacement_container": "ta-01M5S26C9G2838CQVRV0JHHWYR",
+      "replacement_ready_utc": "2026-10-25T08:20:50+00:00",
+      "symptoms": "SIGINT/API shutdown aborted six in-flight engine requests; HTTP500; automatic replacement.",
+      "root_cause": "Cause of shutdown signal not established. A Modal GPU scheduling/capacity message precedes shutdown.",
+      "new_outer_completion_errors_in_active_games": 0,
+      "completed_episodes_replayed": false,
+      "workers_restarted_by_us": false,
+      "evidence": "results/qwen_sting_smoke_moksh/server_logs/full24h_20261025T083357Z_game4.txt",
+      "note": "Internal SDK/proxy transport retry behavior is below the capture wrapper. Active workers continued and latest saved-valid health passed; no new skipped game."
+    }
+  ],
+  "m1_gate_amendment": {
+    "approved": true,
+    "scope": "corrected direct recipient errors with identical successful retry in same slot",
+    "post_observation": true,
+    "legacy_failure_preserved": true,
+    "health_report": "health_m1_game3.txt"
+  },
+  "game4_wave_session": 57045,
+  "m1_resume_wave_session": 69783,
+  "all_experiment_workers_stopped": true,
+  "all_experiment_containers_stopped": true
+}

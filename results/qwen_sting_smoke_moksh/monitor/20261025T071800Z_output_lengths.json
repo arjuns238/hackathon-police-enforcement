@@ -1,0 +1,135 @@
+{
+  "checked_utc": "2026-10-25T07:18:00.984157+00:00",
+  "scope": "Captured new replies only; retained pre-capture episodes retain checkpoint/usage coverage.",
+  "registered_max_output_tokens": 64000,
+  "observations": [
+    {
+      "cell": "arm1_game3",
+      "max_completion_tokens": 2141,
+      "max_reasoning_chars": 8239,
+      "max_content_chars": 1489,
+      "max_tool_argument_chars": 5001,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "max_completion_tokens": 5813,
+      "max_reasoning_chars": 24933,
+      "max_content_chars": 1454,
+      "max_tool_argument_chars": 5587,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "max_completion_tokens": 2104,
+      "max_reasoning_chars": 8670,
+      "max_content_chars": 1214,
+      "max_tool_argument_chars": 2872,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "passive_game3",
+      "max_completion_tokens": 3867,
+      "max_reasoning_chars": 15786,
+      "max_content_chars": 1356,
+      "max_tool_argument_chars": 8888,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "max_completion_tokens": 3521,
+      "max_reasoning_chars": 14971,
+      "max_content_chars": 1473,
+      "max_tool_argument_chars": 3482,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "max_completion_tokens": 8975,
+      "max_reasoning_chars": 37928,
+      "max_content_chars": 1349,
+      "max_tool_argument_chars": 5748,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "max_completion_tokens": 2332,
+      "max_reasoning_chars": 9450,
+      "max_content_chars": 1523,
+      "max_tool_argument_chars": 3020,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "max_completion_tokens": 3697,
+      "max_reasoning_chars": 12695,
+      "max_content_chars": 1489,
+      "max_tool_argument_chars": 4661,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "arm1_game4",
+      "max_completion_tokens": 2711,
+      "max_reasoning_chars": 6247,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5273,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "friendly_ep1_game4",
+      "max_completion_tokens": 7650,
+      "max_reasoning_chars": 27674,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5625,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "friendly_ep3_game4",
+      "max_completion_tokens": 4342,
+      "max_reasoning_chars": 19011,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5828,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "passive_game4",
+      "max_completion_tokens": 2888,
+      "max_reasoning_chars": 11438,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5785,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "pushy_ep1_game4",
+      "max_completion_tokens": 3828,
+      "max_reasoning_chars": 13977,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5530,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "pushy_ep3_game4",
+      "max_completion_tokens": 3656,
+      "max_reasoning_chars": 13773,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5787,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "subtle_ep1_game4",
+      "max_completion_tokens": 9668,
+      "max_reasoning_chars": 37023,
+      "max_content_chars": 0,
+      "max_tool_argument_chars": 5807,
+      "at_registered_cap": 0
+    },
+    {
+      "cell": "subtle_ep3_game4",
+      "max_completion_tokens": 2726,
+      "max_reasoning_chars": 9131,
+      "max_content_chars": 1175,
+      "max_tool_argument_chars": 8117,
+      "at_registered_cap": 0
+    }
+  ]
+}

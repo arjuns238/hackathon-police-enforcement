@@ -1,0 +1,29 @@
+{
+  "files": {
+    "results/qwen_sting/passive_game3/llm_usage.jsonl": {
+      "bytes": 192848,
+      "sha256": "a28b62496d55992b734f3aa6678a924d95f629c517a3c659cb32724827bed80f"
+    },
+    "results/qwen_sting/passive_game3/messages.json": {
+      "bytes": 469772,
+      "sha256": "68efb06ef108408e3baafae5d47948496b4a4ab479434fcffaa42ecde5af9417"
+    },
+    "results/qwen_sting/passive_game3/console.log": {
+      "bytes": 532,
+      "sha256": "e2c6fe4b7d151fa4c52f95a7968b82052991dfd98fca3ec5a44f580f4ca2f36e"
+    },
+    "results/qwen_sting/passive_game3/run_backend.json": {
+      "bytes": 410,
+      "sha256": "7a3758e11ba6594839dbf9f321e47067b054a9c921a9c2adefae9b5b6a1a67a8"
+    },
+    "results/qwen_sting/passive_game3/run.json": {
+      "bytes": 619585,
+      "sha256": "555806ab87befaa356f0db22ac6b904a5e3ae88cdb9943b013fa32dba19611b3"
+    },
+    "results/qwen_sting/passive_game3/raw_model_calls.jsonl": {
+      "bytes": 15509040,
+      "sha256": "64a71aab38ab5d2f1d544fe4690fdc45a6b3d533008446f1023e28b389db33b7"
+    }
+  },
+  "archive_sha256": "71e2db447b69c07edf38b73b18398db74f8a036cd991e40430725c8599cab7e3"
+}

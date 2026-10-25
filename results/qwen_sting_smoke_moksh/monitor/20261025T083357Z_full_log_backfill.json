@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-25T08:33:57.738058+00:00",
+  "results": [
+    {
+      "game": "game3",
+      "path": "results/qwen_sting_smoke_moksh/server_logs/full24h_20261025T083357Z_game3.txt",
+      "lines": 4706,
+      "complete_fetch": true
+    },
+    {
+      "game": "game4",
+      "path": "results/qwen_sting_smoke_moksh/server_logs/full24h_20261025T083357Z_game4.txt",
+      "lines": 3209,
+      "complete_fetch": true
+    }
+  ]
+}

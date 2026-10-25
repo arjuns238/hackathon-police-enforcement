@@ -1,0 +1,11 @@
+{
+  "workspace": "modi-moksh",
+  "app": "qwen-sting",
+  "base_url": "https://modi-moksh--qwen-sting-serve.us-east.modal.run/v1",
+  "source_commit": "740c410",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "vllm_version": "0.31.0",
+  "recorded_utc": "2026-10-25T04:54:03.090041+00:00",
+  "capture": "raw_model_calls.jsonl",
+  "budget": "shared cumulative budget with game4; soft stop $55"
+}

@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-25T07:24:01.909837+00:00",
+  "saved_episodes": 23,
+  "episodes_by_folder": {
+    "arm1_game4": 0,
+    "arm1_game3": 4,
+    "friendly_ep1_game4": 0,
+    "friendly_ep1_game3": 2,
+    "friendly_ep3_game4": 0,
+    "friendly_ep3_game3": 3,
+    "passive_game3": 2,
+    "passive_game4": 0,
+    "pushy_ep1_game4": 0,
+    "pushy_ep1_game3": 3,
+    "subtle_ep1_game4": 0,
+    "subtle_ep1_game3": 3,
+    "subtle_ep3_game4": 1,
+    "subtle_ep3_game3": 4,
+    "pushy_ep3_game4": 0,
+    "pushy_ep3_game3": 1
+  },
+  "conservative_allowance_usd": 27.32,
+  "baseline_left_partial_by_user": true,
+  "other_context_failed_setup_stopped": true
+}

@@ -1,0 +1,17 @@
+{
+  "authorized_utc": "2026-10-25T07:30:18.848787+00:00",
+  "user_instruction": "Also, I\u2019m going to sleep so if something like this comes up, just skip it and let me know in the morning",
+  "scope": "Similar context/resource or required-health failures affecting individual game runs",
+  "actions": [
+    "Preserve all raw outputs, errors and partial requests",
+    "Stop only the affected worker if still running; do not restart it automatically",
+    "Mark that game partial/skipped and continue unaffected runnable games",
+    "Do not change model, prompts, sampling, context/output limits or registered game mechanics",
+    "Keep enforcing cumulative $60 cap/$55 soft stop and storage safety",
+    "Stop each GPU app when no runnable unfinished game remains",
+    "Collect incidents and completion details for a morning summary"
+  ],
+  "overnight_notification_policy": "Hold routine status updates and nonurgent individual-game failure alerts for the morning; retain reports locally.",
+  "morning_delivery": "After 08:00 America/Chicago on 2026-10-25; exact time assumed because none was specified",
+  "pending_user_recovery_question": false
+}

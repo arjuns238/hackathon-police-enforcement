@@ -1,0 +1,56 @@
+{
+  "reason": "Apply registered D8 from origin/main at user request before first saved game-3 episode",
+  "old_source": "4d310a1",
+  "new_source": "9bf80aa",
+  "archived_utc": "2026-10-25T00:42:51.699998+00:00",
+  "cells": {
+    "pushy_ep1_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/pushy_ep1_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "friendly_ep1_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/friendly_ep1_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "subtle_ep1_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/subtle_ep1_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "pushy_ep3_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/pushy_ep3_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "friendly_ep3_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/friendly_ep3_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    },
+    "subtle_ep3_game3": {
+      "saved_episodes": 0,
+      "completed_calls": 0,
+      "excluded_path": "results/qwen_sting_excluded/subtle_ep3_game3_before_D8",
+      "sha256": {
+        "console.log": "54887ac3a32dc01b65d5f1841b91e44b32fd75f18d2bce60a935154c471a57a2"
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "checked_utc": "2026-10-25T04:13:53.040795+00:00",
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "episodes": 0,
+      "usage_calls": 48,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 2807,
+      "last_call_phase": "communication",
+      "last_call_time": "2026-10-25T04:13:51.626724+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "episodes": 0,
+      "usage_calls": 35,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 3203,
+      "last_call_phase": "communication",
+      "last_call_time": "2026-10-25T04:13:28.567763+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "episodes": 0,
+      "usage_calls": 47,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 3313,
+      "last_call_phase": "verdict",
+      "last_call_time": "2026-10-25T04:11:40.841969+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "passive_game3",
+      "episodes": 0,
+      "usage_calls": 49,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 3012,
+      "last_call_phase": "communication",
+      "last_call_time": "2026-10-25T04:12:18.423062+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "episodes": 0,
+      "usage_calls": 55,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 3037,
+      "last_call_phase": "verdict",
+      "last_call_time": "2026-10-25T04:13:22.681571+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "episodes": 0,
+      "usage_calls": 28,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 6143,
+      "last_call_phase": "communication",
+      "last_call_time": "2026-10-25T04:07:40.917171+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "episodes": 0,
+      "usage_calls": 55,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 2315,
+      "last_call_phase": "communication",
+      "last_call_time": "2026-10-25T04:13:40.950126+00:00",
+      "capture_counts": {}
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "episodes": 1,
+      "usage_calls": 55,
+      "truncated": 0,
+      "nonaccepted_statuses": {},
+      "max_completion_tokens": 2414,
+      "last_call_phase": "task",
+      "last_call_time": "2026-10-25T04:12:08.415101+00:00",
+      "capture_counts": {
+        "capture_started": 1,
+        "request": 2,
+        "response": 1
+      }
+    }
+  ],
+  "saved_episodes": 1,
+  "billed_usd": 0.03,
+  "budget_reserve_usd": 12.12,
+  "analysis_snapshot": "results/qwen_sting_smoke_moksh/analysis_snapshots/20261025T041353Z",
+  "note": "Boundary reloads intentional; game4 still waits for all eight first episodes and gates."
+}

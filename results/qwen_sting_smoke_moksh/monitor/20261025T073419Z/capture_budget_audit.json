@@ -1,0 +1,381 @@
+{
+  "checked_utc": "2026-10-25T07:34:19.563468+00:00",
+  "known_skipped": [
+    "arm1_game4",
+    "subtle_ep1_game4"
+  ],
+  "games": [
+    {
+      "cell": "arm1_game3",
+      "saved_episodes": 4,
+      "status": "complete",
+      "journal_counts": {
+        "capture_started": 2,
+        "request": 161,
+        "response": 160,
+        "truncated": 0
+      },
+      "reasoning_replies": 160,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T06:39:58.394462+00:00",
+        "episode": 4,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 0,
+      "errors": []
+    },
+    {
+      "cell": "friendly_ep1_game3",
+      "saved_episodes": 2,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 128,
+        "response": 127,
+        "truncated": 0
+      },
+      "reasoning_replies": 127,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:32:31.123258+00:00",
+        "episode": 3,
+        "actor": "alice",
+        "phase": "communication",
+        "round": 2
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "friendly_ep3_game3",
+      "saved_episodes": 4,
+      "status": "complete",
+      "journal_counts": {
+        "capture_started": 2,
+        "request": 194,
+        "response": 193,
+        "truncated": 0
+      },
+      "reasoning_replies": 193,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:26:01.068426+00:00",
+        "episode": 4,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 0,
+      "errors": []
+    },
+    {
+      "cell": "passive_game3",
+      "saved_episodes": 2,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 159,
+        "response": 158,
+        "truncated": 0
+      },
+      "reasoning_replies": 158,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:34:19.135471+00:00",
+        "episode": 3,
+        "actor": "alice",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "pushy_ep1_game3",
+      "saved_episodes": 4,
+      "status": "complete",
+      "journal_counts": {
+        "capture_started": 3,
+        "request": 187,
+        "response": 185,
+        "truncated": 0
+      },
+      "reasoning_replies": 185,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:25:59.299139+00:00",
+        "episode": 4,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 0,
+      "errors": []
+    },
+    {
+      "cell": "pushy_ep3_game3",
+      "saved_episodes": 1,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 107,
+        "response": 106,
+        "truncated": 0
+      },
+      "reasoning_replies": 106,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:34:06.589812+00:00",
+        "episode": 2,
+        "actor": "bob",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "subtle_ep1_game3",
+      "saved_episodes": 4,
+      "status": "complete",
+      "journal_counts": {
+        "capture_started": 2,
+        "request": 177,
+        "response": 176,
+        "truncated": 0
+      },
+      "reasoning_replies": 176,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:33:53.199136+00:00",
+        "episode": 4,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 0,
+      "errors": []
+    },
+    {
+      "cell": "subtle_ep3_game3",
+      "saved_episodes": 4,
+      "status": "complete",
+      "journal_counts": {
+        "capture_started": 2,
+        "request": 202,
+        "response": 201,
+        "truncated": 0
+      },
+      "reasoning_replies": 201,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:06:46.867626+00:00",
+        "episode": 4,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 0,
+      "errors": []
+    },
+    {
+      "cell": "arm1_game4",
+      "saved_episodes": 0,
+      "status": "skipped context failure",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 26,
+        "response": 25,
+        "truncated": 0,
+        "error": 1
+      },
+      "reasoning_replies": 25,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T06:52:50.778200+00:00",
+        "episode": 1,
+        "actor": "carol",
+        "phase": "communication",
+        "round": 1
+      },
+      "pending_current_invocation": 0,
+      "errors": [
+        {
+          "recorded_at": "2026-10-25T06:52:51.321853+00:00",
+          "error_type": "ContextWindowExceededError",
+          "call_id": "16b18012df1b44d8a1cc87543be2c533"
+        }
+      ]
+    },
+    {
+      "cell": "friendly_ep1_game4",
+      "saved_episodes": 0,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 50,
+        "response": 49,
+        "truncated": 0
+      },
+      "reasoning_replies": 49,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:33:34.796557+00:00",
+        "episode": 1,
+        "actor": "bob",
+        "phase": "communication",
+        "round": 5
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "friendly_ep3_game4",
+      "saved_episodes": 0,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 58,
+        "response": 57,
+        "truncated": 0
+      },
+      "reasoning_replies": 57,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:33:07.966421+00:00",
+        "episode": 1,
+        "actor": "carol",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "passive_game4",
+      "saved_episodes": 1,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 82,
+        "response": 81,
+        "truncated": 0
+      },
+      "reasoning_replies": 81,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:33:59.679912+00:00",
+        "episode": 2,
+        "actor": "bob",
+        "phase": "communication",
+        "round": 1
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "pushy_ep1_game4",
+      "saved_episodes": 0,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 50,
+        "response": 49,
+        "truncated": 0
+      },
+      "reasoning_replies": 49,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:34:11.033859+00:00",
+        "episode": 1,
+        "actor": "carol",
+        "phase": "communication",
+        "round": 5
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "pushy_ep3_game4",
+      "saved_episodes": 1,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 64,
+        "response": 63,
+        "truncated": 0
+      },
+      "reasoning_replies": 63,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:34:16.815318+00:00",
+        "episode": 1,
+        "actor": "dave",
+        "phase": "private_reflection",
+        "round": null
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    },
+    {
+      "cell": "subtle_ep1_game4",
+      "saved_episodes": 0,
+      "status": "skipped context failure",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 39,
+        "response": 38,
+        "truncated": 0,
+        "error": 1
+      },
+      "reasoning_replies": 38,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:14:26.665658+00:00",
+        "episode": 1,
+        "actor": "bob",
+        "phase": "communication",
+        "round": 3
+      },
+      "pending_current_invocation": 0,
+      "errors": [
+        {
+          "recorded_at": "2026-10-25T07:14:27.131417+00:00",
+          "error_type": "ContextWindowExceededError",
+          "call_id": "df798cfe8ca64c8ab0475677e1a503b1"
+        }
+      ]
+    },
+    {
+      "cell": "subtle_ep3_game4",
+      "saved_episodes": 1,
+      "status": "running",
+      "journal_counts": {
+        "capture_started": 1,
+        "request": 106,
+        "response": 105,
+        "truncated": 0
+      },
+      "reasoning_replies": 105,
+      "cap_hits": 0,
+      "latest_complete_reply": {
+        "recorded_at": "2026-10-25T07:33:22.097580+00:00",
+        "episode": 2,
+        "actor": "alice",
+        "phase": "communication",
+        "round": 5
+      },
+      "pending_current_invocation": 1,
+      "errors": []
+    }
+  ],
+  "billed_usd": 0.03,
+  "billing_lags": true,
+  "free_disk_gib": 15.75,
+  "conservative_allowance_usd": 28.69,
+  "saved_episodes": 28,
+  "complete_games": 5
+}

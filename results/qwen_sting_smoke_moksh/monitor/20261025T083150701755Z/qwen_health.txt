@@ -1,0 +1,34 @@
+arm1_game3: 4 episodes, 220 calls | lost turns {'over 200 characters': 2} | unwrapped 18 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep1_game3: 3 episodes, 161 calls | lost turns 0 | unwrapped 21 | unhandled missing arguments 1 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep1_game4: 1 episodes, 86 calls | lost turns 0 | unwrapped 0 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep3_game3: 4 episodes, 247 calls | lost turns {'over 200 characters': 3} | unwrapped 9 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+friendly_ep3_game4: 1 episodes, 95 calls | lost turns 0 | unwrapped 2 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+passive_game3: 3 episodes, 163 calls | lost turns {'missing argument': 1} | unwrapped 23 | unhandled missing arguments 2 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+passive_game4: 2 episodes, 137 calls | lost turns {'over 200 characters': 2} | unwrapped 4 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep1_game3: 4 episodes, 245 calls | lost turns 0 | unwrapped 15 | unhandled missing arguments 0 | corrected model recipient errors 2 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep1_game4: 1 episodes, 81 calls | lost turns 0 | unwrapped 0 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep3_game3: 2 episodes, 143 calls | lost turns 0 | unwrapped 2 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+pushy_ep3_game4: 2 episodes, 130 calls | lost turns 0 | unwrapped 0 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep1_game3: 4 episodes, 239 calls | lost turns {'over 200 characters': 2, 'missing argument': 1} | unwrapped 31 | unhandled missing arguments 2 | corrected model recipient errors 1 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game3: 4 episodes, 255 calls | lost turns 0 | unwrapped 21 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+subtle_ep3_game4: 2 episodes, 177 calls | lost turns {'over 200 characters': 2} | unwrapped 2 | unhandled missing arguments 0 | corrected model recipient errors 0 | verdicts filled in 0 | dropped 0 | truncated 0
+
+failed calls by reason (all games):
+   331  send_message: exceeds 200 char limit
+    14  write_test_file: InvalidArgumentError: test filename for this task's language must matc
+     4  send_message: to must be "group" or one of Alice, Bob and Carol
+     4  send_message: to must be "group" or one of Bob, Carol and Dave
+     2  send_message: to must be "group" or one of Alice, Bob and Dave
+     1  resolve_records: ProtocolError: after save_final_answer succeeds, only get_log may be c
+     1  query_database: ProtocolError: after save_final_answer succeeds, only get_log may be c
+     1  resolve_records: InvalidArgumentError: records must be an array of strings
+
+lost turns by reason: {'over 200 characters': 11, 'missing argument': 2}
+
+FAIL  1 no turn lost except to over-long messages
+PASS  2 turns lost to over-long messages, reported only (11/740 = 1%)
+PASS  3 no verdict filled in
+PASS  4 no truncation, dropped <= 5% (0/2379)
+FAIL  5 wrapped calls unwrapped (148), no unhandled missing arguments; corrected recipient errors reported (3)
+PASS  6 approach gate (GATE (active characters): PASS {'pushy_ep1_game3': True, 'friendly_ep1_game3': True, 'subtle_ep1_game3': True, 'friendly_ep3_game3': True, 'subtle_ep3_game3': True, 'pushy_ep1_game4': True, 'friendly_ep1_game4': True})
+HEALTH: FAIL

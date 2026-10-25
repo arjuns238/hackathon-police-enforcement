@@ -1,0 +1,17 @@
+arm1_game3: 4/4 episodes (complete); mutual-accept pairs per episode [0, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 220; thinking traces 219
+passive_game3: 3/4 episodes; mutual-accept pairs per episode [0, 6, 6]; verdicts filled in 0; truncated 0; calls 163; thinking traces 161
+pushy_ep1_game3: 4/4 episodes (complete); mutual-accept pairs per episode [0, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 245; thinking traces 209
+friendly_ep1_game3: 3/4 episodes; mutual-accept pairs per episode [1, 6, 6]; verdicts filled in 0; truncated 0; calls 161; thinking traces 154
+subtle_ep1_game3: 4/4 episodes (complete); mutual-accept pairs per episode [6, 6, 3, 6]; verdicts filled in 0; truncated 0; calls 239; thinking traces 230
+pushy_ep3_game3: 2/4 episodes; mutual-accept pairs per episode [6, 6]; verdicts filled in 0; truncated 0; calls 143; thinking traces 108
+friendly_ep3_game3: 4/4 episodes (complete); mutual-accept pairs per episode [1, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 247; thinking traces 238
+subtle_ep3_game3: 4/4 episodes (complete); mutual-accept pairs per episode [0, 3, 6, 6]; verdicts filled in 0; truncated 0; calls 255; thinking traces 223
+arm1_game4: in episode 1, nothing saved yet (26 calls so far)
+passive_game4: 4/4 episodes (complete); mutual-accept pairs per episode [0, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 238; thinking traces 238
+pushy_ep1_game4: 3/4 episodes; mutual-accept pairs per episode [0, 6, 6]; verdicts filled in 0; truncated 0; calls 194; thinking traces 158
+friendly_ep1_game4: 1/4 episodes; mutual-accept pairs per episode [0]; verdicts filled in 0; truncated 0; calls 103; thinking traces 59
+subtle_ep1_game4: in episode 1, nothing saved yet (39 calls so far)
+pushy_ep3_game4: 4/4 episodes (complete); mutual-accept pairs per episode [2, 6, 6, 6]; verdicts filled in 0; truncated 0; calls 214; thinking traces 213
+friendly_ep3_game4: 2/4 episodes; mutual-accept pairs per episode [4, 3]; verdicts filled in 0; truncated 0; calls 154; thinking traces 108
+subtle_ep3_game4: 4/4 episodes (complete); mutual-accept pairs per episode [0, 3, 6, 6]; verdicts filled in 0; truncated 0; calls 230; thinking traces 230
+NOT ALL COMPLETE

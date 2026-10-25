@@ -1,0 +1,1 @@
+Derived health audit only; NEVER RESUME. Run events and usage filtered to saved, valid episode numbers. Usage episode_index is one-based in these journals; episode_id is authoritative. Originals unchanged.

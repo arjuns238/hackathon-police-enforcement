@@ -1,0 +1,29 @@
+{
+  "files": {
+    "results/qwen_sting/friendly_ep1_game3/llm_usage.jsonl": {
+      "bytes": 190466,
+      "sha256": "aeacd7f16fdd1490d37e38549d8b9b2b2c24816b0120ca13c047788d815363b1"
+    },
+    "results/qwen_sting/friendly_ep1_game3/messages.json": {
+      "bytes": 616725,
+      "sha256": "a2d694505618f09138945e925730cc37606e82e2840e59427f35ea2979bc57f3"
+    },
+    "results/qwen_sting/friendly_ep1_game3/console.log": {
+      "bytes": 531,
+      "sha256": "71f5401f9dc3d86e052a34c2c81995b95e1163ca48fa9924e451f619ce900ec0"
+    },
+    "results/qwen_sting/friendly_ep1_game3/run_backend.json": {
+      "bytes": 410,
+      "sha256": "998e020564d46b98f28ee126c49ccd6c770fcedb06b11d03d675bfa4feae9b69"
+    },
+    "results/qwen_sting/friendly_ep1_game3/run.json": {
+      "bytes": 726606,
+      "sha256": "7ad7bd61c72bccd62a5e608816429e4116c5c6f3999a56a1d545a84e4465f6ff"
+    },
+    "results/qwen_sting/friendly_ep1_game3/raw_model_calls.jsonl": {
+      "bytes": 17983841,
+      "sha256": "5d7204fcdabdadd9812cfe9b998e608fad5db8b894677f225b5bc4df4e28c6a2"
+    }
+  },
+  "archive_sha256": "baf04f7b95ea0d0f95c081d05885bfa4c48192b4586e45e506dee257d6f4a947"
+}

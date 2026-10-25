@@ -1,0 +1,37 @@
+[
+  {
+    "pid": 69496,
+    "ppid": 69482,
+    "game": "4",
+    "arm": "24",
+    "offer_episode": null
+  },
+  {
+    "pid": 69508,
+    "ppid": 69482,
+    "game": "4",
+    "arm": "21",
+    "offer_episode": "1"
+  },
+  {
+    "pid": 69537,
+    "ppid": 69482,
+    "game": "4",
+    "arm": "21",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 69549,
+    "ppid": 69482,
+    "game": "4",
+    "arm": "22",
+    "offer_episode": "3"
+  },
+  {
+    "pid": 69562,
+    "ppid": 69482,
+    "game": "4",
+    "arm": "23",
+    "offer_episode": "3"
+  }
+]
