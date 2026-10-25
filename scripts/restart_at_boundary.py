@@ -6,8 +6,12 @@ episode (run.json, then messages.json), stops that process and starts the same c
 Python under `caffeinate -i`; the runner resumes after the saved episode. Games that finish on their own are left alone.
 Output of the restarted games is appended to their console.log.
 
-Usage: vendor/agent-collusion/.venv/bin/python scripts/restart_at_boundary.py
+Keeps each game's own QWEN_BASE_URL (read from the running process's environment), so games on the second server
+stay there. `--arms` limits it to some arms (e.g. only Dave games).
+
+Usage: vendor/agent-collusion/.venv/bin/python scripts/restart_at_boundary.py [--arms 21 22 23 24]
 """
+import argparse
 import json
 import os
 import signal
@@ -47,13 +51,28 @@ def saved(d: Path) -> int:
         return 0
 
 
+def base_url_of(pid: int) -> str | None:
+    out = subprocess.run(["ps", "eww", "-p", str(pid)], capture_output=True, text=True).stdout
+    for tok in out.split():
+        if tok.startswith("QWEN_BASE_URL="):
+            return tok.split("=", 1)[1]
+    return None
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--arms", nargs="+", help="only games of these arms")
+    args = ap.parse_args()
     pending = {}
     for pid, argv in running().items():
+        arm = argv[argv.index("--arm") + 1]
+        if args.arms and arm not in args.arms:
+            continue
         d = folder(argv)
         script = next(i for i, a in enumerate(argv) if a.endswith("scripts/run_peer_check.py"))
-        pending[pid] = {"dir": d, "start": saved(d), "cmd": [str(PY), *argv[script:]]}
-        print(f"watching {d.name} (pid {pid}, {pending[pid]['start']} episodes saved)", flush=True)
+        pending[pid] = {"dir": d, "start": saved(d), "cmd": [str(PY), *argv[script:]], "url": base_url_of(pid)}
+        print(f"watching {d.name} (pid {pid}, {pending[pid]['start']} episodes saved, server "
+              f"{pending[pid]['url'] or 'from .env'})", flush=True)
     while pending:
         for pid, p in list(pending.items()):
             alive = subprocess.run(["kill", "-0", str(pid)], capture_output=True).returncode == 0
@@ -71,8 +90,9 @@ def main() -> None:
                         break
                     time.sleep(1)
                 log = open(p["dir"] / "console.log", "a")
+                env = {**os.environ, **({"QWEN_BASE_URL": p["url"]} if p["url"] else {})}
                 new = subprocess.Popen(["caffeinate", "-i", *p["cmd"]], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
-                                       start_new_session=True)
+                                       start_new_session=True, env=env)
                 print(f"{p['dir'].name}: restarted after episode {n} (new pid {new.pid})", flush=True)
                 del pending[pid]
         time.sleep(5)

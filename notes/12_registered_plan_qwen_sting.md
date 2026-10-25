@@ -428,6 +428,14 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   `results/qwen_sting_excluded/game2_paused_2315/`, not data) and restarted from scratch on a second, identical
   server (`qwen-sting-2`: same image, weights, revision, vLLM flags; `QWEN_APP_NAME`). Game 1 stays on the first
   server. Game number is now also server instance, as with the teammate's games (D6); same weights and sampling.
+- **D13 (2026-10-24, ~23:45; found by asri's teammate in game 3).** Dave's report calls used up his tries: in the
+  verdict phase a turn with only reports counted as one of the 3 verdict tries, so a Dave who reported three workers
+  ran out and the runner filled in three rejects (breaking his promise to accept anyone who agreed). The same held for
+  message tries. Fix: a turn with only report calls does not use up a try (up to 5 such turns per phase turn;
+  `REPORT_FREE_TURNS`); tested with a scripted Dave who files three reports and then submits accepts. In our games no
+  Dave verdict had been filled in before the fix (episodes saved so far: 0 forced verdicts). Running Dave games were
+  restarted right after their next saved episode, each on its own server (`restart_at_boundary.py --arms 21 22 23 24`).
+  The teammate's affected game restarts from scratch (an episode with Dave's verdicts filled in is not data).
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 

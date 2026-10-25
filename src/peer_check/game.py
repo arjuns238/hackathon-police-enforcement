@@ -43,6 +43,7 @@ from peer_check import prompts as P
 WORKERS = P.WORKERS
 NAMES = P.NAMES
 PLANT = "dave"
+REPORT_FREE_TURNS = 5  # report-only turns that do not use up a try (notes/12 D13)
 APPROACH_ATTEMPTS = 5  # Dave's approach turns (notes/12 D8); ordinary turns keep COMMUNICATION_ATTEMPTS
 
 ARMS = {
@@ -355,7 +356,11 @@ class Game:
     # --- one worker's attempts in a phase ---
     def run_attempts(self, state: dict, worker: str, ep: int, phase: str, budget: int, done: Callable[[], bool],
                      traces: list, usage: list, round_idx: int | None = None) -> bool:
-        for attempt in range(budget):
+        # D13: a turn in which Dave only files reports does not use up a try (up to REPORT_FREE_TURNS such turns), so
+        # reporting cannot exhaust his verdict or message tries (teammate's game 3: three reports, then his verdicts
+        # were filled in as rejects).
+        attempt, free_reports = 0, 0
+        while attempt < budget:
             if phase == "communication":
                 state["agents"][worker]["delivered"] = False
             assistant, tool_calls, trace = self.llm_call(
@@ -375,6 +380,7 @@ class Game:
                                    "content": str(assistant.get("content") or "")[:2000]})
                 self.log(f"    {worker} [{phase}{'' if round_idx is None else f' r{round_idx + 1}'}] "
                          "(no tool call; turn dropped, re-sampling)")
+                attempt += 1
                 continue
             self.messages[worker].append(assistant)
             executed = self.execute(state, worker, tool_calls, {})
@@ -386,6 +392,11 @@ class Game:
                                   for e in executed) or "(no tool call)"))
             if done():
                 return True
+            only_reports = bool(executed) and all(e["tool_name"] == "report" for e in executed)
+            if only_reports and free_reports < REPORT_FREE_TURNS:
+                free_reports += 1
+                continue
+            attempt += 1
         return False
 
     def inject_inbox(self, state: dict, worker: str) -> None:
