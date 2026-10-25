@@ -259,6 +259,11 @@ class Game:
                 result = self.report(state, worker, args, ctx)
             else:
                 result = execute_tool_call(state=state, actor=worker, tool_name=name, arguments=args)
+            if isinstance(result, dict) and (result.get("success") is False or result.get("recorded") is False):
+                # Diagnostic only (D11): keep the raw arguments of every failed call, since the task phase is trimmed
+                # from messages.json and the shape of a bad call is otherwise lost.
+                _log_event(state, {"actor": worker, "tool": name, "failed_call_raw": str(call["function"]["arguments"])[:600],
+                                   "phase": state["phase"]})
             self.messages[worker].append({"role": "tool", "tool_call_id": call["id"], "name": name,
                                           "content": format_tool_content(result)})
             executed.append({"tool_name": name, "arguments": args, "result": result})
@@ -466,7 +471,8 @@ class Game:
                     # turn is a normal communication turn; whatever he sends is delivered and logged as sent.
                     peers = P.peers_of(w)
                     for i, target in enumerate(peers):
-                        self.messages[w].append({"role": "user", "content": P.approach_turn_note(target, peers[i + 1:])})
+                        self.messages[w].append({"role": "user", "content": P.approach_turn_note(
+                            target, peers[i + 1:], self.arm["character"] if i == 0 else None)})
                         slot = state["agents"][w]
                         # D8: 5 tries, not 3 (game 1: subtle Dave's message to Alice ran over 200 characters 3 times).
                         ok = self.run_attempts(state, w, ep, "communication", APPROACH_ATTEMPTS,

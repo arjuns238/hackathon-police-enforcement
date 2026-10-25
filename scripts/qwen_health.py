@@ -32,8 +32,9 @@ def empty_arg_failure(ev: dict) -> bool:
     if ev.get("success") is not False and not ev.get("error"):
         return False
     tool, err = ev.get("tool"), str(ev.get("error"))
+    # D11: write_test_file with an empty filename is reported but not gated (the paper's own game logs it too, and
+    # it may be a wrong key rather than wrapping; failed_call_raw now shows which).
     return ((tool == "send_message" and not ev.get("to") and "to must be" in err)
-            or (tool == "write_test_file" and not ev.get("path"))
             or (tool == "save_final_answer" and "must be non-empty" in err and not ev.get("content")))
 
 
