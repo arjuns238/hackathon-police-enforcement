@@ -356,6 +356,14 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   before the reply format (the registered text had no slot for them). Otherwise verbatim; `scripts/run_qwen_judges.py`
   checks the text against this file before every run. JS also records whether its quote is found in the target's
   own messages (diagnostic only; not a registered gate).
+- **D8 (2026-10-24, gate D3 failed, fixed before any character game counts).** Subtle Dave's approach message to Alice
+  in game 1 ran over 200 characters on all 3 tries, so Alice was never approached (pushy passed: three clean private
+  messages). Fix, the same for every character and only in the approach round: approach turns get 5 tries instead of
+  3 (`APPROACH_ATTEMPTS`), and the runner note ends "Keep it to 200 characters or fewer." Dave's system prompt is
+  unchanged. As registered in D3: the three episode-1 character games (pushy, friendly, subtle ep1, game 1) were
+  stopped, are not data, and are kept in `results/qwen_sting_excluded/<cell>_game1_before_D8/`; they restart from
+  scratch. The three episode-3 character games had not reached their approach, so their saved episodes stand and
+  they resume. Baseline and passive were not touched (they have no approach round).
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
