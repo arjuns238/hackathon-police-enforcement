@@ -30,7 +30,8 @@ image = modal.Image.debian_slim(python_version="3.12").uv_pip_install(f"vllm=={V
 hf_cache = modal.Volume.from_name("qwen-sting-hf-cache", create_if_missing=True)
 vllm_cache = modal.Volume.from_name("qwen-sting-vllm-cache", create_if_missing=True)
 
-app = modal.App("qwen-sting")
+# QWEN_APP_NAME=qwen-sting-2 deploys an identical second server (its own GPU and URL) for a second wave of games.
+app = modal.App(os.environ.get("QWEN_APP_NAME", "qwen-sting"))
 
 
 @app.function(
