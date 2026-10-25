@@ -1,0 +1,4 @@
+started arm1_game1
+FAILED (exit -15) arm1_game1
+failed: ['arm1_game1']
+BATCH DONE

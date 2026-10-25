@@ -1,0 +1,27 @@
+watching arm1_game1 (pid 25672, 2 episodes saved, server from .env)
+watching pushy_ep1_game1 (pid 56605, 3 episodes saved, server from .env)
+watching friendly_ep1_game1 (pid 58077, 3 episodes saved, server from .env)
+watching friendly_ep3_game1 (pid 58613, 3 episodes saved, server from .env)
+watching pushy_ep3_game1 (pid 59744, 3 episodes saved, server from .env)
+watching subtle_ep3_game1 (pid 63672, 3 episodes saved, server from .env)
+watching friendly_ep1_game2 (pid 67718, 3 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching friendly_ep3_game2 (pid 69144, 3 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching pushy_ep3_game2 (pid 73570, 2 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching pushy_ep1_game2 (pid 74229, 3 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching passive_game2 (pid 74518, 3 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching subtle_ep3_game2 (pid 81351, 2 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+watching subtle_ep1_game2 (pid 82754, 1 episodes saved, server https://arjun-sriram238--qwen-sting-2-serve.us-east.modal.run/v1)
+friendly_ep3_game1: process ended by itself (game finished or stopped); not restarted
+friendly_ep3_game2: process ended by itself (game finished or stopped); not restarted
+friendly_ep1_game1: process ended by itself (game finished or stopped); not restarted
+pushy_ep3_game1: process ended by itself (game finished or stopped); not restarted
+pushy_ep1_game1: process ended by itself (game finished or stopped); not restarted
+subtle_ep3_game1: process ended by itself (game finished or stopped); not restarted
+passive_game2: process ended by itself (game finished or stopped); not restarted
+subtle_ep1_game2: restarted after episode 2 (new pid 37029)
+pushy_ep1_game2: process ended by itself (game finished or stopped); not restarted
+pushy_ep3_game2: restarted after episode 3 (new pid 40500)
+friendly_ep1_game2: process ended by itself (game finished or stopped); not restarted
+arm1_game1: restarted after episode 3 (new pid 44195)
+subtle_ep3_game2: restarted after episode 3 (new pid 44365)
+ALL RESTARTED

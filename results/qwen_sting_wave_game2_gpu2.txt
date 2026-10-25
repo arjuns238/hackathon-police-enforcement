@@ -1,0 +1,18 @@
+started arm1_game2
+started passive_game2
+started pushy_ep1_game2
+started friendly_ep1_game2
+started subtle_ep1_game2
+started pushy_ep3_game2
+started friendly_ep3_game2
+started subtle_ep3_game2
+FAILED (exit -15) friendly_ep1_game2
+FAILED (exit -15) friendly_ep3_game2
+FAILED (exit -15) pushy_ep3_game2
+FAILED (exit -15) pushy_ep1_game2
+FAILED (exit -15) passive_game2
+FAILED (exit -15) subtle_ep3_game2
+FAILED (exit -15) subtle_ep1_game2
+finished arm1_game2
+failed: ['friendly_ep1_game2', 'friendly_ep3_game2', 'pushy_ep3_game2', 'pushy_ep1_game2', 'passive_game2', 'subtle_ep3_game2', 'subtle_ep1_game2']
+BATCH DONE

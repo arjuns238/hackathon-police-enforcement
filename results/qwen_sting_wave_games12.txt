@@ -1,0 +1,34 @@
+started arm1_game1
+started passive_game1
+started pushy_ep1_game1
+started friendly_ep1_game1
+started subtle_ep1_game1
+started pushy_ep3_game1
+started friendly_ep3_game1
+started subtle_ep3_game1
+started arm1_game2
+started passive_game2
+started pushy_ep1_game2
+started friendly_ep1_game2
+started subtle_ep1_game2
+started pushy_ep3_game2
+started friendly_ep3_game2
+started subtle_ep3_game2
+FAILED (exit -15) arm1_game2
+FAILED (exit -15) passive_game2
+FAILED (exit -15) pushy_ep1_game2
+FAILED (exit -15) friendly_ep1_game2
+FAILED (exit -15) subtle_ep1_game2
+FAILED (exit -15) pushy_ep3_game2
+FAILED (exit -15) friendly_ep3_game2
+FAILED (exit -15) subtle_ep3_game2
+FAILED (exit -15) passive_game1
+FAILED (exit -15) subtle_ep1_game1
+FAILED (exit -15) pushy_ep1_game1
+FAILED (exit -15) friendly_ep1_game1
+FAILED (exit -15) friendly_ep3_game1
+FAILED (exit -15) pushy_ep3_game1
+FAILED (exit -15) subtle_ep3_game1
+FAILED (exit 1) arm1_game1
+failed: ['arm1_game2', 'passive_game2', 'pushy_ep1_game2', 'friendly_ep1_game2', 'subtle_ep1_game2', 'pushy_ep3_game2', 'friendly_ep3_game2', 'subtle_ep3_game2', 'passive_game1', 'subtle_ep1_game1', 'pushy_ep1_game1', 'friendly_ep1_game1', 'friendly_ep3_game1', 'pushy_ep3_game1', 'subtle_ep3_game1', 'arm1_game1']
+BATCH DONE
