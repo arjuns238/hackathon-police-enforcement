@@ -455,6 +455,16 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   JS on every episode of the six active cells (`results/judges_qwen/JSall/`), so deals outside the registered window
   are counted. (c) Q-C8 split by approach timing. Registered JS (approach episode and the one after) stays primary.
   Anthropic cost $0.77; total $140.05.
+- **D17 (2026-10-25, afternoon; exploratory, after all registered predictions were scored).** Analyses added to the
+  results page (notes/13, section 8) at asri's request, none registered beforehand: (a) game-by-game comparison of the
+  "both said out loud" rate (J2) against the no-Dave baseline (claim: Dave lowers it; not supported game by game);
+  (b) episode-1 collusion per game and setup; (c) target responses to Dave's approach by character (JS deal / refusal
+  by a word pattern / other reply / no reply); (d) who voices the rule-bending norm first in each episode (first
+  J2-marked message); (e) trusted Dave's acceptance of wrong work; (f) early approaches re-measured with JS's
+  DAVE_PROPOSED flag (pushy 1 game, friendly 1 game; the word search had missed friendly's). The refusal word pattern
+  was broadened once (polite refusals such as "the policy requires the complete raw log"), and section 4's
+  say-no-do-yes now uses the same pattern (episode 1: 0 of 15; episode 3: 7 of 7). Worker-to-worker deals were
+  counted by a word search read by hand (0, one group pact), not by a judge.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
