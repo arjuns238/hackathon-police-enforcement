@@ -443,6 +443,12 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   messages over 200 characters). Size after D9: 2 chat turns lost of about 260 worker-rounds (<1%; before D9, 16%),
   and 13 task or verdict calls failed and were retried. Not worth another restart of running games; reported as a
   residue. The health check's rules 1 and 5 become "<= 2%" (monitoring, not the D10 smoke gate, which passed).
+- **D15 (2026-10-25, 02:50): reply allowance vs the server's context.** Baseline game 1 crashed in episode 3: its
+  conversation reached about 67k input tokens, and 67k plus the 64,000-token reply allowance overran the server's
+  131,072-token context (`--max-model-len`). Fix: only when the server refuses for length, the same request is
+  retried with half the allowance (32k, then 16k, then 8k); replies so far peak near 17k tokens, so no reply is
+  expected to be cut. The paper's 64k allowance is unchanged for every request that fits. The crashed game resumed
+  from its 2 saved episodes; running games were restarted at their next saved episode to pick the fix up.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 

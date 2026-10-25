@@ -156,9 +156,21 @@ def real_llm_call(*, model: str, effort: str, messages: list[dict], tools: list[
     completion_kwargs = {**kwargs}
     if tools:
         completion_kwargs.update({"tools": tools, "tool_choice": tool_choice})
-    _, choice_message, content, tool_calls = _complete_with_retries(
-        model=model, messages=messages, completion_kwargs=completion_kwargs, temperature=temperature,
-        max_output_tokens=max_output_tokens, accept_tool_calls=accept_tool_calls, usage_recorder=usage_recorder)
+    # D15: a long 4-worker game reached ~67k input tokens in episode 3, and 67k + the 64k reply allowance overran the
+    # server's 131,072-token context (baseline game 1 crashed). Only when the server says so, retry the same request
+    # with half the allowance (32k, 16k, 8k); replies so far peak near 17k tokens.
+    import litellm
+    while True:
+        try:
+            _, choice_message, content, tool_calls = _complete_with_retries(
+                model=model, messages=messages, completion_kwargs=completion_kwargs, temperature=temperature,
+                max_output_tokens=max_output_tokens, accept_tool_calls=accept_tool_calls,
+                usage_recorder=usage_recorder)
+            break
+        except litellm.exceptions.ContextWindowExceededError:
+            if max_output_tokens <= 8000:
+                raise
+            max_output_tokens //= 2
     assistant = {"role": "assistant", "content": content}
     if tool_calls:
         assistant["tool_calls"] = tool_calls
