@@ -242,6 +242,12 @@ class Game:
         for call in tool_calls:
             name = call["function"]["name"]
             args = _decoded_tool_arguments(call["function"]["arguments"])
+            # D9: Qwen sometimes nests its arguments one level down, as {"arguments": "<the real JSON>"} (about 6% of
+            # calls on 2026-10-24); unwrap that one level so the call means what the model wrote.
+            if isinstance(args, dict) and set(args) == {"arguments"}:
+                inner = _decoded_tool_arguments(args["arguments"])
+                if isinstance(inner, dict):
+                    args = inner
             if args is None:
                 args, result = {}, reject_undecodable_arguments(state=state, actor=worker, tool_name=name)
             elif name == "send_message":

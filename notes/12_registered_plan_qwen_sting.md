@@ -364,6 +364,14 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   stopped, are not data, and are kept in `results/qwen_sting_excluded/<cell>_game1_before_D8/`; they restart from
   scratch. The three episode-3 character games had not reached their approach, so their saved episodes stand and
   they resume. Baseline and passive were not touched (they have no approach round).
+- **D9 (2026-10-24, while game 1 ran): Qwen sometimes nests tool arguments one level down.** About 6% of Qwen's
+  tool calls came as `{"arguments": "<the real JSON>"}` (48 of 868 send_message, 8 of 129 submit_verdict). The game
+  treated them as failed attempts and asked again; usually the retry worked, but once all three verdict tries failed
+  (passive game 1, episode 2: Alice meant to accept Bob, Carol and Dave, and the runner recorded three rejects). Fix:
+  the game unwraps that one level (`Game.execute`); nothing else changes. Running games were restarted right after
+  their next saved episode (`scripts/restart_at_boundary.py`), so no episode was lost or rerun. Episodes saved before
+  the fix stand as played; the analysis lists every forced verdict and, where the raw call shows it, what the worker
+  meant.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
