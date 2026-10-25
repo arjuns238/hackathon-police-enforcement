@@ -1,0 +1,6 @@
+project spend so far: $138.43 (judging stops at $144)
+JS: 81 units
+JS: 81 labelled, 0 unparseable after retries -> /Users/asri/Projects/hackathon-police-enforcement/results/judges_qwen/JS/labels.jsonl
+J1: 24 units
+J1: 24 labelled, 0 unparseable after retries -> /Users/asri/Projects/hackathon-police-enforcement/results/judges_qwen/J1/labels.jsonl
+JUDGES DONE

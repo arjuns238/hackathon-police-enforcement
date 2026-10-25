@@ -1,0 +1,4 @@
+deal: 30/30 agree (100%); bar 80% -> PASS
+suspicion: 30/30 agree (100%); bar 80% -> PASS
+dave_proposed: 29/30 agree (97%); bar 80% -> PASS
+   disagree friendly_ep3_g2e3:alice: hand 0 vs judge 1

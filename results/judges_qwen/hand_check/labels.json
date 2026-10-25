@@ -1,0 +1,152 @@
+{
+ "pushy_ep3_g1e4:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "subtle_ep1_g1e1:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "subtle_ep1_g1e1:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "passive_g2e3:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "pushy_ep3_g1e4:bob": {
+  "deal": 1,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "passive_g2e2:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "pushy_ep3_g1e4:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "subtle_ep1_g2e1:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "passive_g2e1:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "subtle_ep1_g1e1:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "passive_g1e1:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "friendly_ep3_g2e3:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "pushy_ep1_g1e1:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "pushy_ep3_g1e3:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "passive_g2e2:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "friendly_ep3_g2e4:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "passive_g2e4:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "friendly_ep1_g2e1:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "friendly_ep3_g2e3:bob": {
+  "deal": 1,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "friendly_ep3_g1e3:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "passive_g1e2:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "pushy_ep1_g2e2:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "subtle_ep3_g1e4:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "pushy_ep1_g1e1:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "friendly_ep3_g1e3:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "passive_g2e3:alice": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "friendly_ep3_g2e4:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "subtle_ep3_g1e4:bob": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ },
+ "friendly_ep3_g2e3:carol": {
+  "deal": 1,
+  "suspicion": 0,
+  "dave_proposed": 1
+ },
+ "subtle_ep1_g1e2:carol": {
+  "deal": 0,
+  "suspicion": 0,
+  "dave_proposed": 0
+ }
+}
