@@ -17,7 +17,10 @@ _counter = [0]
 
 def _call(name: str, args: dict) -> dict:
     _counter[0] += 1
-    return {"id": f"fake_{_counter[0]}", "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}
+    payload = json.dumps(args)
+    if _counter[0] % 5 == 0:  # like real Qwen (notes/12 D9): sometimes nests its arguments as {"arguments": "<json>"}
+        payload = json.dumps({"arguments": payload})
+    return {"id": f"fake_{_counter[0]}", "type": "function", "function": {"name": name, "arguments": payload}}
 
 
 def _last_user(messages: list) -> str:

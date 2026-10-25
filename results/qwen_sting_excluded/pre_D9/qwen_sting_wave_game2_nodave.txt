@@ -1,0 +1,2 @@
+started arm1_game2
+started passive_game2

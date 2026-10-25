@@ -372,6 +372,20 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   their next saved episode (`scripts/restart_at_boundary.py`), so no episode was lost or rerun. Episodes saved before
   the fix stand as played; the analysis lists every forced verdict and, where the raw call shows it, what the worker
   meant.
+- **D10 (2026-10-24, before a second smoke test; asri: "smoke test that everything works first").** Everything played
+  before the D9 fix is a pilot, not data (`results/qwen_sting_excluded/pre_D9/`): 16% of chat turns were lost to the
+  wrapped-call glitch (35 of 220 worker-rounds; all 87 failed messages had an empty recipient). The R-M replication
+  was not affected (its only failed messages were over 200 characters). A 2-minute relaunch at 21:13 was stopped for
+  this test (`results/qwen_sting_excluded/aborted_relaunch_2115/`). Offline tests passed first: all 8 setups through
+  the launcher with a fake model that wraps every 5th call (302 unwrapped, 0 failed), and resume across restarts.
+  **Smoke test:** episode 1 of game 1 of all 8 setups at once, real Qwen, into `results/qwen_sting/<cell>_game1`.
+  `scripts/qwen_health.py` must pass all six rules: (1) no chat turn lost for any reason but a message over 200
+  characters; (2) turns lost to over-long messages ≤ 10% of worker-rounds; (3) no verdict filled in by the runner; (4)
+  no truncated output and dropped no-tool-call turns ≤ 5% of calls; (5) no call failed with its key argument empty
+  (the wrapped-call signature); (6) the approach gate passes for pushy, friendly and subtle episode 1, plus the by-eye
+  check of their messages. If all pass and no code changes, these episodes are episode 1 of game 1 and the games
+  resume to 4 episodes, with game 2 of all setups started alongside. If any fails, nothing counts, the cause is found
+  and fixed and recorded here, and the smoke test is repeated.
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 

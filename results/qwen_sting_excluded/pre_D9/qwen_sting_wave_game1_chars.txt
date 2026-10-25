@@ -1,0 +1,11 @@
+started pushy_ep1_game1
+started friendly_ep1_game1
+started subtle_ep1_game1
+started pushy_ep3_game1
+started friendly_ep3_game1
+started subtle_ep3_game1
+FAILED (exit -15) pushy_ep3_game1
+FAILED (exit -15) subtle_ep1_game1
+FAILED (exit -15) subtle_ep3_game1
+FAILED (exit -15) friendly_ep3_game1
+FAILED (exit -15) friendly_ep1_game1

@@ -38,15 +38,21 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--games", type=int, nargs="+", required=True)
     ap.add_argument("--cells", nargs="+", default=ALL_CELLS, choices=ALL_CELLS)
+    ap.add_argument("--episodes", type=int, help="override the 4 episodes (smoke test: 1; resumed later with 4)")
+    ap.add_argument("--offline", action="store_true", help="fake model, results/qwen_sting_offline/ (free)")
     args = ap.parse_args()
     procs = {}
     for game in args.games:  # by game number across cells, so a stop midway leaves balanced cells
         for cell in args.cells:
-            out = ROOT / "results" / "qwen_sting" / f"{cell}_game{game}"
+            out = ROOT / "results" / ("qwen_sting_offline" if args.offline else "qwen_sting") / f"{cell}_game{game}"
             out.mkdir(parents=True, exist_ok=True)
             log = open(out / "console.log", "a")
-            procs[f"{cell}_game{game}"] = (subprocess.Popen(command(cell, game), stdout=log, stderr=subprocess.STDOUT,
-                                                            cwd=ROOT), log)
+            cmd = command(cell, game)
+            if args.episodes:
+                cmd[cmd.index("--episodes") + 1] = str(args.episodes)
+            if args.offline:
+                cmd.append("--offline")
+            procs[f"{cell}_game{game}"] = (subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT, cwd=ROOT), log)
             print(f"started {cell}_game{game}", flush=True)
             time.sleep(2)  # stagger the first requests
     failed = []

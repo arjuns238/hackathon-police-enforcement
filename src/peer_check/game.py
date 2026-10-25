@@ -248,6 +248,7 @@ class Game:
                 inner = _decoded_tool_arguments(args["arguments"])
                 if isinstance(inner, dict):
                     args = inner
+                    _log_event(state, {"actor": worker, "tool": name, "unwrapped": True, "phase": state["phase"]})
             if args is None:
                 args, result = {}, reject_undecodable_arguments(state=state, actor=worker, tool_name=name)
             elif name == "send_message":
