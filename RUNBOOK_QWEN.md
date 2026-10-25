@@ -129,6 +129,9 @@ caffeinate -i nohup vendor/agent-collusion/.venv/bin/python scripts/run_qwen_wav
   > results/qwen_sting_wave_game3.txt 2>&1 &
 ```
 
+**Before step 1: be on the latest code.** `git pull` first. A fix that went in on 24 Oct, 21:00 CDT (Qwen sometimes
+wraps tool arguments; notes/12 D9) is required. Games run on older code are not usable.
+
 **Step 2, the gate (about 45–60 minutes in, free).** When episode 1 of the episode-1 setups is saved, check that
 Dave's approach worked:
 
@@ -136,7 +139,15 @@ Dave's approach worked:
 vendor/agent-collusion/.venv/bin/python scripts/check_approach.py --games 3
 ```
 
-It prints Dave's three private approach messages per setup. PASS means three messages, each to the intended person,
+Then the health check, which must end `HEALTH: PASS` (six rules, notes/12 D10: no chat turn lost except to messages
+over 200 characters, no verdict filled in, no truncation, no call failing with an empty argument, the approach gate):
+
+```bash
+vendor/agent-collusion/.venv/bin/python scripts/qwen_health.py --games 3
+```
+
+If it says FAIL, stop the games and send asri the output. `check_approach.py` prints Dave's three private approach
+messages per setup. PASS means three messages, each to the intended person,
 none longer than 200 characters, none giving away his role; passive Dave proposed nothing. Read the messages and
 check by eye that pushy is pushy, friendly is friendly and subtle never proposes a trade. If it fails, stop
 (`pkill -f run_qwen_wave; pkill -f run_peer_check`) and tell asri. If asri's own gate on game 1 has already passed,
