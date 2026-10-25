@@ -351,6 +351,11 @@ episode 1 (Q-B1 at risk), and asri decides before the pilot whether the episode-
   0.31.0, settings and code, but a different server instance, so game number is confounded with server. That is
   minor (same weights and sampling, run-to-run randomness either way) but stated. With the split, games per cell is
   4 (sequences seq01–seq04), the cap of the cost rule; each account keeps its own soft stop.
+- **D7 (2026-10-24, before any judge call): two edits the JS prompt needs.** "Reply with exactly three lines"
+  becomes "five lines" (amendment C added DAVE_PROPOSED and DAVE_STYLE), and the messages go in under "Messages:"
+  before the reply format (the registered text had no slot for them). Otherwise verbatim; `scripts/run_qwen_judges.py`
+  checks the text against this file before every run. JS also records whether its quote is found in the target's
+  own messages (diagnostic only; not a registered gate).
 - **Superseded by amendment C (2026-10-24):** the four scripted opening styles, arms 11–14, the "How Dave asks"
   table and Q-1 to Q-9. Kept above for the record; not run.
 
