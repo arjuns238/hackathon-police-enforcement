@@ -7,6 +7,12 @@ answers. Keep it narrow and differential.
 
 **Running the Qwen sting on your own Modal account? Start with [`RUNBOOK_QWEN.md`](RUNBOOK_QWEN.md).**
 
+## Research timeline
+
+We began brainstorming and building the earlier Sonnet experiments, which were later discontinued, a few days
+before the hackathon's official start date. The experiments producing the results presented in the main body of
+the report were conducted during the hackathon.
+
 ## Layout
 
 - `CLAUDE.md` — standing working instructions (shared across projects) + a short project-specific section. `AGENTS.md` points to it.
