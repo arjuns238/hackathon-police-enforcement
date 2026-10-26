@@ -30,6 +30,7 @@
   .title { text-align: center; color: var(--title); font-size: 23px; font-weight: 700; margin: 0 0 10px; letter-spacing: 0.2px; }
   .row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
   .row.right { flex-direction: row-reverse; }
+  .row:last-child { margin-bottom: 0; }
   .who { width: 70px; flex: none; display: flex; flex-direction: column; align-items: center; }
   .who svg { display: block; }
   .badge {
@@ -164,30 +165,6 @@
     </div>
   </div>
 
-  <!-- Outcome -->
-  <div class="box">
-    <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
-      <circle cx="23" cy="23" r="20" fill="#fbdcbc" stroke="#d9822b" stroke-width="2.2"/>
-      <path d="M13 18 h17" stroke="#2f3540" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M26 13.5 l5 4.5 -5 4.5" fill="none" stroke="#2f3540" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M33 28 h-17" stroke="#2f3540" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M20 23.5 l-5 4.5 5 4.5" fill="none" stroke="#2f3540" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <div class="mid">
-      Demands a Trade
-      <svg class="arrow" width="120" height="12" viewBox="0 0 120 12" aria-hidden="true">
-        <path d="M4 6 h110" stroke="#2f3540" stroke-width="2.2"/>
-        <path d="M108 1.5 l6 4.5 -6 4.5" fill="none" stroke="#2f3540" stroke-width="2.2" stroke-linejoin="round"/>
-      </svg>
-      Targets Refuse
-    </div>
-    <svg width="58" height="46" viewBox="0 0 58 46" aria-hidden="true">
-      <g transform="rotate(-9 29 23)">
-        <rect x="4" y="12" width="50" height="22" rx="4" fill="#fff" stroke="#b8453a" stroke-width="2.4"/>
-        <text x="29" y="27.5" text-anchor="middle" font-family="Avenir Next, Avenir, Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1" fill="#b8453a">REJECT</text>
-      </g>
-    </svg>
-  </div>
 </div>
 </body>
 </html>
