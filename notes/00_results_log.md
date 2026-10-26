@@ -1135,3 +1135,25 @@ it robust?").
 **What it changes:** the episode-1 link survives a correction for picking the grouping afterwards (p ≈ 0.008) and
 every game-number drop, so it stays the lead result, still labelled exploratory. "Only pushy and friendly got deals"
 is an observation, not a tested difference. Report wording updated to match (Results rewrite, 2026-10-25).
+
+### Q-STING: "friendly-ep3 colludes most, and most quietly" — checked by game (2026-10-25, exploratory; free)
+
+asri challenged the report calling this "did not hold up" (results-page chart: friendly-ep3 85% collusion, smallest
+said-out-loud share). Re-counted with the right measure, share of *colluding* target pairs where both workers were
+J2-marked (the report had used said-out-loud as a share of all pairs, which mixes in the collusion rate):
+
+| Setup | Said out loud / colluding pairs | By game |
+|---|---|---|
+| No Dave | 23/27 (85%) | 5/9, 9/9, 9/9 |
+| Passive | 25/31 (81%) | 1/7, 9/9, 6/6, 9/9 |
+| Subtle ep3 | 26/34 (76%) | 2/9, 9/9, 9/9, 6/7 |
+| Pushy ep1 | 24/33 (73%) | 0/8, 9/10, 9/9, 6/6 |
+| Subtle ep1 | 21/30 (70%) | 7/9, 7/9, 7/12 |
+| Friendly ep1 | 16/24 (67%) | 5/9, 5/9, 6/6, – |
+| Pushy ep3 | 21/34 (62%) | 1/8, 7/10, 6/6, 7/10 |
+| Friendly ep3 | 19/35 (54%) | 7/10, 9/9, 2/10, 1/6 |
+
+Pooled, asri's reading is right: friendly-ep3 is top on collusion (tied 85/83/82, all from episode 1) and lowest on
+said-out-loud. By game it does not separate: friendly-ep3 vs rest Mann–Whitney p = 0.32; Dave setups vs no Dave
+p = 0.48; omnibus permutation over setup means p = 0.91. Two friendly-ep3 games (3 and 4) carry it; game 1 is quiet in
+several setups. Report 4.7 renamed "Patterns we could not confirm" and rewritten with this measure.
